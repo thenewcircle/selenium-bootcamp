@@ -1,4 +1,4 @@
-package com.example.selenium.labs;
+package com.example.selenium.lab00;
 
 import org.junit.Assert;
 import org.junit.Test;
