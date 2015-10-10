@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example.selenium</groupId>
-    <artifactId>selenium-smoke-test</artifactId>
-    <name>selenium-smoke-test</name>
+    <artifactId>selenium-labs</artifactId>
+    <name>selenium-labs</name>
     <version>class-SNAPSHOT</version>
-    <description>Smoke test for Selenium setup</description>
+    <description>Selenium Bootcamp Labs</description>
 
     <parent>
         <groupId>com.example.selenium</groupId>
