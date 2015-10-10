@@ -1,6 +1,7 @@
 package com.example.selenium.smoketest.spree;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -24,24 +25,14 @@ public class RunSeleniumSmokeTest {
     @Before
     public void setUp() throws Exception {
         wd = new FirefoxDriver();
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @Test
     public void testVerifyJerseyPrice() {
-        wd.get(GlobalConfiguration.SHOP_ADDRESS);
-
-        long start = System.currentTimeMillis();
-        while (System.currentTimeMillis() - start < 60*1000) {
-            if ("Spree Demo Site".equals(wd.getTitle())) {
-                break;
-            }
-        }
-
-        wd.findElement(By.cssSelector("#product_6 > div.product-image > a > img[alt=\"Ruby Baseball Jersey\"]")).click();
-        if (!wd.findElement(By.tagName("html")).getText().contains("$19.99")) {
-           fail("verifyTextPresent failed");
-        }
+        wd.get(GlobalConfiguration.SHOP_ADDRESS+"/products");
+        Assert.assertEquals("Spree Demo Site", wd.getTitle());
+        Assert.assertTrue(wd.findElement(By.cssSelector("#product_6 > .price")).getText().contentEquals("$19.99"));
     }
 
     @After
