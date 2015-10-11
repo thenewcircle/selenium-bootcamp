@@ -31,7 +31,7 @@ public class Demo03 {
     	searchBox.sendKeys("kittens");
     	searchBox.submit();
     	
-    	sleepFor(1000);
+    	waitFor(1.0);
     	
     	// Make sure that the tile - set, in most cases this will 
     	// fail because the script is going too fast.
@@ -39,13 +39,16 @@ public class Demo03 {
     	Assert.assertEquals("kittens - Google Search", title);
     }
 
-	private void sleepFor(int delay) {
-		try {
-			Thread.sleep(delay);
-		} catch (InterruptedException e) {
-			Thread.interrupted();
-		}
-	}
+    @Deprecated
+    public void waitFor(double seconds) {
+        long wait = (long) (1000.0 * seconds);
+        try {
+            Thread.sleep(wait);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }    
     
     @After
     public void tearDown() {
