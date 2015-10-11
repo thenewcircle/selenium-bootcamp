@@ -31,11 +31,21 @@ public class Demo03 {
     	searchBox.sendKeys("kittens");
     	searchBox.submit();
     	
+    	sleepFor(1000);
+    	
     	// Make sure that the tile - set, in most cases this will 
     	// fail because the script is going too fast.
     	String title = browser.getTitle();
     	Assert.assertEquals("kittens - Google Search", title);
     }
+
+	private void sleepFor(int delay) {
+		try {
+			Thread.sleep(delay);
+		} catch (InterruptedException e) {
+			Thread.interrupted();
+		}
+	}
     
     @After
     public void tearDown() {
