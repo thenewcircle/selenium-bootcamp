@@ -44,11 +44,6 @@ public class Demo03 {
 			}
         };
         wait.until(condition);
-        
-    	// Make sure that the tile - set, in most cases this will 
-    	// fail because the script is going too fast.
-    	String title = browser.getTitle();
-    	Assert.assertEquals(expectedTitle, title);
     }
 
     @Deprecated
