@@ -37,13 +37,12 @@ public class Demo03 {
     	String expectedTitle = "kittens - Google Search"; 
     	
     	WebDriverWait wait = new WebDriverWait(browser, 10);
-    	ExpectedCondition<Boolean> condition = new ExpectedCondition<Boolean>() {
+        wait.until(new ExpectedCondition<Boolean>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
 				return driver.getTitle().toLowerCase().startsWith(expectedTitle.toLowerCase());
 			}
-        };
-        wait.until(condition);
+        });
     }
 
     @Deprecated
