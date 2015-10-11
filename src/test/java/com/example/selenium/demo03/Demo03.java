@@ -24,7 +24,7 @@ public class Demo03 {
     }
 
     @Test
-    public void demoSearchGoogle() throws Exception {
+    public void demoSearchGoogle() {
     	// not secure, not www, browser will follow redirects
     	browser.navigate().to("http://google.com");
     	WebElement searchBox = browser.findElement(By.name("q"));
