@@ -10,8 +10,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Demo03 {
     FirefoxDriver browser;
@@ -30,13 +33,22 @@ public class Demo03 {
     	WebElement searchBox = browser.findElement(By.name("q"));
     	searchBox.sendKeys("kittens");
     	searchBox.submit();
+
+    	String expectedTitle = "kittens - Google Search"; 
     	
-    	waitFor(1.0);
-    	
+    	WebDriverWait wait = new WebDriverWait(browser, 10);
+    	ExpectedCondition<Boolean> condition = new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				return driver.getTitle().toLowerCase().startsWith(expectedTitle.toLowerCase());
+			}
+        };
+        wait.until(condition);
+        
     	// Make sure that the tile - set, in most cases this will 
     	// fail because the script is going too fast.
     	String title = browser.getTitle();
-    	Assert.assertEquals("kittens - Google Search", title);
+    	Assert.assertEquals(expectedTitle, title);
     }
 
     @Deprecated
