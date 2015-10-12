@@ -1,6 +1,5 @@
 package com.example.selenium.demos;
 
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -8,12 +7,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Demo03 {
@@ -31,26 +27,24 @@ public class Demo03 {
     	// not secure, not www, browser will follow redirects
     	browser.navigate().to("http://google.com");
     	WebElement searchBox = browser.findElement(By.name("q"));
-    	searchBox.sendKeys("kittens");
+    	
+    	searchBox.sendKeys("Kittens");
     	searchBox.submit();
 
-    	String expectedTitle = "kittens - Google Search"; 
+    	String expectedTitle = "kittens"; 
+
+    	// SeleniumUtils.waitFor(6.0);
+//    	WebDriverWait wait = new WebDriverWait(browser, 10);
+//    	SeleniumUtils.compareTitleIgnoreCase(expectedTitle, wait);
+
     	WebDriverWait wait = new WebDriverWait(browser, 10);
         wait.until((WebDriver driver) -> driver.getTitle().toLowerCase().startsWith(expectedTitle.toLowerCase()));
+
+    	String actualTitle = browser.getTitle();
+    	Assert.assertEquals("Kittens - Google Search", actualTitle);
     }
 
-    @Deprecated
-    public void waitFor(double seconds) {
-        long wait = (long) (1000.0 * seconds);
-        try {
-            Thread.sleep(wait);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }    
-    
-    @After
+	@After
     public void tearDown() {
         browser.quit();
     }
