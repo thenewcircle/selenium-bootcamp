@@ -1,9 +1,11 @@
 package com.example.selenium.demos;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
+import static com.example.selenium.SeleniumUtils.*;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -34,14 +36,14 @@ public class Demo03 {
     	String expectedTitle = "kittens"; 
 
     	// SeleniumUtils.waitFor(6.0);
-//    	WebDriverWait wait = new WebDriverWait(browser, 10);
-//    	SeleniumUtils.compareTitleIgnoreCase(expectedTitle, wait);
-
     	WebDriverWait wait = new WebDriverWait(browser, 10);
+    	compareTitleIgnoreCase(expectedTitle, wait);
+
+    	wait = new WebDriverWait(browser, 10);
         wait.until((WebDriver driver) -> driver.getTitle().toLowerCase().startsWith(expectedTitle.toLowerCase()));
 
     	String actualTitle = browser.getTitle();
-    	Assert.assertEquals("Kittens - Google Search", actualTitle);
+    	assertEquals("Kittens - Google Search", actualTitle);
     }
 
 	@After

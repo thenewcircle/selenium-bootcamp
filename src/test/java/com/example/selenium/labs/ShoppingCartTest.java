@@ -16,7 +16,7 @@ public class ShoppingCartTest {
     @Before
     public void setUp() throws Exception {
         browser = new FirefoxDriver();
-        browser.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @Test
