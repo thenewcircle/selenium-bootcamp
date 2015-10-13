@@ -3,12 +3,13 @@ package com.example.selenium.labs;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.example.selenium.SeleniumUtils;
 
 public class ShoppingCartTest {
 
@@ -24,7 +25,7 @@ public class ShoppingCartTest {
     public void testShoppingCart() {
 
         // open shopping page in firefox
-        browser.navigate().to("https://superb-store-8178.spree.mx/");
+        browser.navigate().to("https://XXXX-YYYY-DDDD.spree.mx/");
 
         // click on the 'SHOP' link at the top navigation bar
         browser.findElement(By.cssSelector(".container > nav.columns.seven > #main-nav-bar > #shop-link > a[href='/products']")).click();
@@ -32,7 +33,7 @@ public class ShoppingCartTest {
         // click on the image of the 'Ruby on Rails Tote', 1st product 1st row
         // browser.findElement(By.cssSelector("li #product_1 > div.product-image > a > img[alt='Ruby on Rails Tote']")).click();
         // browser.findElement(By.cssSelector("li #product_1 > div.product-image > a > img")).click();
-        browser.findElement(By.cssSelector("img[alt='Ruby on Rails Tote']")).click();
+        browser.findElement(SeleniumUtils.imageWithAltText("Ruby on Rails Tote")).click();
 
         // click on the add to cart button
         browser.findElement(By.id("add-to-cart-button")).click();
@@ -45,21 +46,20 @@ public class ShoppingCartTest {
 
         // click on the 'Spree Ringer T-Shirt' image
         // browser.findElement(By.cssSelector("li #product_10 > div.product-image > a > img[alt='Spree Ringer T-Shirt']")).click();
-        browser.findElement(By.cssSelector("img[alt='Spree Ringer T-Shirt']")).click();
+        browser.findElement(SeleniumUtils.imageWithAltText("Spree Ringer T-Shirt")).click();
 
         // click on 'Add to Cart' button
         browser.findElement(By.id("add-to-cart-button")).click();
 
         // verify that the actual total after adding to shopping cart is $35.98
-        // By.cssSelector(".cart-total>td:nth-child(2)>h5")
-        Assert.assertEquals("$35.98", browser.findElement(By.xpath("//tr[@class='cart-total']/td[2]/h5")).getText());
+        SeleniumUtils.contains("$35.98", browser.findElement(By.xpath("//tr[@class='cart-total']/td[2]/h5")).getText());
 
         // click on 'Continue Shopping' button
         browser.findElement(By.cssSelector(".continue.button.gray")).click();
 
         // click on the image of the 'Ruby on Rails Tote', 1st product 1st row
         // browser.findElement(By.cssSelector("li #product_1 > div.product-image > a > img[alt='Ruby on Rails Tote']")).click();
-        browser.findElement(By.cssSelector("img[alt='Ruby on Rails Tote']")).click();
+        browser.findElement(SeleniumUtils.imageWithAltText("Ruby on Rails Tote")).click();
 
         // click on 'Featured' under 'Look for Similar Items'
         // browser.findElement(By.linkText("Featured")).click();
@@ -78,8 +78,7 @@ public class ShoppingCartTest {
         browser.findElement(By.cssSelector("a.cart-info.full")).click();
 
         // verify that the actual total in cart after info page is $35.98
-        // By.cssSelector(".cart-total>td:nth-child(2)>h5")
-        Assert.assertEquals("$35.98", browser.findElement(By.xpath("//tr[@class='cart-total']/td[2]/h5")).getText());
+        SeleniumUtils.contains("$35.98", browser.findElement(By.xpath("//tr[@class='cart-total']/td[2]/h5")).getText());
 
     }
 

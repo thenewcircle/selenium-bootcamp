@@ -1,5 +1,7 @@
 package com.example.selenium;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,4 +26,23 @@ public class SeleniumUtils {
 		});
 	}
 
+	public static void contains(String expectedSubstring, String actualString) {
+
+        if (actualString == null) {
+            String msg = String.format("expected to contain \"%s\" but got null.", expectedSubstring);
+            Assert.fail(msg);
+        }
+        if (expectedSubstring == null) {
+            throw new IllegalArgumentException("expectedString shouldn't be null");
+        }
+        if (!actualString.contains(expectedSubstring)) {
+            String msg = String.format("expected to contain \"%s\" but got \"%s\".", expectedSubstring, actualString);
+            Assert.fail(msg);
+        }
+
+    }
+
+	public static By imageWithAltText(String alternateText) {
+		return By.cssSelector("img[alt='"+alternateText+"']");
+	}
 }
