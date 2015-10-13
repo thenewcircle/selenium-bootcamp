@@ -39,7 +39,6 @@ public class ShoppingCartTest {
 
     @Test 
     public void testVerifySytleOnShopPage() {
-
     	HomePage homePage = HomePage.open(browser);
         ShopPage shopPage = homePage.clickOnShopLinkInTopNavigationBar();
         shopPage.validateNavigationBarSytle();

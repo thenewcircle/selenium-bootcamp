@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.example.selenium.SeleniumUtils;
 
@@ -11,6 +13,9 @@ public abstract class AbstractPage {
 
 	protected final WebDriver browser;
 
+	@FindBy(linkText="HOME") 
+	private WebElement homeLink;
+	
 	public AbstractPage(WebDriver browser) {
 		this.browser = browser;
 	}
@@ -24,14 +29,20 @@ public abstract class AbstractPage {
 	}
 
 	public final WebElement getHomeLink() {
-		return browser.findElement(By.linkText("HOME"));
+		return homeLink;
+		// return browser.findElement(By.linkText("HOME"));
+	}
+
+	public final WebElement getShopLink() {
+		return browser.findElement(By.linkText("SHOP"));
 	}
 
 	public final ShopPage clickOnShopLinkInTopNavigationBar() {
 	    // click on the 'SHOP' link at the top navigation bar
 	    //browser.findElement(By.cssSelector(".container > nav.columns.seven > #main-nav-bar > #shop-link > a[href='/products']")).click();
-	    browser.findElement(By.linkText("SHOP")).click();
-	    return new ShopPage(browser);
+	    getShopLink().click();
+	    // return new ShopPage(browser);
+	    return PageFactory.initElements(browser, ShopPage.class);
 	}
 
 	public final void validateNavigationBarSytle() {

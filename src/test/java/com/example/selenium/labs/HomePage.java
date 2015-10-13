@@ -2,6 +2,7 @@ package com.example.selenium.labs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends AbstractPage {
 
@@ -9,6 +10,7 @@ public class HomePage extends AbstractPage {
 		// open shopping page in firefox
         browser.navigate().to("https://superb-store-8178.spree.mx/");
         return new HomePage(browser);
+        // return PageFactory.initElements(browser, HomePage.class);
 	}
 	
 	public HomePage(WebDriver browser) {
