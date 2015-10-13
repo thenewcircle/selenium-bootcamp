@@ -3,23 +3,32 @@ package com.example.selenium.labs;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.example.selenium.SeleniumUtils;
 
 public class ShoppingCartTest {
 
-    private FirefoxDriver browser;
+    private WebDriver browser;
 
     @Before
     public void setUp() throws Exception {
         browser = new FirefoxDriver();
-        browser.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+//    	System.getProperties().setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
+//    	browser = new ChromeDriver();
+
+//    	System.getProperties().setProperty("webdriver.ie.driver", "c:\\tools\\selenium\\IEDriverServer.exe");
+//    	browser = new InternetExplorerDriver();
+    	
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        browser.manage().window().maximize();
     }
 
     @Test 
@@ -35,12 +44,22 @@ public class ShoppingCartTest {
         ShopPage shopPage = homePage.clickOnShopLinkInTopNavigationBar();
         shopPage.validateNavigationBarSytle();
     }
+
+    @Test
+    public void testAdminLogin() {
+    	HomePage homePage = HomePage.open(browser);
+    	AdminPage adminPage = homePage.clickAdminLinkInTopNavigationBar();
+    	
+    	adminPage.setUsername("mickey.mouse@disney.com");
+    	adminPage.setPassword("asdflkj");
+    	adminPage.clickLoginButton();
+    }
     
     @Test
     public void testShoppingCart() {
-
+    	
     	HomePage homePage = HomePage.open(browser);
-
+    	
         ShopPage shopPage = homePage.clickOnShopLinkInTopNavigationBar();
 
         ProductPage totePage = shopPage.clickOnImageWithText("Ruby on Rails Tote");

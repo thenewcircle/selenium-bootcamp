@@ -23,17 +23,18 @@ public abstract class AbstractPage {
 	    return new ProductPage(browser);
 	}
 
-	public WebElement getHomeLink() {
+	public final WebElement getHomeLink() {
 		return browser.findElement(By.linkText("HOME"));
 	}
 
-	public ShopPage clickOnShopLinkInTopNavigationBar() {
+	public final ShopPage clickOnShopLinkInTopNavigationBar() {
 	    // click on the 'SHOP' link at the top navigation bar
-	    browser.findElement(By.cssSelector(".container > nav.columns.seven > #main-nav-bar > #shop-link > a[href='/products']")).click();
+	    //browser.findElement(By.cssSelector(".container > nav.columns.seven > #main-nav-bar > #shop-link > a[href='/products']")).click();
+	    browser.findElement(By.linkText("SHOP")).click();
 	    return new ShopPage(browser);
 	}
 
-	public void validateNavigationBarSytle() {
+	public final void validateNavigationBarSytle() {
 	    String color = getHomeLink().getCssValue("color");
 	    Assert.assertEquals("rgba(0, 173, 238, 1)", color);
 	
