@@ -21,7 +21,10 @@ public abstract class AbstractPage {
 	}
 
 	public final void openNavigationMenu() {
-		browser.findElement(By.xpath(".//*[@id='header']/div/nav[2]/a[1]/i")).click();
+		int width = browser.manage().window().getSize().getWidth();
+		if (width <= 700) {
+			browser.findElement(By.xpath(".//*[@id='header']/div/nav[2]/a[1]/i")).click();
+		}
 	}
 	
 	public final ProductPage clickOnImageWithText(String text) {

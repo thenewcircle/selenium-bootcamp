@@ -24,7 +24,11 @@ public class FeaturedPage extends AbstractPage {
 
 	public CartPage clickOnCartLink() {
         // click on 'Cart' button in top right corner
-        browser.findElement(By.cssSelector("a.cart-info.full")).click();
+		try {
+			browser.findElement(By.cssSelector("a.cart-info.full")).click();
+		} catch(Exception e) {
+			browser.findElement(By.cssSelector("a.cart-info.full")).click();
+		}
         return new CartPage(browser);
 	}
 }

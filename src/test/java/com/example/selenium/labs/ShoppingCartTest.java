@@ -1,39 +1,68 @@
 package com.example.selenium.labs;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.example.selenium.SeleniumUtils;
 
+@RunWith(Parameterized.class)
 public class ShoppingCartTest {
 
-    private WebDriver browser;
+	private enum DriverType { FireFox, Chome }
+	
+	private WebDriver browser;
 
-    @Before
+    private final int width;
+    private final int height;
+    
+    @Parameters
+    public static Collection<Object[]> data() {
+
+    	return Arrays.asList(new Object[][] {     
+//            { DriverType.FireFox, 700, 600 }, 
+            { DriverType.FireFox, 1024, 600 },
+            
+//            { DriverType.Chome, 700, 600 }, 
+//            { DriverType.Chome, 1024, 600 }
+           });
+    }
+    
+    public ShoppingCartTest(DriverType driverType, int width, int height) {
+		super();
+		this.width = width;
+		this.height = height;
+
+		if (DriverType.FireFox == driverType) {
+	    	browser = new FirefoxDriver();
+		} else {
+	    	System.getProperties().setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
+	    	browser = new ChromeDriver();
+		}
+    }
+
+	@Before
     public void setUp() throws Exception {
 //    	Capabilities desiredCapabilities = new Capabilities();
 //    	browser = new RemoteWebDriver(new URL("http://hub.com"), desiredCapabilities));
     	
-    	//System.getProperties().setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
-//    	browser = new ChromeDriver();
-
-//    	System.getProperties().setProperty("webdriver.ie.driver", "c:\\tools\\selenium\\IEDriverServer.exe");
-//    	browser = new InternetExplorerDriver();
-
-    	browser = new FirefoxDriver();
-    	
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // browser.manage().window().maximize();
-        browser.manage().window().setPosition(new Point(0,0));
-        browser.manage().window().setSize(new Dimension(700, 700));
+         browser.manage().window().setPosition(new Point(0,0));
+         browser.manage().window().setSize(new Dimension(width, height));
     }
 
     @Test 
