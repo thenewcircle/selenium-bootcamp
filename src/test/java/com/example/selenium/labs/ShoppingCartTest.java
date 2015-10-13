@@ -5,11 +5,11 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.example.selenium.SeleniumUtils;
 
@@ -19,16 +19,21 @@ public class ShoppingCartTest {
 
     @Before
     public void setUp() throws Exception {
-        browser = new FirefoxDriver();
-
-//    	System.getProperties().setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
+//    	Capabilities desiredCapabilities = new Capabilities();
+//    	browser = new RemoteWebDriver(new URL("http://hub.com"), desiredCapabilities));
+    	
+    	//System.getProperties().setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
 //    	browser = new ChromeDriver();
 
 //    	System.getProperties().setProperty("webdriver.ie.driver", "c:\\tools\\selenium\\IEDriverServer.exe");
 //    	browser = new InternetExplorerDriver();
+
+    	browser = new FirefoxDriver();
     	
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        browser.manage().window().maximize();
+        // browser.manage().window().maximize();
+        browser.manage().window().setPosition(new Point(0,0));
+        browser.manage().window().setSize(new Dimension(700, 700));
     }
 
     @Test 

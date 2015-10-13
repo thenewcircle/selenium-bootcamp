@@ -8,6 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumUtils {
 
+	// default (package) - ignored
+	// private 
+	// protected
+	// public
+	
+	
 	@Deprecated
 	public static void waitFor(double seconds) {
 		try {

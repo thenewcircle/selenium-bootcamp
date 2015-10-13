@@ -10,8 +10,10 @@ public class ShopPage extends AbstractPage {
 	}
 
 	public BrandPage clickOnSpreeLinkInSidebarUnderShopByBrandSection() {
-        // click on 'Spree' link in the sidebar under 'Shop by Brand' section
-        browser.findElement(By.xpath("//aside[@id='sidebar']//a[.='Spree']")).click();
+		openNavigationMenu();
+		// click on 'Spree' link in the sidebar under 'Shop by Brand' section
+        // browser.findElement(By.xpath("//aside[@id='sidebar']//a[.='Spree']")).click();
+        browser.findElement(By.linkText("Spree"));
         return new BrandPage(browser);
 	}
 }
