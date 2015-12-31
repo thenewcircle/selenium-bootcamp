@@ -32,7 +32,8 @@ public class SeleniumSmokeTest {
   public void testVerifyJerseyPrice() {
     wd.get("http://spree.newcircle.com/products");
     Assert.assertEquals("Spree Demo Site", wd.getTitle());
-    Assert.assertTrue(wd.findElement(By.cssSelector("#product_6 .price")).getText().contentEquals("$19.99"));
+    By by = By.cssSelector("#product_6 .price")).getText().contentEquals("$19.99");
+    Assert.assertTrue(wd.findElement(by);
   }
 
   @After
