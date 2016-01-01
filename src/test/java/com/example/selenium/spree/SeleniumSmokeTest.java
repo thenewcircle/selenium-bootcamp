@@ -23,7 +23,7 @@ public class SeleniumSmokeTest {
   private WebDriver wd;
 
   @Before
-  public void setUp() throws Exception {
+  public void beforeMethod() throws Exception {
     wd = new HtmlUnitDriver();
     wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   }
@@ -37,7 +37,7 @@ public class SeleniumSmokeTest {
   }
 
   @After
-  public void tearDown() {
+  public void afterMethod() {
     wd.quit();
   }
 }
