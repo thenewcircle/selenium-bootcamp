@@ -25,7 +25,7 @@ public class SeleniumSmokeTest {
   }
 
   @Test
-  public void testVerifyJerseyPrice() {
+  public void testHomePageTitle() {
     browser.get("http://spree.newcircle.com/products");
     Assert.assertEquals("Spree Demo Site", browser.getTitle());
   }
