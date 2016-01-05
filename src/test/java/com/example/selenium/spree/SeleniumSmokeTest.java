@@ -10,8 +10,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class SeleniumSmokeTest {
 
   static {
@@ -24,7 +22,6 @@ public class SeleniumSmokeTest {
   @Before
   public void beforeMethod() throws Exception {
     browser = new HtmlUnitDriver();
-    browser.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   }
 
   @Test
