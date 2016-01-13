@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +19,7 @@ import com.example.selenium.spree.utils.InternetExplorerDriverFactory;
 import com.example.selenium.spree.utils.RichWebDriver;
 import com.example.selenium.spree.utils.WebDriverFactory;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
+import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
 import ch.qos.logback.classic.Level;
 
@@ -27,6 +29,7 @@ public class SeleniumSmokeTest {
   static {
     LogbackUtils.initLogback(Level.WARN);
     LogbackUtils.setLevel(DefaultCssErrorHandler.class, Level.ERROR);
+    LogbackUtils.setLevel(StrictErrorReporter.class, Level.OFF);
   }
 
   private RichWebDriver browser;
@@ -47,7 +50,59 @@ public class SeleniumSmokeTest {
     browser.get("http://spree.newcircle.com/products");
     Assert.assertEquals("Spree Demo Site", browser.getTitle());
   }
+  
+  @Test
+  public void testBackButton() {
+    browser.get("http://spree.newcircle.com/products/spree-bag");
+    Assert.assertEquals("Spree Bag - Spree Demo Site", browser.getTitle());
 
+    browser.navigate().to("http://spree.newcircle.com/products/spree-tote");
+    Assert.assertEquals("Spree Tote - Spree Demo Site", browser.getTitle());
+
+    browser.navigate().back();  
+    Assert.assertEquals("Spree Bag - Spree Demo Site", browser.getTitle());
+
+    browser.navigate().forward();
+    Assert.assertEquals("Spree Tote - Spree Demo Site", browser.getTitle());
+  }
+  
+  @Test
+  public void testRefresh() throws Exception {
+	  browser.get("http://spree.newcircle.com/products/spree-bag");
+	  Assert.assertEquals("Spree Bag - Spree Demo Site", browser.getTitle());
+	  
+	  browser.navigate().refresh();
+	  Assert.assertEquals("Spree Bag - Spree Demo Site", browser.getTitle());
+  }
+  
+  @Test
+  public void testGetCurrentUrl() throws Exception {
+	  Assume.assumeFalse(browser.isHtmlUnit());
+	  
+	  browser.get("http://google.com");
+	  Assert.assertEquals("Google", browser.getTitle());
+	  
+	  String url = browser.getCurrentUrl();
+	  String msg = "I got instead " + url;
+	  Assert.assertTrue(msg, url.startsWith("https://www.google.com"));
+  }
+  
+  @Test
+  public void testGetPageSource() throws Exception {
+	  browser.get("http://example.com");
+	  String src = browser.getPageSource();
+	  
+	  String tag = "<!DOCTYPE html>";
+	  if (browser.isHtmlUnit()) {
+		  tag = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+	  } else if (browser.isIE()) {
+		  tag = "<html>";
+	  }
+	  
+	  String start = src.substring(0, tag.length());
+	  Assert.assertEquals(tag, start);
+  }
+  
   @After
   public void afterMethod() {
     browser.quit();

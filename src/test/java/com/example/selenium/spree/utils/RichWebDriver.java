@@ -10,12 +10,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriver.Navigation;
-import org.openqa.selenium.WebDriver.Options;
-import org.openqa.selenium.WebDriver.TargetLocator;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.HasInputDevices;
 import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.interactions.Mouse;
@@ -225,5 +223,12 @@ public class RichWebDriver implements
 	public TargetLocator switchTo() {
 		return webDriver.switchTo();
 	}
-	
+
+	public boolean isHtmlUnit() {
+		return webDriver instanceof HtmlUnitDriver;
+	}
+
+	public boolean isIE() {
+		return webDriver instanceof InternetExplorerDriver;
+	}
 }
