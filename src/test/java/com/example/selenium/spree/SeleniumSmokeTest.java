@@ -3,10 +3,10 @@ package com.example.selenium.spree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -17,6 +17,8 @@ import com.example.selenium.spree.utils.FirefoxDriverFactory;
 import com.example.selenium.spree.utils.HtmlUnitDriverFactory;
 import com.example.selenium.spree.utils.InternetExplorerDriverFactory;
 import com.example.selenium.spree.utils.RichWebDriver;
+import com.example.selenium.spree.utils.ScreenshotRule;
+import com.example.selenium.spree.utils.SeleniumTest;
 import com.example.selenium.spree.utils.WebDriverFactory;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
 import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
@@ -24,7 +26,7 @@ import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 import ch.qos.logback.classic.Level;
 
 @RunWith(Parameterized.class)
-public class SeleniumSmokeTest {
+public class SeleniumSmokeTest implements SeleniumTest {
 
   static {
     LogbackUtils.initLogback(Level.WARN);
@@ -34,6 +36,10 @@ public class SeleniumSmokeTest {
 
   private RichWebDriver browser;
   private final WebDriverFactory wdf;
+  
+  @Rule
+  public final ScreenshotRule screenshotRule = 
+    new ScreenshotRule(this, "c:\\tmp\\test-failures");
   
   public SeleniumSmokeTest(String name, WebDriverFactory wdf) {
 	  this.wdf = wdf;
@@ -101,12 +107,13 @@ public class SeleniumSmokeTest {
 	  
 	  String start = src.substring(0, tag.length());
 	  Assert.assertEquals(tag, start);
+	  Assert.assertTrue(false);
   }
   
-  @After
-  public void afterMethod() {
-    browser.quit();
-  }
+//  @After
+//  public void afterMethod() {
+//    browser.quit();
+//  }
   
   @Parameterized.Parameters(name = "{0}")
   public static Iterable<Object[]> createTestParameters() {
@@ -116,5 +123,11 @@ public class SeleniumSmokeTest {
 	  data.add(new Object[]{ "IE",   new InternetExplorerDriverFactory()});
 	  data.add(new Object[]{ "HtmlUnit", new HtmlUnitDriverFactory()});
 	  return data;
+  }
+
+
+  @Override
+  public RichWebDriver getRichWebDriver() {
+    return browser;
   }
 }
