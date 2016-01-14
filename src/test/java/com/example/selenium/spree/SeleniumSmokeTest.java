@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Assume;
@@ -10,11 +11,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.selenium.LogbackUtils;
 import com.example.selenium.spree.utils.ChromeDriverFactory;
 import com.example.selenium.spree.utils.FirefoxDriverFactory;
-import com.example.selenium.spree.utils.HtmlUnitDriverFactory;
 import com.example.selenium.spree.utils.InternetExplorerDriverFactory;
 import com.example.selenium.spree.utils.RichWebDriver;
 import com.example.selenium.spree.utils.ScreenshotRule;
@@ -49,6 +52,8 @@ public class SeleniumSmokeTest implements SeleniumTest {
   @Before
   public void beforeMethod() throws Exception {
 	  browser = wdf.create();
+	  browser.manage().timeouts()
+	    .implicitlyWait(10, TimeUnit.SECONDS);
   }
 
   @Test
@@ -93,6 +98,7 @@ public class SeleniumSmokeTest implements SeleniumTest {
 	  Assert.assertTrue(msg, url.startsWith("https://www.google.com"));
   }
   
+  
   @Test
   public void testGetPageSource() throws Exception {
 	  browser.get("http://example.com");
@@ -115,13 +121,75 @@ public class SeleniumSmokeTest implements SeleniumTest {
 //    browser.quit();
 //  }
   
+  @Test
+  public void testSearchSpree() throws Exception {
+    browser.get("http://spree.newcircle.com");
+    WebElement keywordsTF = browser.findElementById("keywords");
+    String value = keywordsTF.getAttribute("value");
+    Assert.assertEquals("", value);
+    
+    keywordsTF.sendKeys("Bag");
+    value = keywordsTF.getAttribute("value");
+    Assert.assertEquals("Bag", value);
+    
+    keywordsTF.submit();
+  
+    // we are on the second page
+    
+    String url = browser.getCurrentUrl();
+    Assert.assertTrue(url.startsWith("http://spree.newcircle.com/products?"));
+
+    keywordsTF = browser.findElementById("keywords");
+    value = keywordsTF.getAttribute("value");
+    Assert.assertEquals("Bag", value);
+
+    keywordsTF.clear();
+    value = keywordsTF.getAttribute("value");
+    Assert.assertEquals("", value);
+
+    browser.findElementById("logo").click();
+    
+    //Thread.sleep(1*1000);
+    WebDriverWait wait = new WebDriverWait(browser, 10);
+    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
+    
+//    url = browser.getCurrentUrl();
+//    Assert.assertEquals("http://spree.newcircle.com/", url);
+  }
+  
+  @Test
+  public void testGoogleSearch() {
+    Assume.assumeFalse(browser.isHtmlUnit());
+
+    browser.get("https://www.google.com/");
+    WebElement searchTF = browser.findElementById("lst-ib");
+    Assert.assertNotNull(searchTF);
+
+    Assert.assertEquals("2048", searchTF.getAttribute("maxlength"));
+    Assert.assertEquals("26px", searchTF.getCssValue("height"));
+
+    Assert.assertTrue(searchTF.getLocation().getX() > 200);
+    Assert.assertTrue(searchTF.getLocation().getY() > 100);
+
+    Assert.assertTrue(searchTF.getSize().getWidth() > 400 &&
+                      searchTF.getSize().getWidth() < 500);
+    Assert.assertEquals(26, searchTF.getSize().getHeight());
+
+    Assert.assertTrue(searchTF.isDisplayed());
+    Assert.assertFalse(searchTF.isSelected());
+    Assert.assertTrue(searchTF.isEnabled());
+
+    Assert.assertEquals("input", searchTF.getTagName());
+    Assert.assertEquals("", searchTF.getText());
+  }
+  
   @Parameterized.Parameters(name = "{0}")
   public static Iterable<Object[]> createTestParameters() {
 	  List<Object[]> data = new ArrayList();
 	  data.add(new Object[]{ "Firefox",  new FirefoxDriverFactory()});
 	  data.add(new Object[]{ "Chrome",   new ChromeDriverFactory()});
 	  data.add(new Object[]{ "IE",   new InternetExplorerDriverFactory()});
-	  data.add(new Object[]{ "HtmlUnit", new HtmlUnitDriverFactory()});
+//	  data.add(new Object[]{ "HtmlUnit", new HtmlUnitDriverFactory()});
 	  return data;
   }
 
