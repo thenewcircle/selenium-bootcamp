@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class SeleniumSmokeTest {
+public class ShoppingSpreeTests {
 
   static {
     LogbackUtils.initLogback(Level.WARN);
