@@ -21,7 +21,10 @@ public class SeleniumSmokeTest {
 
   @Before
   public void beforeMethod() throws Exception {
-    browser = new HtmlUnitDriver();
+    HtmlUnitDriver webDriver = new HtmlUnitDriver();
+    webDriver.setJavascriptEnabled(true);
+
+    browser = webDriver;
   }
 
   @Test
