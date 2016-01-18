@@ -26,7 +26,7 @@ public class ShoppingSpreeTests {
 
   @Test
   public void testHomePageTitle() {
-    browser.get("http://spree.newcircle.com/products");
+    browser.get("http://spree.newcircle.com");
     Assert.assertEquals("Spree Demo Site", browser.getTitle());
   }
 
