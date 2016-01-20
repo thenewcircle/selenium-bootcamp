@@ -180,6 +180,29 @@ public class ShoppingSpreeTests implements SeleniumTest {
     cartPage.open();
     cartPage.validateTitle();
   }
+  @Test
+  public void testShoppingSpree() throws Exception {
+    HomePage homePage = new HomePage(browser);
+    homePage.open();
+
+    ProductsPage productsPage = homePage.search("Mug");
+
+    ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+    productPage.clickThumbnail(1);
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
+    productPage.setQuantity(3);
+    productPage.validateCartLink(0, null);
+    
+    CartPage cartPage = productPage.clickAddToCart();
+    cartPage.validateUrl();
+    cartPage.validateCartLink(3, "41.97");
+
+    productsPage = cartPage.clickContinueShopping();
+    productsPage.validateUrl();
+  }
   
   @Test
   public void testCapabilities() {
@@ -216,11 +239,11 @@ public class ShoppingSpreeTests implements SeleniumTest {
     List<Object[]> data = new ArrayList();
 //     data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
-    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+//    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     return data;
   }
-
+  
   @Override
   public RemoteWebDriver getRemoteWebDriver() {
     return browser;

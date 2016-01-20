@@ -1,6 +1,7 @@
 package com.example.selenium.spree;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CartPage extends SpreePage {
@@ -18,5 +19,17 @@ public class CartPage extends SpreePage {
 
   public void validateTitle() {
     Assert.assertEquals("Shopping Cart - Spree Demo Site", browser.getTitle());
+  }
+
+  public void validateUrl() {
+    String url = browser.getCurrentUrl();
+    String exp = "http://spree.newcircle.com/cart";
+    Assert.assertEquals(exp, url);
+  }
+
+  public ProductsPage clickContinueShopping() {
+    WebElement contShopBtn = browser.findElementByLinkText("Continue shopping");
+    contShopBtn.click();
+    return new ProductsPage(browser);
   }
 }

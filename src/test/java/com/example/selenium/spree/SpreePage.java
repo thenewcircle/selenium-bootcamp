@@ -1,6 +1,7 @@
 package com.example.selenium.spree;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -48,10 +49,29 @@ public class SpreePage {
     WebElement logo = browser.findElementByCssSelector("#logo > a");
     logo.click();
 
-    WebDriverWait wait = new WebDriverWait(browser, 120, 1000);
+    WebDriverWait wait = new WebDriverWait(browser, 5, 1000);
     wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
 
     return new HomePage(browser);
+  }
+
+  public void validateCartLink(int count, String amount) {
+    String LNKTXT = "CART: ";
+
+    WebDriverWait wait = new WebDriverWait(browser, 5);
+    By by = By.partialLinkText(LNKTXT);
+    wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    
+    WebElement cartLnk = browser.findElementByPartialLinkText(LNKTXT);
+    // WebElement cartLnk = browser.findElementByCssSelector("a.cart-info");
+    String text = cartLnk.getText();
+  
+    if (count == 0) {
+      Assert.assertEquals("CART: (EMPTY)", text);
+    } else {
+      String expected = String.format("CART: (%s) $%s", count, amount);
+      Assert.assertEquals(expected, text);
+    }
   }
 
 }
