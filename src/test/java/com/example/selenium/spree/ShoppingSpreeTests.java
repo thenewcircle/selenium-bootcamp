@@ -99,8 +99,6 @@ public class ShoppingSpreeTests implements SeleniumTest {
     ProductPage productPage = new ProductPage(browser);
     productPage.open();
     productPage.validateTitle();
-    
-    Assert.assertTrue(false);
   }
   
   @Test
