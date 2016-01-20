@@ -17,5 +17,4 @@ public class HomePage extends SpreePage {
   public void validateTitle() {
     Assert.assertEquals("Spree Demo Site", browser.getTitle());
   }
-  
 }

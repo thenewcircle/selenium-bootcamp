@@ -9,6 +9,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -43,8 +47,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Before
   public void beforeMethod() throws Exception {
     browser = wdf.create();
+    browser.manage().window().maximize();
+//    browser.manage().window().setSize(new Dimension(800, 600));
   }
-
+  
   @Test
   public void testHomePageTitle() {
     // browser.get("http://spree.newcircle.com");
@@ -95,6 +101,53 @@ public class ShoppingSpreeTests implements SeleniumTest {
   }
   
   @Test
+  public void testDepartmentsCombo() throws Exception {
+    HomePage homePage = new HomePage(browser);
+    homePage.open();
+    WebElement deptCmb = homePage.getDepartmentCmb();
+
+    String value = deptCmb.getAttribute("aria-label");
+    Assert.assertEquals("Taxon", value);
+
+    value = deptCmb.getCssValue("background-color");
+    Assert.assertEquals("rgba(255, 255, 255, 1)", value);
+
+    Point location = deptCmb.getLocation();
+    String msg = "Location " + location;
+    Assert.assertTrue(msg, location.getX() > 300);
+    Assert.assertTrue(msg, location.getY() < 200);
+    
+    Dimension size = deptCmb.getSize();
+    msg = "Size " + size;
+    Assert.assertTrue(msg, size.getWidth() > 100 &&
+                           size.getWidth() < 120);
+    
+    Assert.assertTrue(msg, size.getHeight() > 15 &&
+                           size.getHeight() < 25);
+    
+    Assert.assertEquals("select", deptCmb.getTagName());
+
+    Assert.assertTrue(deptCmb.isDisplayed());
+    Assert.assertFalse(deptCmb.isSelected());
+    Assert.assertTrue(deptCmb.isEnabled());
+    
+    String text = deptCmb.getText();
+
+    if (browser instanceof InternetExplorerDriver) {
+      Assert.assertEquals("All departments Categories Brand", text);
+    } else {
+      Assert.assertEquals("All departments\nCategories\nBrand", text);
+    }
+    
+
+    List<WebElement> options = deptCmb.findElements(By.tagName("option"));
+    Assert.assertEquals(3, options.size());
+    Assert.assertEquals("All departments", options.get(0).getText());
+    Assert.assertEquals("Categories", options.get(1).getText());
+    Assert.assertEquals("Brand", options.get(2).getText());
+  }
+  
+  @Test
   public void testProductPageTitle() {
     ProductPage productPage = new ProductPage(browser);
     productPage.open();
@@ -142,9 +195,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList();
 //    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
-//    data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
+    data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+//    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 
