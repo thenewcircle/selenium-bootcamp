@@ -17,6 +17,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.selenium.LogbackUtils;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
@@ -132,6 +134,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
     Assert.assertTrue(deptCmb.isEnabled());
     
     String text = deptCmb.getText();
+    deptCmb.click();
+    deptCmb.clear();
+    deptCmb.submit();
 
     if (browser instanceof InternetExplorerDriver) {
       Assert.assertEquals("All departments Categories Brand", text);
@@ -145,6 +150,21 @@ public class ShoppingSpreeTests implements SeleniumTest {
     Assert.assertEquals("All departments", options.get(0).getText());
     Assert.assertEquals("Categories", options.get(1).getText());
     Assert.assertEquals("Brand", options.get(2).getText());
+  }
+  
+  @Test
+  public void testSearchSpree() throws Exception {
+    HomePage homePage = new HomePage(browser);
+    homePage.open();
+    
+    ProductsPage productsPage = homePage.search("Bag");
+    productsPage.validateUrl();
+    productsPage.validateTitle();
+    productsPage.clearSearch();
+
+    homePage = productsPage.clickLogo();
+
+    // homePage.validateUrl();
   }
   
   @Test
@@ -194,10 +214,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList();
-//    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+//     data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
+    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
-    // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-//    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 
