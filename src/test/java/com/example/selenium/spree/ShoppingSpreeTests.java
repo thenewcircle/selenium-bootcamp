@@ -17,10 +17,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.selenium.LogbackUtils;
+import com.example.selenium.spree.pages.CartPage;
+import com.example.selenium.spree.pages.HomePage;
+import com.example.selenium.spree.pages.ProductPage;
+import com.example.selenium.spree.pages.ProductsPage;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
 import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
@@ -57,9 +59,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public void testHomePageTitle() {
     // browser.get("http://spree.newcircle.com");
     // Assert.assertEquals("Spree Demo Site", browser.getTitle());
-    HomePage homePage = new HomePage(browser);
-    homePage.open();
-    homePage.validateTitle();
+    HomePage homePage = HomePage.open(browser);
   }
 
   @Test
@@ -88,8 +88,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testIeComments() {
-    HomePage homePage = new HomePage(browser);
-    homePage.open();
+    HomePage homePage = HomePage.open(browser);
     homePage.validateIeComments();
   }
   
@@ -104,8 +103,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testDepartmentsCombo() throws Exception {
-    HomePage homePage = new HomePage(browser);
-    homePage.open();
+    HomePage homePage = HomePage.open(browser);
     WebElement deptCmb = homePage.getDepartmentCmb();
 
     String value = deptCmb.getAttribute("aria-label");
@@ -134,9 +132,6 @@ public class ShoppingSpreeTests implements SeleniumTest {
     Assert.assertTrue(deptCmb.isEnabled());
     
     String text = deptCmb.getText();
-    deptCmb.click();
-    deptCmb.clear();
-    deptCmb.submit();
 
     if (browser instanceof InternetExplorerDriver) {
       Assert.assertEquals("All departments Categories Brand", text);
@@ -154,8 +149,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testSearchSpree() throws Exception {
-    HomePage homePage = new HomePage(browser);
-    homePage.open();
+    HomePage homePage = HomePage.open(browser);
     
     ProductsPage productsPage = homePage.search("Bag");
     productsPage.validateUrl();
@@ -168,22 +162,8 @@ public class ShoppingSpreeTests implements SeleniumTest {
   }
   
   @Test
-  public void testProductPageTitle() {
-    ProductPage productPage = new ProductPage(browser);
-    productPage.open();
-    productPage.validateTitle();
-  }
-  
-  @Test
-  public void testCartPageTitle() {
-    CartPage cartPage = new CartPage(browser);
-    cartPage.open();
-    cartPage.validateTitle();
-  }
-  @Test
   public void testShoppingSpree() throws Exception {
-    HomePage homePage = new HomePage(browser);
-    homePage.open();
+    HomePage homePage = HomePage.open(browser);
 
     ProductsPage productsPage = homePage.search("Mug");
 
@@ -238,7 +218,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList();
 //     data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+//    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
 //    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     return data;

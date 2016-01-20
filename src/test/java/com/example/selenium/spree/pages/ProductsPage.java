@@ -1,14 +1,12 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductsPage extends SpreePage {
 
-  public ProductsPage(RemoteWebDriver browser) {
+  protected ProductsPage(RemoteWebDriver browser) {
     super(browser);
   }
 
@@ -30,9 +28,6 @@ public class ProductsPage extends SpreePage {
     WebElement productLnk = browser.findElementByLinkText(name);
     productLnk.click();
 
-    WebDriverWait wait = new WebDriverWait(browser, 5);
-    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/products/spree-mug"));
-    
     return new ProductPage(browser);
   }
 }

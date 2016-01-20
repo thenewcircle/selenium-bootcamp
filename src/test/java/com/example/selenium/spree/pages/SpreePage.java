@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,8 +11,12 @@ public class SpreePage {
 
   protected final RemoteWebDriver browser;
 
-  public SpreePage(RemoteWebDriver browser) {
+  protected SpreePage(RemoteWebDriver browser) {
     this.browser = browser;
+    
+    WebDriverWait wait = new WebDriverWait(browser, 5);
+    By by = By.partialLinkText("CART: ");
+    wait.until(ExpectedConditions.presenceOfElementLocated(by));
   }
 
   public void validateIeComments() {
@@ -49,20 +53,12 @@ public class SpreePage {
     WebElement logo = browser.findElementByCssSelector("#logo > a");
     logo.click();
 
-    WebDriverWait wait = new WebDriverWait(browser, 5, 1000);
-    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
-
     return new HomePage(browser);
   }
 
   public void validateCartLink(int count, String amount) {
-    String LNKTXT = "CART: ";
 
-    WebDriverWait wait = new WebDriverWait(browser, 5);
-    By by = By.partialLinkText(LNKTXT);
-    wait.until(ExpectedConditions.presenceOfElementLocated(by));
-    
-    WebElement cartLnk = browser.findElementByPartialLinkText(LNKTXT);
+    WebElement cartLnk = browser.findElementByPartialLinkText("CART: ");
     // WebElement cartLnk = browser.findElementByCssSelector("a.cart-info");
     String text = cartLnk.getText();
   

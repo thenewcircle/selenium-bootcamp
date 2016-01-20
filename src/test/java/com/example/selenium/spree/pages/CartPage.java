@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ public class CartPage extends SpreePage {
 
   // private final RemoteWebDriver browser;
 
-  public CartPage(RemoteWebDriver browser) {
+  protected CartPage(RemoteWebDriver browser) {
     // this.browser = browser;
     super(browser);
   }
