@@ -98,7 +98,9 @@ public class ShoppingSpreeTests {
     webDriver.get("http://google.com");
     Assert.assertEquals("Google", webDriver.getTitle());
     String url = webDriver.getCurrentUrl();
-    Assert.assertTrue(url.startsWith("https://www.google.com/?"));
+
+    String msg = "Found " + url;
+    Assert.assertTrue(msg, url.startsWith("https://www.google.com/?"));
   }
 
   @After
