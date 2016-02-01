@@ -9,6 +9,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -153,6 +155,32 @@ public class ShoppingSpreeTests implements SeleniumTest {
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     WebElement deptCmb = homePage.getDepartmentCmb();
+
+    Assert.assertEquals("Taxon", deptCmb.getAttribute("aria-label"));
+    Assert.assertEquals("rgba(255, 255, 255, 1)",
+        deptCmb.getCssValue("background-color"));
+
+    Point location = deptCmb.getLocation();
+    String msg = "Found " + location;
+    Assert.assertTrue(msg, location.getX() > 100);
+    Assert.assertTrue(msg, location.getY() < 200);
+
+    Dimension size = deptCmb.getSize();
+    msg = "Found " + size;
+    Assert.assertTrue(msg, size.getWidth() > 100 && size.getWidth() < 120);
+    Assert.assertTrue(msg, size.getHeight() > 15 && size.getHeight() < 25);
+
+    Assert.assertEquals("select", deptCmb.getTagName());
+
+    Assert.assertTrue(deptCmb.isDisplayed());
+    Assert.assertFalse(deptCmb.isSelected());
+    Assert.assertTrue(deptCmb.isEnabled());
+
+    if (webDriver instanceof InternetExplorerDriver) {
+      Assert.assertEquals("All departments Categories Brand", deptCmb.getText());
+    } else {
+      Assert.assertEquals("All departments\nCategories\nBrand", deptCmb.getText());
+    }
   }
 
   // @After
@@ -165,7 +193,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
     List<Object[]> data = new ArrayList();
     // data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    //data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     return data;
   }
