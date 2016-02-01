@@ -17,21 +17,21 @@ public class ShoppingSpreeTests {
     LogbackUtils.setLevel(DefaultCssErrorHandler.class, Level.ERROR);
   }
 
-  private WebDriver browser;
+  private WebDriver webDriver;
 
   @Before
   public void beforeMethod() throws Exception {
-    browser = new HtmlUnitDriver();
+    webDriver = new HtmlUnitDriver();
   }
 
   @Test
   public void testHomePageTitle() {
-    browser.get("http://spree.newcircle.com");
-    Assert.assertEquals("Spree Demo Site", browser.getTitle());
+    webDriver.get("http://spree.newcircle.com");
+    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 
   @After
   public void afterMethod() {
-    browser.quit();
+    webDriver.quit();
   }
 }
