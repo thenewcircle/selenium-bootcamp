@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
@@ -24,7 +25,11 @@ public class ShoppingSpreeTests {
   public void beforeMethod() throws Exception {
     // HtmlUnitDriver wd= new HtmlUnitDriver();
     // wd.setJavascriptEnabled(true);
-    FirefoxDriver wd = new FirefoxDriver();
+    // FirefoxDriver wd = new FirefoxDriver();
+
+    String path = System.getenv("webdriver.chrome.driver");
+    System.setProperty("webdriver.chrome.driver", path);
+    ChromeDriver wd = new ChromeDriver();
 
     this.webDriver = wd;
   }
