@@ -93,6 +93,14 @@ public class ShoppingSpreeTests {
     Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
   }
 
+  @Test
+  public void testGetGoogleUrl() {
+    webDriver.get("http://google.com");
+    Assert.assertEquals("Google", webDriver.getTitle());
+    String url = webDriver.getCurrentUrl();
+    Assert.assertTrue(url.startsWith("http://google.com"));
+  }
+
   @After
   public void afterMethod() {
     webDriver.quit();
