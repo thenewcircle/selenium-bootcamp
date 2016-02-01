@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -10,13 +10,14 @@ public class ProductPage extends SpreePage {
 
   // protected final RemoteWebDriver webDriver;
 
-  public ProductPage(RemoteWebDriver webDriver) {
+  protected ProductPage(RemoteWebDriver webDriver) {
     super(webDriver);
     // this.webDriver = webDriver;
   }
 
-  public void open() {
+  public static ProductPage open(RemoteWebDriver webDriver) {
     webDriver.get("http://spree.newcircle.com/products/spree-tote");
+    return new ProductPage(webDriver);
   }
 
   public void validateTitle() {
@@ -40,7 +41,7 @@ public class ProductPage extends SpreePage {
     quantityTF.clear();
     quantityTF.sendKeys(String.valueOf(count));
   }
-  
+
   public CartPage clickAddToCart() {
     webDriver.findElementByTagName("button").click();
     WebDriverWait wait = new WebDriverWait(webDriver, 30);

@@ -2,6 +2,12 @@ package com.example.selenium.spree;
 
 import ch.qos.logback.classic.Level;
 import com.example.selenium.LogbackUtils;
+import com.example.selenium.spree.factories.ChromeDriverFactory;
+import com.example.selenium.spree.factories.WebDriverFactory;
+import com.example.selenium.spree.pages.CartPage;
+import com.example.selenium.spree.pages.HomePage;
+import com.example.selenium.spree.pages.ProductPage;
+import com.example.selenium.spree.pages.ProductsPage;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,8 +19,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,22 +70,19 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public void testHomePageTitle() {
     // webDriver.get("http://spree.newcircle.com");
     // Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     homePage.validateTitle();
   }
 
   @Test
   public void testProductPageTitle() {
-    ProductPage productPage = new ProductPage(webDriver);
-    productPage.open();
+    ProductPage productPage = ProductPage.open(webDriver);
     productPage.validateTitle();
   }
 
   @Test
   public void testCartPageTitle() {
-    CartPage cartPage = new CartPage(webDriver);
-    cartPage.open();
+    CartPage cartPage = CartPage.open(webDriver);
     cartPage.validateTitle();
   }
 
@@ -121,8 +122,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Test
   public void testIeComments() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     homePage.validateIeComments();
   }
 
@@ -153,15 +153,13 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Test
   public void testDepartmentsCombo() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     homePage.validateDepartmentCmb();
   }
 
   @Test
   public void testSearchSpree() throws Exception {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
 
     ProductsPage productsPage = homePage.search("Bag");
     productsPage.validateUrl();
@@ -175,8 +173,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Test
   public void testShoppingSpree() throws Exception {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
 
     ProductsPage productsPage = homePage.search("Mug");
 

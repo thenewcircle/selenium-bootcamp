@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.Dimension;
@@ -13,7 +13,7 @@ public class SpreePage {
 
   protected final RemoteWebDriver webDriver;
 
-  public SpreePage(RemoteWebDriver webDriver) {
+  protected SpreePage(RemoteWebDriver webDriver) {
     this.webDriver = webDriver;
   }
 

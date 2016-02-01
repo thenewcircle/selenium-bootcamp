@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ProductsPage extends SpreePage {
 
-  public ProductsPage(RemoteWebDriver webDriver) {
+  protected ProductsPage(RemoteWebDriver webDriver) {
     super(webDriver);
   }
 

@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -7,13 +7,14 @@ public class HomePage extends SpreePage {
 
   // protected final RemoteWebDriver webDriver;
 
-  public HomePage(RemoteWebDriver webDriver) {
+  protected HomePage(RemoteWebDriver webDriver) {
     super(webDriver);
     // this.webDriver = webDriver;
   }
 
-  public void open() {
+  public static HomePage open(RemoteWebDriver webDriver) {
     webDriver.get("http://spree.newcircle.com");
+    return new HomePage(webDriver);
   }
 
   public void validateTitle() {

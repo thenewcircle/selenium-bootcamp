@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -10,13 +10,14 @@ public class CartPage extends SpreePage {
 
   // protected final RemoteWebDriver webDriver;
 
-  public CartPage(RemoteWebDriver webDriver) {
+  protected CartPage(RemoteWebDriver webDriver) {
     super(webDriver);
     // this.webDriver = webDriver;
   }
 
-  public void open() {
+  public static CartPage open(RemoteWebDriver webDriver) {
     webDriver.navigate().to("http://spree.newcircle.com/cart");
+    return new CartPage(webDriver);
   }
 
   public void validateTitle() {
