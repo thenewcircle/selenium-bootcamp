@@ -62,6 +62,13 @@ public class ShoppingSpreeTests {
     productPage.validateTitle();
   }
 
+  @Test
+  public void testCartPageTitle() {
+    CartPage cartPage = new CartPage(webDriver);
+    cartPage.open();
+    cartPage.validateTitle();
+  }
+
   @After
   public void afterMethod() {
     webDriver.quit();
