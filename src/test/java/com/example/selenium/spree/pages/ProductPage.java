@@ -3,6 +3,8 @@ package com.example.selenium.spree.pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends SpreePage {
 
@@ -10,7 +12,9 @@ public class ProductPage extends SpreePage {
 
   protected ProductPage(RemoteWebDriver webDriver) {
     super(webDriver);
-    // this.webDriver = webDriver;
+
+    WebDriverWait wait = new WebDriverWait(webDriver, 30);
+    wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/products/spree-tote"));
   }
 
   public static ProductPage open(RemoteWebDriver webDriver) {
