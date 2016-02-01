@@ -9,9 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -19,6 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(Parameterized.class)
 public class ShoppingSpreeTests implements SeleniumTest {
@@ -59,6 +57,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
     // InternetExplorerDriver wd = new InternetExplorerDriver();
 
     this.webDriver = wdf.create();
+    this.webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
   }
 
   @Test
