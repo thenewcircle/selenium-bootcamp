@@ -84,6 +84,15 @@ public class ShoppingSpreeTests {
     Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
   }
 
+  @Test
+  public void testRefresh() {
+    webDriver.get("http://spree.newcircle.com/products/spree-bag");
+    Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
+
+    webDriver.navigate().refresh();
+    Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
+  }
+
   @After
   public void afterMethod() {
     webDriver.quit();
