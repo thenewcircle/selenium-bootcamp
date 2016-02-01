@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class ShoppingSpreeTests {
 
@@ -27,12 +28,17 @@ public class ShoppingSpreeTests {
     // wd.setJavascriptEnabled(true);
     // FirefoxDriver wd = new FirefoxDriver();
 
-    String path = System.getenv("webdriver.chrome.driver");
-    System.setProperty("webdriver.chrome.driver", path);
-    ChromeDriver wd = new ChromeDriver();
+    // String path = System.getenv("webdriver.chrome.driver");
+    // System.setProperty("webdriver.chrome.driver", path);
+    // ChromeDriver wd = new ChromeDriver();
+
+    String path = System.getenv("webdriver.ie.driver");
+    System.setProperty("webdriver.ie.driver", path);
+    InternetExplorerDriver wd = new InternetExplorerDriver();
 
     this.webDriver = wd;
   }
+
   @Test
   public void testHomePageTitle() {
     webDriver.get("http://spree.newcircle.com");
