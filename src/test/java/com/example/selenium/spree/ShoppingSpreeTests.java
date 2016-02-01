@@ -3,9 +3,9 @@ package com.example.selenium.spree;
 import ch.qos.logback.classic.Level;
 import com.example.selenium.LogbackUtils;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class ShoppingSpreeTests {
+public class ShoppingSpreeTests implements SeleniumTest {
 
   static {
     LogbackUtils.initLogback(Level.WARN);
@@ -25,8 +25,17 @@ public class ShoppingSpreeTests {
   private RemoteWebDriver webDriver;
   private final WebDriverFactory wdf;
 
+  @Rule
+  public final ScreenshotRule screenshotRule =
+      new ScreenshotRule(this, "c:\\tmp\\test-failures");
+
   public ShoppingSpreeTests(WebDriverFactory wdf, String name) {
     this.wdf = wdf;
+  }
+
+  @Override
+  public RemoteWebDriver getRemoteWebDriver() {
+    return webDriver;
   }
 
   @Before
@@ -110,10 +119,10 @@ public class ShoppingSpreeTests {
     homePage.validateIeComments();
   }
 
-  @After
-  public void afterMethod() {
-    webDriver.quit();
-  }
+  // @After
+  // public void afterMethod() {
+  //   webDriver.quit();
+  // }
 
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
