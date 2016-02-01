@@ -2,6 +2,8 @@ package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends SpreePage {
 
@@ -9,7 +11,9 @@ public class HomePage extends SpreePage {
 
   protected HomePage(RemoteWebDriver webDriver) {
     super(webDriver);
-    // this.webDriver = webDriver;
+
+    WebDriverWait wait = new WebDriverWait(webDriver, 30);
+    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
   }
 
   public static HomePage open(RemoteWebDriver webDriver) {

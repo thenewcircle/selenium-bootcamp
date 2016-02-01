@@ -12,7 +12,9 @@ public class CartPage extends SpreePage {
 
   protected CartPage(RemoteWebDriver webDriver) {
     super(webDriver);
-    // this.webDriver = webDriver;
+
+    WebDriverWait wait = new WebDriverWait(webDriver, 30);
+    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/cart"));
   }
 
   public static CartPage open(RemoteWebDriver webDriver) {
@@ -32,9 +34,6 @@ public class CartPage extends SpreePage {
   public ProductsPage clickContinueShopping() {
     WebElement continueLnk = webDriver.findElementByLinkText("Continue shopping");
     continueLnk.click();
-
-    WebDriverWait wait = new WebDriverWait(webDriver, 30);
-    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/products"));
 
     return new ProductsPage(webDriver);
   }
