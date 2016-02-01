@@ -162,13 +162,11 @@ public class ShoppingSpreeTests implements SeleniumTest {
     HomePage homePage = HomePage.open(webDriver);
 
     ProductsPage productsPage = homePage.search("Bag");
-    productsPage.validateUrl();
     productsPage.validateTitle();
     productsPage.clearSearch();
 
     homePage = productsPage.clickLogo();
     // Thread.sleep(3000);
-    // homePage.validateUrl();
   }
 
   @Test
@@ -187,11 +185,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
     productPage.validateCartLink(0, null);
 
     CartPage cartPage = productPage.clickAddToCart();
-    cartPage.validateUrl();
     cartPage.validateCartLink(3, "41.97");
 
-    productsPage = cartPage.clickContinueShopping();
-    productsPage.validateUrl();
+    cartPage.clickContinueShopping();
   }
 
   // @After

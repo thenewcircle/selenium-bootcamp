@@ -15,14 +15,6 @@ public class ProductsPage extends SpreePage {
     wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/products"));
   }
 
-  public void validateUrl() {
-    String url = webDriver.getCurrentUrl();
-    String exp = "http://spree.newcircle.com/products";
-    int length = Math.min(url.length(), exp.length());
-    Assert.assertEquals(url.substring(0, length),
-        exp.substring(0, length));
-  }
-
   public void validateTitle() {
     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }

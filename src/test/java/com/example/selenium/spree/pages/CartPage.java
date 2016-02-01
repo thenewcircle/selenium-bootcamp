@@ -26,11 +26,6 @@ public class CartPage extends SpreePage {
     Assert.assertEquals("Shopping Cart - Spree Demo Site", webDriver.getTitle());
   }
 
-  public void validateUrl() {
-    String url = "http://spree.newcircle.com/cart";
-    Assert.assertEquals(url, webDriver.getCurrentUrl());
-  }
-
   public ProductsPage clickContinueShopping() {
     WebElement continueLnk = webDriver.findElementByLinkText("Continue shopping");
     continueLnk.click();
