@@ -72,4 +72,14 @@ public class SpreePage {
 
     return new HomePage(webDriver);
   }
+
+  public void validateCartLink(int count, String amount) {
+    WebElement cartLnk = webDriver.findElementByClassName("cart-info");
+    if (count == 0) {
+      Assert.assertEquals("CART: (EMPTY)", cartLnk.getText());
+    } else {
+      String expected = String.format("CART: (%s) $%s", count, amount);
+      Assert.assertEquals(expected, cartLnk.getText());
+    }
+  }
 }
