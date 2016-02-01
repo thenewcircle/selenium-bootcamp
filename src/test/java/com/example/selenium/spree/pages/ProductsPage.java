@@ -13,9 +13,7 @@ public class ProductsPage extends SpreePage {
 
     WebDriverWait wait = new WebDriverWait(webDriver, 5);
     wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/products"));
-  }
 
-  public void validateTitle() {
     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 

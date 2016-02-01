@@ -16,6 +16,9 @@ public class ProductPage extends SpreePage {
     WebDriverWait wait = new WebDriverWait(webDriver, 5);
     String url = getUrl(productName);
     wait.until(ExpectedConditions.urlContains(url));
+
+    String title = productName + " - Spree Demo Site";
+    Assert.assertEquals(title, webDriver.getTitle());
   }
 
   public static ProductPage open(RemoteWebDriver webDriver, String productName) {
@@ -28,10 +31,6 @@ public class ProductPage extends SpreePage {
     String name = productName.replace(" ", "-");
     name = name.toLowerCase();
     return "http://spree.newcircle.com/products/" + name;
-  }
-
-  public void validateTitle() {
-    Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
   }
 
   public void validateImageSrc(String url) {

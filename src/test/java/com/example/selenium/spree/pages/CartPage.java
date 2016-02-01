@@ -15,15 +15,13 @@ public class CartPage extends SpreePage {
 
     WebDriverWait wait = new WebDriverWait(webDriver, 5);
     wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/cart"));
+
+    Assert.assertEquals("Shopping Cart - Spree Demo Site", webDriver.getTitle());
   }
 
   public static CartPage open(RemoteWebDriver webDriver) {
     webDriver.navigate().to("http://spree.newcircle.com/cart");
     return new CartPage(webDriver);
-  }
-
-  public void validateTitle() {
-    Assert.assertEquals("Shopping Cart - Spree Demo Site", webDriver.getTitle());
   }
 
   public ProductsPage clickContinueShopping() {

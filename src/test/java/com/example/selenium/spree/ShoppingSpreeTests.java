@@ -71,19 +71,16 @@ public class ShoppingSpreeTests implements SeleniumTest {
     // webDriver.get("http://spree.newcircle.com");
     // Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
     HomePage homePage = HomePage.open(webDriver);
-    homePage.validateTitle();
   }
 
   @Test
   public void testProductPageTitle() {
     ProductPage productPage = ProductPage.open(webDriver, "Spree Tote");
-    productPage.validateTitle();
   }
 
   @Test
   public void testCartPageTitle() {
     CartPage cartPage = CartPage.open(webDriver);
-    cartPage.validateTitle();
   }
 
   @Test
@@ -162,7 +159,6 @@ public class ShoppingSpreeTests implements SeleniumTest {
     HomePage homePage = HomePage.open(webDriver);
 
     ProductsPage productsPage = homePage.search("Bag");
-    productsPage.validateTitle();
     productsPage.clearSearch();
 
     homePage = productsPage.clickLogo();

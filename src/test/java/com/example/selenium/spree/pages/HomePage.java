@@ -14,15 +14,13 @@ public class HomePage extends SpreePage {
 
     WebDriverWait wait = new WebDriverWait(webDriver, 5);
     wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
+
+    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 
   public static HomePage open(RemoteWebDriver webDriver) {
     webDriver.get("http://spree.newcircle.com");
     return new HomePage(webDriver);
-  }
-
-  public void validateTitle() {
-    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 
   public void validateIeComments() {
