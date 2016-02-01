@@ -76,7 +76,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Test
   public void testProductPageTitle() {
-    ProductPage productPage = ProductPage.open(webDriver);
+    ProductPage productPage = ProductPage.open(webDriver, "Spree Tote");
     productPage.validateTitle();
   }
 

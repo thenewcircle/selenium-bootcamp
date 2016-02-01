@@ -12,7 +12,7 @@ public class HomePage extends SpreePage {
   protected HomePage(RemoteWebDriver webDriver) {
     super(webDriver);
 
-    WebDriverWait wait = new WebDriverWait(webDriver, 30);
+    WebDriverWait wait = new WebDriverWait(webDriver, 5);
     wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
   }
 

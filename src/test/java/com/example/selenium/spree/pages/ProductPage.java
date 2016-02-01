@@ -10,16 +10,24 @@ public class ProductPage extends SpreePage {
 
   // protected final RemoteWebDriver webDriver;
 
-  protected ProductPage(RemoteWebDriver webDriver) {
+  protected ProductPage(RemoteWebDriver webDriver, String productName) {
     super(webDriver);
 
-    WebDriverWait wait = new WebDriverWait(webDriver, 30);
-    wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/products/spree-tote"));
+    WebDriverWait wait = new WebDriverWait(webDriver, 5);
+    String url = getUrl(productName);
+    wait.until(ExpectedConditions.urlContains(url));
   }
 
-  public static ProductPage open(RemoteWebDriver webDriver) {
-    webDriver.get("http://spree.newcircle.com/products/spree-tote");
-    return new ProductPage(webDriver);
+  public static ProductPage open(RemoteWebDriver webDriver, String productName) {
+    String url = getUrl(productName);
+    webDriver.get(url);
+    return new ProductPage(webDriver, productName);
+  }
+
+  protected static String getUrl(String productName) {
+    String name = productName.replace(" ", "-");
+    name = name.toLowerCase();
+    return "http://spree.newcircle.com/products/" + name;
   }
 
   public void validateTitle() {
