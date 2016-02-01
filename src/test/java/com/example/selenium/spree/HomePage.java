@@ -18,4 +18,10 @@ public class HomePage {
   public void validateTitle() {
     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
+
+  public void validateIeComments() {
+    String src = webDriver.getPageSource();
+    String msg = "Found " + src.substring(0, 1000);
+    Assert.assertTrue(msg, src.contains("<!--[if lt IE 9]>"));
+  }
 }

@@ -103,6 +103,13 @@ public class ShoppingSpreeTests {
     Assert.assertTrue(msg, url.startsWith("https://www.google.com/?"));
   }
 
+  @Test
+  public void testIeComments() {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    homePage.validateIeComments();
+  }
+
   @After
   public void afterMethod() {
     webDriver.quit();
