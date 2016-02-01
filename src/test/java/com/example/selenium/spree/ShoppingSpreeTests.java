@@ -9,6 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -145,6 +146,13 @@ public class ShoppingSpreeTests implements SeleniumTest {
     } else {
       throw new UnsupportedOperationException();
     }
+  }
+
+  @Test
+  public void testDepartmentsCombo() {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    WebElement deptCmb = homePage.getDepartmentCmb();
   }
 
   // @After
