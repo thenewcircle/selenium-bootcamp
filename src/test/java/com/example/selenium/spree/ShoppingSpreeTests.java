@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class ShoppingSpreeTests {
@@ -21,12 +22,12 @@ public class ShoppingSpreeTests {
 
   @Before
   public void beforeMethod() throws Exception {
-    HtmlUnitDriver wd = new HtmlUnitDriver();
-    wd.setJavascriptEnabled(true);
+    // HtmlUnitDriver wd= new HtmlUnitDriver();
+    // wd.setJavascriptEnabled(true);
+    FirefoxDriver wd = new FirefoxDriver();
 
-    webDriver = wd;
+    this.webDriver = wd;
   }
-
   @Test
   public void testHomePageTitle() {
     webDriver.get("http://spree.newcircle.com");
