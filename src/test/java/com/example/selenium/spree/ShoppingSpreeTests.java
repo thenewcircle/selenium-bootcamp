@@ -69,6 +69,21 @@ public class ShoppingSpreeTests {
     cartPage.validateTitle();
   }
 
+  @Test
+  public void testBackAndForth() {
+    webDriver.get("http://spree.newcircle.com/products/spree-bag");
+    Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
+
+    webDriver.navigate().to("http://spree.newcircle.com/products/spree-tote");
+    Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
+
+    webDriver.navigate().back();
+    Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
+
+    webDriver.navigate().forward();
+    Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
+  }
+
   @After
   public void afterMethod() {
     webDriver.quit();
