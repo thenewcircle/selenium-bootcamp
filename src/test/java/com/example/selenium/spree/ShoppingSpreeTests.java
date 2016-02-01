@@ -21,7 +21,10 @@ public class ShoppingSpreeTests {
 
   @Before
   public void beforeMethod() throws Exception {
-    webDriver = new HtmlUnitDriver();
+    HtmlUnitDriver wd = new HtmlUnitDriver();
+    wd.setJavascriptEnabled(true);
+
+    webDriver = wd;
   }
 
   @Test
