@@ -9,6 +9,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
@@ -117,6 +120,31 @@ public class ShoppingSpreeTests implements SeleniumTest {
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     homePage.validateIeComments();
+  }
+
+  @Test
+  public void testCapabilities() {
+
+    Assert.assertEquals(true, webDriver.getCapabilities().isJavascriptEnabled());
+
+    if (webDriver instanceof FirefoxDriver) {
+      Assert.assertEquals("firefox", webDriver.getCapabilities().getBrowserName());
+      Assert.assertEquals("43.0.4", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform().name());
+
+    } else if (webDriver instanceof ChromeDriver) {
+      Assert.assertEquals("chrome", webDriver.getCapabilities().getBrowserName());
+      Assert.assertEquals("48.0.2564.97", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("XP", webDriver.getCapabilities().getPlatform().name());
+
+    } else if (webDriver instanceof InternetExplorerDriver) {
+      Assert.assertEquals("internet explorer", webDriver.getCapabilities().getBrowserName());
+      Assert.assertEquals("11", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform().name());
+
+    } else {
+      throw new UnsupportedOperationException();
+    }
   }
 
   // @After
