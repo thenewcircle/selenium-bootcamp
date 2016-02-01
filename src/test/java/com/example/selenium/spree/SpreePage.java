@@ -6,6 +6,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SpreePage {
 
@@ -64,6 +66,10 @@ public class SpreePage {
 
   public HomePage clickLogo() {
     webDriver.findElementById("logo").click();
+
+    WebDriverWait wait = new WebDriverWait(webDriver, 30);
+    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
+
     return new HomePage(webDriver);
   }
 }

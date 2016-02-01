@@ -168,8 +168,8 @@ public class ShoppingSpreeTests implements SeleniumTest {
     productsPage.clearSearch();
 
     homePage = productsPage.clickLogo();
-    Thread.sleep(3000);
-    homePage.validateUrl();
+    // Thread.sleep(3000);
+    // homePage.validateUrl();
   }
 
   // @After
