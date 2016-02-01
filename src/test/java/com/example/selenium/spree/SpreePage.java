@@ -48,4 +48,22 @@ public class SpreePage {
       Assert.assertEquals("All departments\nCategories\nBrand", deptCmb.getText());
     }
   }
+
+  public ProductsPage search(String keywords) {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.sendKeys(keywords);
+    searchTF.submit();
+    return new ProductsPage(webDriver);
+  }
+
+  public void clearSearch() {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+    Assert.assertEquals("", searchTF.getAttribute("value"));
+  }
+
+  public HomePage clickLogo() {
+    webDriver.findElementById("logo").click();
+    return new HomePage(webDriver);
+  }
 }

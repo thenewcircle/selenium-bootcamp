@@ -157,6 +157,21 @@ public class ShoppingSpreeTests implements SeleniumTest {
     homePage.validateDepartmentCmb();
   }
 
+  @Test
+  public void testSearchSpree() throws Exception {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+
+    ProductsPage productsPage = homePage.search("Bag");
+    productsPage.validateUrl();
+    productsPage.validateTitle();
+    productsPage.clearSearch();
+
+    homePage = productsPage.clickLogo();
+    Thread.sleep(3000);
+    homePage.validateUrl();
+  }
+
   // @After
   // public void afterMethod() {
   //   webDriver.quit();

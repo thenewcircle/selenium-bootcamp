@@ -25,4 +25,9 @@ public class HomePage extends SpreePage {
     String msg = "Found " + src.substring(0, 1000);
     Assert.assertTrue(msg, src.contains("<!--[if lt IE 9]>"));
   }
+
+  public void validateUrl() {
+    String url = webDriver.getCurrentUrl();
+    Assert.assertEquals("http://spree.newcircle.com/", url);
+  }
 }
