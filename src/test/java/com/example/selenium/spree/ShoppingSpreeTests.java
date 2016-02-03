@@ -64,6 +64,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
     this.webDriver = wdf.create();
     this.webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    this.webDriver.manage().deleteAllCookies();
   }
 
   @Test
