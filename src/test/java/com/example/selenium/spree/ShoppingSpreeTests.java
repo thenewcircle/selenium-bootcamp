@@ -213,9 +213,21 @@ public class ShoppingSpreeTests implements SeleniumTest {
     productPage.assertVariant(3);
   }
 
+  @Test
+  public void testMouseOver() {
+    HomePage homePage = HomePage.open(webDriver);
+    ProductsPage productsPage = homePage.search("Stein");
+
+    ProductPage productPage = productsPage.clickProductLnk("Ruby on Rails Stein");
+    productPage.validateImageSrc("http://spree.newcircle.com/spree/products/31/product/ror_stein.jpeg?");
+
+    productPage.mouseOverThumbnail(1);
+    productPage.validateImageSrc("http://spree.newcircle.com/spree/products/32/product/ror_stein_back.jpeg?");
+  }
+
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
-    List<Object[]> data = new ArrayList();
+    List<Object[]> data = new ArrayList<>();
     // data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
     // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });

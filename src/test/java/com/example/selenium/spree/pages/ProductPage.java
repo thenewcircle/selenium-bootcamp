@@ -2,6 +2,8 @@ package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -80,5 +82,11 @@ public class ProductPage extends SpreePage {
         Assert.assertFalse(msg, variant.isSelected());
       }
     }
+  }
+
+  public void mouseOverThumbnail(int index) {
+    WebElement thumbnail = webDriver.findElementByXPath(".//*[@id='product-thumbnails']/li["+ (index+1) +"]/a/img");
+    Coordinates co = ((Locatable)thumbnail).getCoordinates();
+    webDriver.getMouse().mouseMove(co);
   }
 }
