@@ -18,8 +18,8 @@ public class ProductsPage extends SpreePage {
   }
 
   public ProductPage clickProductLnk(String name) {
-    WebElement lnkElement = webDriver.findElementByLinkText(name);
-    lnkElement.click();
+    // Cannot replace with @FindBy because it's dynamically created
+    webDriver.findElementByLinkText(name).click();
     return new ProductPage(webDriver, name);
   }
 }

@@ -3,12 +3,20 @@ package com.example.selenium.spree.pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends SpreePage {
 
-  // protected final RemoteWebDriver webDriver;
+  @FindBy(css = "#main-image > img")
+  protected WebElement img;
+
+  @FindBy(name = "quantity")
+  protected WebElement quantityTF;
+
+  @FindBy(tagName = "button")
+  protected WebElement addToCartBtn;
 
   protected ProductPage(RemoteWebDriver webDriver, String productName) {
     super(webDriver);
@@ -34,25 +42,24 @@ public class ProductPage extends SpreePage {
   }
 
   public void validateImageSrc(String url) {
-    WebElement img = webDriver.findElementByCssSelector("#main-image > img");
     String src = img.getAttribute("src");
     String msg = "Found " + src;
     Assert.assertTrue(msg, src.startsWith(url));
   }
 
   public void clickThumbnail(int index) {
+    // Cannot replace with @FindBy because it's dynamically created
     String path = String.format(".//*[@id='product-thumbnails']/li[%s]/a/img", index+1);
     webDriver.findElementByXPath(path).click();
   }
 
   public void setQuantity(int count) {
-    WebElement quantityTF = webDriver.findElementByName("quantity");
     quantityTF.clear();
     quantityTF.sendKeys(String.valueOf(count));
   }
 
   public CartPage clickAddToCart() {
-    webDriver.findElementByTagName("button").click();
+    addToCartBtn.click();
     return new CartPage(webDriver);
   }
 }

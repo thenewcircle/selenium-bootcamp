@@ -6,22 +6,32 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SpreePage {
 
   protected final RemoteWebDriver webDriver;
 
+  @FindBy(id = "keywords")
+  protected WebElement searchTF;
+
+  @FindBy(id = "logo")
+  protected WebElement logoImg;
+
+  @FindBy(className = "cart-info")
+  protected WebElement cartLnk;
+
+  @FindBy(id="taxon")
+  protected WebElement deptCmb;
+
   protected SpreePage(RemoteWebDriver webDriver) {
     this.webDriver = webDriver;
-  }
 
-  public WebElement getDepartmentCmb() {
-    return webDriver.findElementById("taxon");
+    PageFactory.initElements(webDriver, this);
   }
 
   public void validateDepartmentCmb() {
-    WebElement deptCmb = getDepartmentCmb();
-
     Assert.assertEquals("Taxon", deptCmb.getAttribute("aria-label"));
     Assert.assertEquals("rgba(255, 255, 255, 1)",
         deptCmb.getCssValue("background-color"));
@@ -50,25 +60,22 @@ public class SpreePage {
   }
 
   public ProductsPage search(String keywords) {
-    WebElement searchTF = webDriver.findElementById("keywords");
     searchTF.sendKeys(keywords);
     searchTF.submit();
     return new ProductsPage(webDriver);
   }
 
   public void clearSearch() {
-    WebElement searchTF = webDriver.findElementById("keywords");
     searchTF.clear();
     Assert.assertEquals("", searchTF.getAttribute("value"));
   }
 
   public HomePage clickLogo() {
-    webDriver.findElementById("logo").click();
+    logoImg.click();
     return new HomePage(webDriver);
   }
 
   public void validateCartLink(int count, String amount) {
-    WebElement cartLnk = webDriver.findElementByClassName("cart-info");
     if (count == 0) {
       Assert.assertEquals("CART: (EMPTY)", cartLnk.getText());
     } else {

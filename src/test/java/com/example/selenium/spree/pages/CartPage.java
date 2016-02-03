@@ -3,12 +3,14 @@ package com.example.selenium.spree.pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage extends SpreePage {
 
-  // protected final RemoteWebDriver webDriver;
+  @FindBy(linkText = "Continue shopping")
+  protected WebElement continueLnk;
 
   protected CartPage(RemoteWebDriver webDriver) {
     super(webDriver);
@@ -25,9 +27,7 @@ public class CartPage extends SpreePage {
   }
 
   public ProductsPage clickContinueShopping() {
-    WebElement continueLnk = webDriver.findElementByLinkText("Continue shopping");
     continueLnk.click();
-
     return new ProductsPage(webDriver);
   }
 }
