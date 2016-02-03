@@ -15,9 +15,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
@@ -187,10 +189,29 @@ public class ShoppingSpreeTests implements SeleniumTest {
     cartPage.clickContinueShopping();
   }
 
-  // @After
-  // public void afterMethod() {
-  //   webDriver.quit();
-  // }
+  @Test
+  public void testRadioButtons() {
+    HomePage homePage = HomePage.open(webDriver);
+    ProductsPage productsPage = homePage.search("Jersey");
+    ProductPage productPage = productsPage.clickProductLnk("Ruby on Rails Baseball Jersey");
+    productPage.assertVariant(0);
+
+    productPage.setQuantity(5);
+
+    Keyboard kb = webDriver.getKeyboard();
+    kb.pressKey(Keys.SHIFT);
+    kb.sendKeys(Keys.TAB);
+    kb.releaseKey(Keys.SHIFT);
+
+    kb.sendKeys(Keys.DOWN);
+    productPage.assertVariant(1);
+
+    kb.sendKeys(Keys.DOWN);
+    productPage.assertVariant(2);
+
+    kb.sendKeys(Keys.DOWN);
+    productPage.assertVariant(3);
+  }
 
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {

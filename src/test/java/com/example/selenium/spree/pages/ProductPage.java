@@ -3,9 +3,12 @@ package com.example.selenium.spree.pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class ProductPage extends SpreePage {
 
@@ -17,6 +20,10 @@ public class ProductPage extends SpreePage {
 
   @FindBy(tagName = "button")
   protected WebElement addToCartBtn;
+
+  @CacheLookup
+  @FindBy(css="#product-variants input")
+  protected List<WebElement> variants;
 
   protected ProductPage(RemoteWebDriver webDriver, String productName) {
     super(webDriver);
@@ -61,5 +68,17 @@ public class ProductPage extends SpreePage {
   public CartPage clickAddToCart() {
     addToCartBtn.click();
     return new CartPage(webDriver);
+  }
+
+  public void assertVariant(int index) {
+    for (int i = 0; i < variants.size(); i++) {
+      WebElement variant = variants.get(i);
+      String msg = "Variant " + i;
+      if (i == index) {
+        Assert.assertTrue(msg, variant.isSelected());
+      } else {
+        Assert.assertFalse(msg, variant.isSelected());
+      }
+    }
   }
 }
