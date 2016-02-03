@@ -46,6 +46,7 @@ public class ProductPage extends SpreePage {
 
   protected static String getUrl(String productName) {
     String name = productName.replace(" ", "-");
+    name = name.replace(".", "");
     name = name.toLowerCase();
     return "http://spree.newcircle.com/products/" + name;
   }

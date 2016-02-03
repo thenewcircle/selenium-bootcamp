@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -223,6 +224,20 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
     productPage.mouseOverThumbnail(1);
     productPage.validateImageSrc("http://spree.newcircle.com/spree/products/32/product/ror_stein_back.jpeg?");
+  }
+
+  @Test
+  public void testNewWindow() {
+    HomePage homePage = HomePage.open(webDriver);
+    ProductsPage productsPage = homePage.search("Spaghetti");
+
+    int count = webDriver.getWindowHandles().size();
+    Assert.assertEquals(1, count);
+
+    productsPage.controlClickProductLnk("Ruby on Rails Jr. Spaghetti");
+
+    count = webDriver.getWindowHandles().size();
+    Assert.assertEquals(2, count);
   }
 
   @Parameterized.Parameters(name = "{1}")
