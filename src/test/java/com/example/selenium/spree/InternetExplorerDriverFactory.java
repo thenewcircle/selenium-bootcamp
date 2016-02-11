@@ -7,7 +7,10 @@ public class InternetExplorerDriverFactory extends WebDriverFactory {
 
   @Override
   public RemoteWebDriver create() {
-    System.setProperty("webdriver.ie.driver", "C:\\tools\\selenium\\IEDriverServer32.exe");
-    return new InternetExplorerDriver();
+    String path = System.getenv("webdriver.ie.driver");
+    System.setProperty("webdriver.ie.driver", path);
+    InternetExplorerDriver driver = new InternetExplorerDriver();
+    // configure zoom level
+    return driver;
   }
 }

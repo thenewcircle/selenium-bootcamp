@@ -7,7 +7,8 @@ public class ChromeDriverFactory extends WebDriverFactory {
 
   @Override
   public RemoteWebDriver create() {
-    System.setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
+    String path = System.getenv("webdriver.chrome.driver");
+    System.setProperty("webdriver.chrome.driver", path);
     return new ChromeDriver();
   }
 
