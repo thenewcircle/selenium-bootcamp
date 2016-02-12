@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.example.selenium.LogbackUtils;
@@ -23,7 +24,8 @@ import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
 import ch.qos.logback.classic.Level;
 
-//@RunWith(Parameterized.class)
+@Listeners(ScreenshotRule.class)
+
 @Test
 public class ShoppingSpreeTests /*implements SeleniumTest*/ {
 
@@ -177,13 +179,13 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     
     // homePage.validateUrl();
     homePage.validateTitle();
-    
-    webDriver.quit();
+
+    Assert.assertTrue(false);
   }
   
   @AfterMethod
   public void afterMethod() {
-//    webDriver.quit();
+    webDriver.quit();
   }
   
   @DataProvider(name = "webDrivers")
