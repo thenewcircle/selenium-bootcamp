@@ -1,8 +1,12 @@
 package com.example.selenium.spree;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class SpreePage {
 
@@ -22,4 +26,36 @@ public abstract class SpreePage {
     return webDriver.findElementById("taxon");
   }
 
+  public ProductsPage search(String text) {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+    searchTF.sendKeys(text+"\n");
+//    searchTF.submit();
+//    searchTF.sendKeys("\n");
+//    searchTF.sendKeys(Keys.ENTER);
+
+    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/products?utf8=%E2%9C%93&taxon=&keywords=bag");
+    new WebDriverWait(webDriver, 30, 1000).until(expectation);
+
+    return new ProductsPage(webDriver);
+  }
+
+  public void clearSearch() {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+
+    String actual = searchTF.getAttribute("value");
+    String expected = "";
+    Assert.assertEquals(expected, actual);
+  }
+
+  public HomePage clickLogo() {
+    WebElement logoImg = webDriver.findElementById("logo");
+    logoImg.click();
+    
+    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/");
+    new WebDriverWait(webDriver, 30, 1000).until(expectation);
+    
+    return new HomePage(webDriver);
+  }
 }
