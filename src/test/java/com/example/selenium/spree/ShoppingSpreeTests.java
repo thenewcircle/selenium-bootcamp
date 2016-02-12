@@ -19,6 +19,14 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.example.selenium.LogbackUtils;
+import com.example.selenium.spree.factories.ChromeDriverFactory;
+import com.example.selenium.spree.factories.FirefoxDriverFactory;
+import com.example.selenium.spree.factories.InternetExplorerDriverFactory;
+import com.example.selenium.spree.factories.WebDriverFactory;
+import com.example.selenium.spree.pages.CartPage;
+import com.example.selenium.spree.pages.HomePage;
+import com.example.selenium.spree.pages.ProductPage;
+import com.example.selenium.spree.pages.ProductsPage;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
 import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
@@ -54,28 +62,29 @@ public class ShoppingSpreeTests implements SeleniumTest {
     webDriver = wdf.create();
     webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     webDriver.manage().window().maximize();
-    webDriver.manage().window().setSize(new Dimension(800, 600));
+    webDriver.manage().window().setSize(new Dimension(1024, 768));
+
+//    webDriver.get("http://spree.newcircle.com");
+//    webDriver.manage().deleteAllCookies();
   }
 
   @Test
   public void testHomePageTitle() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     homePage.validateTitle();
   }
 
   @Test
   public void testProductPageTitle() {
-    ProductPage productPage = new ProductPage(webDriver);
-    productPage.open();
+    ProductPage productPage = ProductPage.open(webDriver, "Spree Tote");
     productPage.validateTitle();
   }
   
   @Test
   public void testCartPageTitle() {
-    CartPage cartPage = new CartPage(webDriver);
-    cartPage.open();
-    cartPage.validateTitle();
+//    CartPage cartPage = new CartPage(webDriver);
+//    cartPage.open();
+//    cartPage.validateTitle();
   }
   
   @Test
@@ -114,8 +123,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testIeComments() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     homePage.validateIeComments();
   }
 
@@ -126,12 +134,12 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
     if (webDriver instanceof FirefoxDriver) {
       Assert.assertEquals("firefox", webDriver.getCapabilities().getBrowserName());
-      Assert.assertEquals("43.0.4", webDriver.getCapabilities().getVersion());
-      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform());
+      Assert.assertEquals("44.0.2", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform().name());
 
     } else if (webDriver instanceof ChromeDriver) {
       Assert.assertEquals("chrome", webDriver.getCapabilities().getBrowserName());
-      Assert.assertEquals("48.0.2564.103", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("48.0.2564.109", webDriver.getCapabilities().getVersion());
       Assert.assertEquals("XP", webDriver.getCapabilities().getPlatform().name());
 
     } else if (webDriver instanceof InternetExplorerDriver) {
@@ -146,14 +154,13 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test 
   public void testDepartmentCombo() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     WebElement deptCmb = homePage.getDepartmentCmb();
 
     Assert.assertEquals("Taxon", deptCmb.getAttribute("aria-label"));
 
     if (webDriver instanceof FirefoxDriver) {
-      Assert.assertEquals("20px", deptCmb.getCssValue("height"));
+      Assert.assertEquals("18px", deptCmb.getCssValue("height"));
       
     } else if (webDriver instanceof InternetExplorerDriver) {
       Assert.assertEquals("15.79px", deptCmb.getCssValue("height"));
@@ -184,21 +191,56 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Test
   public void testSearchSpree() throws Exception {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     
     ProductsPage productsPage = homePage.search("Bag");
     
-    productsPage.validateUrl();
     productsPage.validateTitle();
     productsPage.clearSearch();
     
     homePage = productsPage.clickLogo();
     // Thread.sleep(10*1000);
 
-    
     // homePage.validateUrl();
     homePage.validateTitle();
+  }
+  
+  @Test
+  public void testShoppingSpree() throws Exception {
+    HomePage homePage = HomePage.open(webDriver);
+
+    ProductsPage productsPage = homePage.search("Mug");
+
+    ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+
+    productPage.clickThumbnail(1);
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
+    productPage.setQuantity(3);
+    productPage.validateCartLink(0, null);
+    
+    CartPage cartPage = productPage.clickAddToCart();
+    cartPage.validateCartLink(3, "41.97");
+
+    productsPage = cartPage.clickContinueShopping();
+    // needs web driver wait in clickContinueShopping()
+  }
+  
+  @Test
+  public void testMouseOver() throws Exception {
+    HomePage homePage = HomePage.open(webDriver);
+    ProductsPage productsPage = homePage.search("Stein");
+
+    ProductPage productPage = productsPage.clickProductLnk("Ruby on Rails Stein");
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/31/product/ror_stein.jpeg?");
+
+    productPage.mouseOverThumbnail(1);
+ 
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/32/product/ror_stein_back.jpeg?");
   }
   
 //  @After

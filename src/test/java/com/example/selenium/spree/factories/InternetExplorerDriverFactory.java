@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.factories;
 
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;

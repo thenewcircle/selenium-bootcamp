@@ -1,10 +1,11 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,8 +14,24 @@ public abstract class SpreePage {
 
   protected final RemoteWebDriver webDriver;
 
-  public SpreePage(RemoteWebDriver webDriver) {
+  @FindBy(id = "taxon")
+  private WebElement deptCmb;
+  
+  @FindBy(id = "keywords")
+  private WebElement searchTF;
+
+  @FindBy(id = "logo")
+  private WebElement logoImg;
+
+  @FindBy(className = "cart-info")
+  private WebElement cartLnk;
+  
+  public SpreePage(RemoteWebDriver webDriver, String url) {
     this.webDriver = webDriver;
+    PageFactory.initElements(webDriver, this);
+    
+    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlContains(url);
+    new WebDriverWait(webDriver, 5).until(expectation);
   }
 
   public void validateIeComments() {
@@ -24,18 +41,13 @@ public abstract class SpreePage {
   }
 
   public WebElement getDepartmentCmb() {
-    return webDriver.findElementById("taxon");
+    return deptCmb;
   }
 
   public ProductsPage search(String text) {
-    By by = By.id("keywords");
-    WebElement searchTF = webDriver.findElement(by);
-    
     searchTF.clear();
     searchTF.sendKeys(text);
-//    searchTF.submit();
-//    searchTF.sendKeys("\n");
-    searchTF.sendKeys(Keys.ENTER);
+    searchTF.submit();
 
 //    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/products?utf8=%E2%9C%93&taxon=&keywords=bag");
 //    new WebDriverWait(webDriver, 5, 1000).until(expectation);
@@ -44,7 +56,6 @@ public abstract class SpreePage {
   }
 
   public void clearSearch() {
-    WebElement searchTF = webDriver.findElementById("keywords");
     searchTF.clear();
 
     String actual = searchTF.getAttribute("value");
@@ -53,12 +64,21 @@ public abstract class SpreePage {
   }
 
   public HomePage clickLogo() {
-    WebElement logoImg = webDriver.findElementById("logo");
     logoImg.click();
     
     ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/");
     new WebDriverWait(webDriver, 30, 1000).until(expectation);
     
     return new HomePage(webDriver);
+  }
+
+  public void validateCartLink(int quantity, String amount) {
+    String text = cartLnk.getText();
+    if (quantity == 0) {
+      Assert.assertEquals("CART: (EMPTY)", text);
+    } else {
+      String expected = String.format("CART: (%s) $%s", quantity, amount);
+      Assert.assertEquals(expected, text);
+    }
   }
 }
