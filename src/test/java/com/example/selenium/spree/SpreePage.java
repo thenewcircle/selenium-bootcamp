@@ -1,6 +1,7 @@
 package com.example.selenium.spree;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -27,15 +28,17 @@ public abstract class SpreePage {
   }
 
   public ProductsPage search(String text) {
-    WebElement searchTF = webDriver.findElementById("keywords");
+    By by = By.id("keywords");
+    WebElement searchTF = webDriver.findElement(by);
+    
     searchTF.clear();
-    searchTF.sendKeys(text+"\n");
+    searchTF.sendKeys(text);
 //    searchTF.submit();
 //    searchTF.sendKeys("\n");
-//    searchTF.sendKeys(Keys.ENTER);
+    searchTF.sendKeys(Keys.ENTER);
 
-    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/products?utf8=%E2%9C%93&taxon=&keywords=bag");
-    new WebDriverWait(webDriver, 30, 1000).until(expectation);
+//    ExpectedCondition<Boolean> expectation = ExpectedConditions.urlToBe("http://spree.newcircle.com/products?utf8=%E2%9C%93&taxon=&keywords=bag");
+//    new WebDriverWait(webDriver, 5, 1000).until(expectation);
 
     return new ProductsPage(webDriver);
   }

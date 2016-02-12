@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,9 +17,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.selenium.LogbackUtils;
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
@@ -53,12 +51,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
   @Before
   public void beforeMethod() throws Exception {
-//    HtmlUnitDriver wd = new HtmlUnitDriver();
-//    wd.setJavascriptEnabled(true);
-//    FirefoxDriver wd = new FirefoxDriver();
-    
-
     webDriver = wdf.create();
+    webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    webDriver.manage().window().maximize();
+    webDriver.manage().window().setSize(new Dimension(800, 600));
   }
 
   @Test
