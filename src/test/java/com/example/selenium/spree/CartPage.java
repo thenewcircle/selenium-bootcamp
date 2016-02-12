@@ -1,7 +1,7 @@
 package com.example.selenium.spree;
 
-import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 
 public class CartPage extends SpreePage {
 
