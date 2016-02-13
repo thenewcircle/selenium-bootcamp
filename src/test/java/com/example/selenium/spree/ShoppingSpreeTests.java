@@ -1,6 +1,8 @@
 package com.example.selenium.spree;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,7 +27,7 @@ import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
 import ch.qos.logback.classic.Level;
 
-@Listeners(ScreenshotRule.class)
+@Listeners(SeleniumUtils.class)
 
 @Test
 public class ShoppingSpreeTests /*implements SeleniumTest*/ {
@@ -179,10 +181,19 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     
     // homePage.validateUrl();
     homePage.validateTitle();
+    
+    Assert.assertTrue(false);
   }
   
   @AfterMethod
   public void afterMethod(ITestResult results) {
+    // String path = System.getenv("tests.selenium.screenshots");
+    String path = "c:\\tmp\\test-failures";
+    
+    File screenShotDir = new File(path);
+    String name = String.format("%s.%s(%s)", getClass().getName(), results.getMethod().getMethodName(), Arrays.asList(results.getParameters()));
+    SeleniumUtils.captureScreenshot(webDriver, screenShotDir, name);
+
     webDriver.quit();
   }
   
