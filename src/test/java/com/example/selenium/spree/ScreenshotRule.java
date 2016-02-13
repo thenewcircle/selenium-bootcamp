@@ -45,16 +45,16 @@ public class ScreenshotRule extends TestListenerAdapter {
     File srcFile;
 
     try {
-      Dimension ss = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-      java.awt.Rectangle r = new java.awt.Rectangle(ss);
-      java.awt.image.BufferedImage image = new Robot().createScreenCapture(r);
-      ImageIO.write(image, "png", dstFile);
+//      Dimension ss = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+//      java.awt.Rectangle r = new java.awt.Rectangle(ss);
+//      java.awt.image.BufferedImage image = new Robot().createScreenCapture(r);
+//      ImageIO.write(image, "png", dstFile);
       
     } catch (Exception ex) {
       log.error("Unable to capture screen shot: {}", ex.getMessage());
       return;
     }
 
-    log.warn("Screen shot saved to {}", dstFile.getAbsolutePath());
+//    log.warn("Screen shot saved to {}", dstFile.getAbsolutePath());
   }
 }

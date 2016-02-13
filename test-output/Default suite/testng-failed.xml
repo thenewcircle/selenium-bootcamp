@@ -3,24 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.example.selenium.spree.ShoppingSpreeTests">
-        <methods>
-          <include name="testCartPageTitle"/>
-          <include name="testProductPageTitle"/>
-        </methods>
-      </class> <!-- com.example.selenium.spree.ShoppingSpreeTests -->
+      <class name="com.example.selenium.spree.WebDriverFactory"/>
+      <class name="com.example.selenium.spree.SpreePage"/>
+      <class name="com.example.selenium.spree.CartPage"/>
+      <class name="com.example.selenium.spree.FirefoxDriverFactory"/>
+      <class name="com.example.selenium.spree.ShoppingSpreeTests"/>
+      <class name="com.example.selenium.spree.ProductPage"/>
+      <class name="com.example.selenium.spree.ChromeDriverFactory"/>
+      <class name="com.example.selenium.spree.ScreenshotRule"/>
+      <class name="com.example.selenium.spree.ProductsPage"/>
+      <class name="com.example.selenium.spree.HomePage"/>
+      <class name="com.example.selenium.spree.InternetExplorerDriverFactory"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.example.selenium.spree.ShoppingSpreeTests">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="testProductPageTitle"/>
-          <include name="testCartPageTitle"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- com.example.selenium.spree.ShoppingSpreeTests -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

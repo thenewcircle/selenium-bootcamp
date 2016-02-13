@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -53,7 +54,6 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     ProductPage productPage = new ProductPage(webDriver);
     productPage.open();
     productPage.validateTitle();
-    Assert.assertTrue(false);
   }
   
   @Test(dependsOnMethods="testProductPageTitle")
@@ -132,7 +132,7 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     Assert.assertEquals("Taxon", deptCmb.getAttribute("aria-label"));
 
     if (webDriver instanceof FirefoxDriver) {
-      Assert.assertEquals("20px", deptCmb.getCssValue("height"));
+      Assert.assertEquals("18px", deptCmb.getCssValue("height"));
       
     } else if (webDriver instanceof InternetExplorerDriver) {
       Assert.assertEquals("15.79px", deptCmb.getCssValue("height"));
@@ -179,12 +179,10 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     
     // homePage.validateUrl();
     homePage.validateTitle();
-
-    Assert.assertTrue(false);
   }
   
   @AfterMethod
-  public void afterMethod() {
+  public void afterMethod(ITestResult results) {
     webDriver.quit();
   }
   

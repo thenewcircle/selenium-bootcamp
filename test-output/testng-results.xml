@@ -1,92 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" total="2" passed="0">
+<testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4426" started-at="2016-02-12T18:13:51Z" finished-at="2016-02-12T18:13:55Z">
+  <suite name="Default suite" duration-ms="26393" started-at="2016-02-13T00:30:10Z" finished-at="2016-02-13T00:30:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4426" started-at="2016-02-12T18:13:51Z" finished-at="2016-02-12T18:13:55Z">
+    <test name="Default test" duration-ms="26393" started-at="2016-02-13T00:30:10Z" finished-at="2016-02-13T00:30:37Z">
       <class name="com.example.selenium.spree.ShoppingSpreeTests">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="3583" started-at="2016-02-12T13:13:51Z" finished-at="2016-02-12T13:13:54Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="2416" started-at="2016-02-12T19:30:11Z" finished-at="2016-02-12T19:30:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="testProductPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0]" test-instance-name="" name="testProductPageTitle" duration-ms="826" started-at="2016-02-12T13:13:54Z" finished-at="2016-02-12T13:13:55Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.example.selenium.spree.ShoppingSpreeTests.testProductPageTitle(ShoppingSpreeTests.java:54)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="testDepartmentCombo()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testDepartmentCombo" duration-ms="694" started-at="2016-02-12T19:30:13Z" finished-at="2016-02-12T19:30:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testProductPageTitle -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-02-12T13:13:55Z" finished-at="2016-02-12T13:13:55Z">
+        </test-method> <!-- testDepartmentCombo -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="310" started-at="2016-02-12T19:30:14Z" finished-at="2016-02-12T19:30:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testDepartmentCombo()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="testCartPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0]" test-instance-name="" name="testCartPageTitle" duration-ms="0" started-at="2016-02-12T13:13:55Z" depends-on-methods="com.example.selenium.spree.ShoppingSpreeTests.testProductPageTitle" finished-at="2016-02-12T13:13:55Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ShoppingSpreeTests.testCartPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ShoppingSpreeTests.testCartPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@5abca1e0] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1861" started-at="2016-02-12T19:30:14Z" finished-at="2016-02-12T19:30:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testProductPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testProductPageTitle" duration-ms="544" started-at="2016-02-12T19:30:16Z" finished-at="2016-02-12T19:30:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProductPageTitle -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="227" started-at="2016-02-12T19:30:16Z" finished-at="2016-02-12T19:30:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testProductPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1794" started-at="2016-02-12T19:30:17Z" finished-at="2016-02-12T19:30:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testSearchSpree()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testSearchSpree" duration-ms="1457" started-at="2016-02-12T19:30:18Z" finished-at="2016-02-12T19:30:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchSpree -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="234" started-at="2016-02-12T19:30:20Z" finished-at="2016-02-12T19:30:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testSearchSpree()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1858" started-at="2016-02-12T19:30:20Z" finished-at="2016-02-12T19:30:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testBackAndForth()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testBackAndForth" duration-ms="1276" started-at="2016-02-12T19:30:22Z" finished-at="2016-02-12T19:30:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBackAndForth -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="218" started-at="2016-02-12T19:30:23Z" finished-at="2016-02-12T19:30:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testBackAndForth()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1759" started-at="2016-02-12T19:30:23Z" finished-at="2016-02-12T19:30:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testCapabilities()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testCapabilities" duration-ms="1" started-at="2016-02-12T19:30:25Z" finished-at="2016-02-12T19:30:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCapabilities -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="155" started-at="2016-02-12T19:30:25Z" finished-at="2016-02-12T19:30:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testCapabilities()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1843" started-at="2016-02-12T19:30:25Z" finished-at="2016-02-12T19:30:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testGetGoogleUrl()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testGetGoogleUrl" duration-ms="1473" started-at="2016-02-12T19:30:27Z" finished-at="2016-02-12T19:30:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetGoogleUrl -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="228" started-at="2016-02-12T19:30:29Z" finished-at="2016-02-12T19:30:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testGetGoogleUrl()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1806" started-at="2016-02-12T19:30:29Z" finished-at="2016-02-12T19:30:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testIeComments()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testIeComments" duration-ms="615" started-at="2016-02-12T19:30:31Z" finished-at="2016-02-12T19:30:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIeComments -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="185" started-at="2016-02-12T19:30:31Z" finished-at="2016-02-12T19:30:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testIeComments()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1776" started-at="2016-02-12T19:30:31Z" finished-at="2016-02-12T19:30:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testRefresh()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testRefresh" duration-ms="1004" started-at="2016-02-12T19:30:33Z" finished-at="2016-02-12T19:30:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRefresh -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="182" started-at="2016-02-12T19:30:34Z" finished-at="2016-02-12T19:30:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testRefresh()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="beforeMethod" is-config="true" duration-ms="1789" started-at="2016-02-12T19:30:34Z" finished-at="2016-02-12T19:30:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testCartPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="testCartPageTitle" duration-ms="502" started-at="2016-02-12T19:30:36Z" depends-on-methods="com.example.selenium.spree.ShoppingSpreeTests.testProductPageTitle" finished-at="2016-02-12T19:30:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCartPageTitle -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79]" test-instance-name="" name="afterMethod" is-config="true" duration-ms="172" started-at="2016-02-12T19:30:37Z" finished-at="2016-02-12T19:30:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name="" status=SUCCESS method=ShoppingSpreeTests.testCartPageTitle()[pri:0, instance:com.example.selenium.spree.ShoppingSpreeTests@887af79] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
       </class> <!-- com.example.selenium.spree.ShoppingSpreeTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
