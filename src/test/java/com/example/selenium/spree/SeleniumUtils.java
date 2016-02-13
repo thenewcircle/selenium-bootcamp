@@ -5,6 +5,9 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +17,29 @@ public class SeleniumUtils extends TestListenerAdapter {
 
   private static final Logger log = LoggerFactory.getLogger(SeleniumUtils.class);
 
+  public static RemoteWebDriver createDriver(DriverType type) {
+
+    if (DriverType.Chrome == type) {
+      String path = System.getenv("webdriver.chrome.driver");
+      System.setProperty("webdriver.chrome.driver", path);
+      return new ChromeDriver();
+      
+    } else if (DriverType.IE == type) {
+      String path = System.getenv("webdriver.ie.driver");
+      System.setProperty("webdriver.ie.driver", path);
+      InternetExplorerDriver driver = new InternetExplorerDriver();
+      // configure zoom level
+      return driver;
+    
+    } else if (DriverType.Firefox == type) {
+      return new FirefoxDriver();
+    
+    } else {
+      String msg = String.format("The driver type %s is not supported.", type);
+      throw new UnsupportedOperationException(msg);
+    }
+  }
+  
   public static void captureScreenshot(RemoteWebDriver webDriver, File screenShotDir, String testName) {
     if (webDriver == null) {
       log.error("The web driver does not exist.");

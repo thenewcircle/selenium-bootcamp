@@ -14,11 +14,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.example.selenium.LogbackUtils;
@@ -27,10 +26,8 @@ import com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter;
 
 import ch.qos.logback.classic.Level;
 
-@Listeners(SeleniumUtils.class)
-
-@Test
-public class ShoppingSpreeTests /*implements SeleniumTest*/ {
+@Test(dataProvider="Drivers")
+public class ShoppingSpreeTests {
 
   static {
     LogbackUtils.initLogback(Level.INFO);
@@ -39,33 +36,37 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
   }
 
   private RemoteWebDriver webDriver;
-  
-  @BeforeMethod
-  public void beforeMethod() throws Exception {
-    webDriver = new FirefoxDriver();
+
+  public ShoppingSpreeTests() {
   }
 
-  @Test(enabled=false)
-  public void testHomePageTitle() {
+  public void testHomePageTitle(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+    
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     homePage.validateTitle();
   }
 
-  public void testProductPageTitle() {
+  public void testProductPageTitle(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     ProductPage productPage = new ProductPage(webDriver);
     productPage.open();
     productPage.validateTitle();
   }
   
-  @Test(dependsOnMethods="testProductPageTitle")
-  public void testCartPageTitle() {
+  public void testCartPageTitle(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     CartPage cartPage = new CartPage(webDriver);
     cartPage.open();
     cartPage.validateTitle();
   }
   
-  public void testBackAndForth() {
+  public void testBackAndForth(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     webDriver.get("http://spree.newcircle.com/products/spree-bag");
     Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
 
@@ -79,7 +80,9 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
   }
   
-  public void testRefresh() {
+  public void testRefresh(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     webDriver.get("http://spree.newcircle.com/products/spree-bag");
     Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
 
@@ -87,7 +90,9 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     Assert.assertEquals("Spree Bag - Spree Demo Site", webDriver.getTitle());
   }
 
-  public void testGetGoogleUrl() {
+  public void testGetGoogleUrl(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     webDriver.get("http://google.com");;
     Assert.assertEquals("Google", webDriver.getTitle());
 
@@ -96,24 +101,27 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     Assert.assertTrue(title.startsWith("https://www.google.com/?"), msg);
   }
   
-  public void testIeComments() {
+  public void testIeComments(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     homePage.validateIeComments();
   }
 
-  public void testCapabilities() {
+  public void testCapabilities(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
 
     Assert.assertEquals(true, webDriver.getCapabilities().isJavascriptEnabled());
 
     if (webDriver instanceof FirefoxDriver) {
-//      Assert.assertEquals("firefox", webDriver.getCapabilities().getBrowserName());
-//      Assert.assertEquals("44.0.2", webDriver.getCapabilities().getVersion());
-//      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform());
+      Assert.assertEquals("firefox", webDriver.getCapabilities().getBrowserName());
+      Assert.assertEquals("44.0.2", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("WINDOWS", webDriver.getCapabilities().getPlatform().name());
 
     } else if (webDriver instanceof ChromeDriver) {
       Assert.assertEquals("chrome", webDriver.getCapabilities().getBrowserName());
-      Assert.assertEquals("48.0.2564.103", webDriver.getCapabilities().getVersion());
+      Assert.assertEquals("48.0.2564.109", webDriver.getCapabilities().getVersion());
       Assert.assertEquals("XP", webDriver.getCapabilities().getPlatform().name());
 
     } else if (webDriver instanceof InternetExplorerDriver) {
@@ -126,7 +134,9 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     }
   }
   
-  public void testDepartmentCombo() {
+  public void testDepartmentCombo(DriverType type) {
+    webDriver = SeleniumUtils.createDriver(type);
+
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     WebElement deptCmb = homePage.getDepartmentCmb();
@@ -163,30 +173,26 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
     Assert.assertEquals("AlldepartmentsCategoriesBrand", text);
   }
 
-  @Test
-  // @Test(dataProvider = "webDrivers")
-  public void testSearchSpree(/*WebDriverFactory factory*/) throws Exception {
+  public void testSearchSpree(DriverType type) throws Exception {
+    webDriver = SeleniumUtils.createDriver(type);
+
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     
     ProductsPage productsPage = homePage.search("Bag");
+    
+    Thread.sleep(5*1000);
     
     productsPage.validateUrl();
     productsPage.validateTitle();
     productsPage.clearSearch();
     
     homePage = productsPage.clickLogo();
-    // Thread.sleep(10*1000);
-
-    
-    // homePage.validateUrl();
     homePage.validateTitle();
-    
-    Assert.assertTrue(false);
   }
   
   @AfterMethod
-  public void afterMethod(ITestResult results) {
+  private void afterMethod(ITestResult results) {
     // String path = System.getenv("tests.selenium.screenshots");
     String path = "c:\\tmp\\test-failures";
     
@@ -196,15 +202,13 @@ public class ShoppingSpreeTests /*implements SeleniumTest*/ {
 
     webDriver.quit();
   }
-  
-  @DataProvider(name = "webDrivers")
-  public static Iterator<Object[]> createTestParameters() {
-    List<Object[]> data = new ArrayList();
-//  data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-//    data.add(new Object[]{ new FirefoxDriverFactory() });
-//    data.add(new Object[]{ new InternetExplorerDriverFactory() });
-    data.add(new Object[]{ new ChromeDriverFactory()});
+
+  @DataProvider(name = "Drivers")
+  public static Iterator<Object[]> createDrivers() {
+    List<Object[]> data = new ArrayList<>();
+    data.add(new Object[]{ DriverType.IE });
+    data.add(new Object[]{ DriverType.Firefox });
+    data.add(new Object[]{ DriverType.Chrome });
     return data.iterator();
   }
-
 }
