@@ -50,6 +50,13 @@ public class ShoppingSpreeTests {
     productPage.validateTitle();
   }
   
+  @Test
+  public void testCartPageTitle() {
+    CartPage cartPage = new CartPage(webDriver);
+    cartPage.open();
+    cartPage.validateTitle();
+  }
+  
   @After
   public void afterMethod() {
     webDriver.quit();
@@ -58,10 +65,10 @@ public class ShoppingSpreeTests {
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList();
-    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+    // data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-     data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 }
