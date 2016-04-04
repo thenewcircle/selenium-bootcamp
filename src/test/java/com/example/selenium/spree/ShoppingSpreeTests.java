@@ -38,10 +38,18 @@ public class ShoppingSpreeTests {
 
   @Test
   public void testHomePageTitle() {
-    webDriver.get("http://spree.newcircle.com");
-    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    homePage.validateTitle();
   }
 
+  @Test
+  public void testProductPageTitle() {
+    ProductPage productPage = new ProductPage(webDriver);
+    productPage.open();
+    productPage.validateTitle();
+  }
+  
   @After
   public void afterMethod() {
     webDriver.quit();
@@ -53,7 +61,7 @@ public class ShoppingSpreeTests {
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+     data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 }

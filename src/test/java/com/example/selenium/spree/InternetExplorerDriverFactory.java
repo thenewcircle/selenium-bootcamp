@@ -1,0 +1,15 @@
+package com.example.selenium.spree;
+
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class InternetExplorerDriverFactory implements WebDriverFactory {
+
+  @Override
+  public RemoteWebDriver create() {
+    String path = System.getenv("webdriver.ie.driver");
+    System.setProperty("webdriver.ie.driver", path);
+    return new InternetExplorerDriver();
+  }
+
+}
