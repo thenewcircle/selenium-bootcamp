@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,15 +10,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.selenium.LogbackUtils;
 //import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
@@ -46,6 +42,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Before
   public void beforeMethod() throws Exception {
     webDriver = wdf.create();
+    webDriver.manage()
+             .timeouts()
+             .implicitlyWait(5, TimeUnit.SECONDS);
   }
 
   @Test
@@ -141,6 +140,30 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
     homePage = productsPage.clickLogo();
     //homePage.validateUrl();
+  }
+  
+  @Test
+  public void testShoppingSpree() throws Exception {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+
+    ProductsPage productsPage = homePage.search("Mug");
+
+    ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+    productPage.clickThumbnail(1);
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
+    productPage.setQuantity(3);
+    productPage.validateCartLink(0, null);
+    
+    CartPage cartPage = productPage.clickAddToCart();
+    cartPage.validateUrl();
+    cartPage.validateCartLink(3, "41.97");
+
+    productsPage = cartPage.clickContinueShopping();
+    productsPage.validateUrl();
   }
   
 //  @After
