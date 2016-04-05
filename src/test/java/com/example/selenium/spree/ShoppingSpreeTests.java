@@ -9,6 +9,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -122,7 +124,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public void testDepartmentsCombo() {
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
-    WebElement deptCmb = homePage.getDepartmentCmb();
+    homePage.validateDepartmentCmb();
   } 
   
 //  @After
@@ -133,10 +135,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList();
-    // data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+     data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 
