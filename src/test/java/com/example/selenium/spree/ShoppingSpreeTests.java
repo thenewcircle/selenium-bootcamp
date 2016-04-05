@@ -150,8 +150,8 @@ public class ShoppingSpreeTests implements SeleniumTest {
     ProductsPage productsPage = homePage.search("Mug");
 
     ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
-    productPage.validateImageSrc(
-      "http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+    productPage.validateImageSrc("http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+    
     productPage.clickThumbnail(1);
     productPage.validateImageSrc(
       "http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");

@@ -84,6 +84,19 @@ public class SpreePage {
 
     return new ProductsPage(webDriver);
   }
+
+  public void validateCartLink(int count, String amount) {
+    String expected;
+    if (count == 0) {
+      expected  = "CART: (EMPTY)";
+    } else {
+      expected = String.format("CART: (%s) $%s", count, amount);
+    }
+    WebElement cartLink = webDriver.findElementByPartialLinkText("CART: ");
+    String actual = cartLink.getText();
+    Assert.assertEquals(expected, actual);
+    
+  }
 }
 
 
