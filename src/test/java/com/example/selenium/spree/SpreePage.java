@@ -5,6 +5,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SpreePage {
 
@@ -69,11 +71,8 @@ public class SpreePage {
     WebElement logo = webDriver.findElementById("logo");
     logo.click();
 
-    try {
-      Thread.sleep(10* 1000);
-    } catch (InterruptedException e) {
-      Thread.interrupted();
-    }
+    WebDriverWait wait = new WebDriverWait(webDriver, 5, 10);
+    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
     
     return new HomePage(webDriver);
   }
