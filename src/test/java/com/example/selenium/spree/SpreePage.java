@@ -60,4 +60,38 @@ public class SpreePage {
     }
   }
 
+  public void clearSearch() {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+  }
+
+  public HomePage clickLogo() {
+    WebElement logo = webDriver.findElementById("logo");
+    logo.click();
+
+    try {
+      Thread.sleep(10* 1000);
+    } catch (InterruptedException e) {
+      Thread.interrupted();
+    }
+    
+    return new HomePage(webDriver);
+  }
+
+  public ProductsPage search(String text) {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.sendKeys(text);
+    searchTF.submit();
+
+    return new ProductsPage(webDriver);
+  }
 }
+
+
+
+
+
+
+
+
+

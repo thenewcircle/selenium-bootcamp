@@ -16,4 +16,9 @@ public class HomePage extends SpreePage {
   public void validateTitle() {
     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
+
+  public void validateUrl() {
+    String actual = webDriver.getCurrentUrl();
+    Assert.assertEquals("http://spree.newcircle.com/", actual);
+  }
 }
