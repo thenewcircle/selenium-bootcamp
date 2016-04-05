@@ -45,6 +45,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
     webDriver.manage()
              .timeouts()
              .implicitlyWait(5, TimeUnit.SECONDS);
+
+    webDriver.get("http://spree.newcircle.com");
+    webDriver.manage().deleteAllCookies();
   }
 
   @Test
