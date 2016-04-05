@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -17,7 +18,7 @@ import com.example.selenium.LogbackUtils;
 import ch.qos.logback.classic.Level;
 
 @RunWith(Parameterized.class)
-public class ShoppingSpreeTests {
+public class ShoppingSpreeTests implements SeleniumTest {
 
   static {
     LogbackUtils.initLogback(Level.WARN);
@@ -26,6 +27,10 @@ public class ShoppingSpreeTests {
 
   private RemoteWebDriver webDriver;
   private final WebDriverFactory wdf;
+  
+  @Rule
+  public final ScreenshotRule screenshotRule = 
+    new ScreenshotRule(this, "c:\\tmp\\test-failures");
   
   public ShoppingSpreeTests(WebDriverFactory wdf, String name) {
     this.wdf = wdf;
@@ -41,6 +46,7 @@ public class ShoppingSpreeTests {
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     homePage.validateTitle();
+    Assert.assertTrue(false);
   }
 
   @Test
@@ -85,10 +91,10 @@ public class ShoppingSpreeTests {
     Assert.assertTrue(msg, url.startsWith("https://www.google.com/?"));
   } 
   
-  @After
-  public void afterMethod() {
-    webDriver.quit();
-  }
+//  @After
+//  public void afterMethod() {
+//    webDriver.quit();
+//  }
   
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
@@ -98,5 +104,10 @@ public class ShoppingSpreeTests {
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
     // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
+  }
+
+  @Override
+  public RemoteWebDriver getRemoteWebDriver() {
+    return webDriver;
   }
 }
