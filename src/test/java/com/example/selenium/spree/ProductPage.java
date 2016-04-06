@@ -3,24 +3,27 @@ package com.example.selenium.spree;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends SpreePage {
 
-  public ProductPage(RemoteWebDriver webDirver) {
-    super(webDirver);
+  public ProductPage(RemoteWebDriver webDirver, String product) {
+    super(webDirver, 
+        toUrl(product),
+        product+" - Spree Demo Site");
   }
 
-  public void open() {
-    webDriver.get("http://spree.newcircle.com/products/spree-tote");
+  public static ProductPage open(RemoteWebDriver webDriver, String product) {
+    webDriver.get(toUrl(product));
+    return new ProductPage(webDriver, product);
   }
 
-  public void validateTitle() {
-    String actual = webDriver.getTitle();
-    Assert.assertEquals("Spree Tote - Spree Demo Site", actual);
+  public static String toUrl(String product) {
+    String name = product.toLowerCase();
+    name = name.replace(" ", "-");
+    name = name.replace(".", "");
+    return "http://spree.newcircle.com/products/" + name;
   }
-
+  
   public void validateImageSrc(String expected) {
     WebElement mainImg = webDriver.findElementByCssSelector("#main-image>img");
     String actual = mainImg.getAttribute("src");
@@ -45,9 +48,6 @@ public class ProductPage extends SpreePage {
   public CartPage clickAddToCart() {
     WebElement addBtn = webDriver.findElementByTagName("button");
     addBtn.click();
-
-    WebDriverWait wait = new WebDriverWait(webDriver, 5);
-    wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/cart"));
     
     return new CartPage(webDriver);
   }

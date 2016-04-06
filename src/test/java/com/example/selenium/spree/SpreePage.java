@@ -1,6 +1,7 @@
 package com.example.selenium.spree;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -12,8 +13,13 @@ public class SpreePage {
 
   protected final RemoteWebDriver webDriver;
 
-  public SpreePage(RemoteWebDriver webDriver) {
+  public SpreePage(RemoteWebDriver webDriver, String url, String title) {
     this.webDriver = webDriver;
+
+    WebDriverWait wait = new WebDriverWait(webDriver, 5);
+    wait.until(ExpectedConditions.urlContains(url));
+
+    Assert.assertEquals(title, webDriver.getTitle());
   }
 
   public WebElement getDepartmentCmb() {
@@ -22,13 +28,13 @@ public class SpreePage {
 
   public void validateDepartmentCmb() {
     WebElement deptCmb = getDepartmentCmb();
-  
+
     String attribute = deptCmb.getAttribute("aria-label");
     Assert.assertEquals("Taxon", attribute);
-    
+
     String cssValue = deptCmb.getCssValue("height");
     String name = webDriver.getCapabilities().getBrowserName();
-  
+
     if ("firefox".equals(name)) {
       Assert.assertEquals("20px", cssValue);
     } else if ("internet explorer".equals(name)) {
@@ -38,22 +44,22 @@ public class SpreePage {
     } else {
       throw new UnsupportedOperationException();
     }
-    
+
     Point location = deptCmb.getLocation();
     Assert.assertTrue(location.getX() > 100);
     Assert.assertTrue(location.getY() < 200);
-    
+
     Dimension size = deptCmb.getSize();
     Assert.assertTrue(size.getWidth() > 100 && size.getWidth() < 120);
     Assert.assertTrue(size.getHeight() > 15 && size.getHeight() < 25);
-    
+
     String tagName = deptCmb.getTagName();
     Assert.assertEquals("select", tagName);
-    
+
     Assert.assertTrue(deptCmb.isDisplayed());
     Assert.assertFalse(deptCmb.isSelected());
     Assert.assertTrue(deptCmb.isEnabled());
-  
+
     String text = deptCmb.getText();
     if ("internet explorer".equals(name)) {
       Assert.assertEquals("All departments Categories Brand", text);
@@ -71,9 +77,6 @@ public class SpreePage {
     WebElement logo = webDriver.findElementById("logo");
     logo.click();
 
-    WebDriverWait wait = new WebDriverWait(webDriver, 5, 10);
-    wait.until(ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
-    
     return new HomePage(webDriver);
   }
 
@@ -88,22 +91,17 @@ public class SpreePage {
   public void validateCartLink(int count, String amount) {
     String expected;
     if (count == 0) {
-      expected  = "CART: (EMPTY)";
+      expected = "CART: (EMPTY)";
     } else {
       expected = String.format("CART: (%s) $%s", count, amount);
     }
-    WebElement cartLink = webDriver.findElementByPartialLinkText("CART: ");
+
+    By by = By.partialLinkText("CART: ");
+    WebDriverWait wait = new WebDriverWait(webDriver, 5);
+    WebElement cartLink = wait.until(ExpectedConditions.elementToBeClickable(by));
+    
     String actual = cartLink.getText();
     Assert.assertEquals(expected, actual);
-    
+
   }
 }
-
-
-
-
-
-
-
-
-
