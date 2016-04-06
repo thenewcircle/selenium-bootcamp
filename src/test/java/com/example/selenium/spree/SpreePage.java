@@ -6,6 +6,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,9 +15,20 @@ public class SpreePage {
 
   protected final RemoteWebDriver webDriver;
 
+  @FindBy(id="keywords")
+  protected WebElement searchTF;
+
+  @FindBy(id="taxon")
+  protected WebElement departmentCmb;
+
+  @FindBy(id="logo")
+  WebElement logo;
+  
   public SpreePage(RemoteWebDriver webDriver, String url, String title) {
     this.webDriver = webDriver;
 
+    PageFactory.initElements(webDriver, this);
+    
     WebDriverWait wait = new WebDriverWait(webDriver, 5);
     wait.until(ExpectedConditions.urlContains(url));
 
@@ -23,7 +36,7 @@ public class SpreePage {
   }
 
   public WebElement getDepartmentCmb() {
-    return webDriver.findElementById("taxon");
+    return departmentCmb;
   }
 
   public void validateDepartmentCmb() {
@@ -69,19 +82,16 @@ public class SpreePage {
   }
 
   public void clearSearch() {
-    WebElement searchTF = webDriver.findElementById("keywords");
     searchTF.clear();
   }
 
   public HomePage clickLogo() {
-    WebElement logo = webDriver.findElementById("logo");
     logo.click();
 
     return new HomePage(webDriver);
   }
 
   public ProductsPage search(String text) {
-    WebElement searchTF = webDriver.findElementById("keywords");
     searchTF.sendKeys(text);
     searchTF.submit();
 

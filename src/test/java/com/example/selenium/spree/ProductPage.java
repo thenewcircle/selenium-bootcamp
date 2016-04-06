@@ -3,9 +3,19 @@ package com.example.selenium.spree;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
 
 public class ProductPage extends SpreePage {
 
+  @FindBy(css="#main-image>img")
+  WebElement mainImg;
+
+  @FindBy(name = "quantity")
+  WebElement quantityTF;
+
+  @FindBy(tagName = "button")
+  WebElement addBtn;
+  
   public ProductPage(RemoteWebDriver webDirver, String product) {
     super(webDirver, 
         toUrl(product),
@@ -25,7 +35,6 @@ public class ProductPage extends SpreePage {
   }
   
   public void validateImageSrc(String expected) {
-    WebElement mainImg = webDriver.findElementByCssSelector("#main-image>img");
     String actual = mainImg.getAttribute("src");
     String msg = "No match:\nActual: " + actual + "\nExpected: " + expected;
     Assert.assertTrue(msg, actual.startsWith(expected));
@@ -40,13 +49,11 @@ public class ProductPage extends SpreePage {
   }
 
   public void setQuantity(int count) {
-    WebElement quantityTF = webDriver.findElementByName("quantity");
     quantityTF.clear();
     quantityTF.sendKeys("3");
   }
 
   public CartPage clickAddToCart() {
-    WebElement addBtn = webDriver.findElementByTagName("button");
     addBtn.click();
     
     return new CartPage(webDriver);
