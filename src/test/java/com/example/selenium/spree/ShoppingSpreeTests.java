@@ -71,7 +71,17 @@ public class ShoppingSpreeTests {
 
     webDriver.navigate().refresh();
     homePage.validateTitle();
-}
+  }
+  
+  @Test
+  public void testGetGoogleUrl() {
+    webDriver.get("http://google.com");
+    String actual = webDriver.getCurrentUrl();
+    String expected = "https://www.google.com/?";
+    String msg = "Found: " + actual;
+    System.out.println(msg);
+    Assert.assertTrue(msg, actual.startsWith(expected));
+  }
   
   @After
   public void afterMethod() {
