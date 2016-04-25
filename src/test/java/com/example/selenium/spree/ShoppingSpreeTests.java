@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import ch.qos.logback.classic.Level;
 
@@ -19,9 +19,11 @@ public class ShoppingSpreeTests {
 
   @Before
   public void beforeMethod() throws Exception {
-    webDriver = new FirefoxDriver();
+    System.setProperty("webdriver.chrome.driver", 
+                         "C:\\tools\\selenium\\chromedriver.exe");
+    webDriver = new ChromeDriver();
   }
-
+  
   @Test
   public void testHomePageTitle() {
     webDriver.get("http://spree.newcircle.com");
