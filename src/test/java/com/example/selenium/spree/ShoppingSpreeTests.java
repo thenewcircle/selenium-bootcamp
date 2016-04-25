@@ -46,6 +46,33 @@ public class ShoppingSpreeTests {
     productPage.validateTitle();
   }
   
+  @Test
+  public void testCartPageTitle() {
+    CartPage cartPage = new CartPage(webDriver);
+    cartPage.open();
+    cartPage.validateTitle();
+  }
+  
+  @Test
+  public void testBackAndForth() {
+    CartPage cartPage = new CartPage(webDriver);
+    cartPage.open();
+    cartPage.validateTitle();
+    
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    homePage.validateTitle();
+    
+    webDriver.navigate().back();
+    cartPage.validateTitle();
+    
+    webDriver.navigate().forward();
+    homePage.validateTitle();
+
+    webDriver.navigate().refresh();
+    homePage.validateTitle();
+}
+  
   @After
   public void afterMethod() {
     webDriver.quit();
