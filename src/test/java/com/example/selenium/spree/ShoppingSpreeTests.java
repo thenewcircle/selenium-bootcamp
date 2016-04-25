@@ -34,7 +34,12 @@ public class ShoppingSpreeTests {
   
   @Test
   public void testHomePageTitle() {
-    webDriver.get("http://spree.newcircle.com");
+//    webDriver.get("http://spree.newcircle.com");
+//    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
+
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+
     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 
@@ -45,7 +50,7 @@ public class ShoppingSpreeTests {
 
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
-    List<Object[]> data = new ArrayList();
+    List<Object[]> data = new ArrayList<>();
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
