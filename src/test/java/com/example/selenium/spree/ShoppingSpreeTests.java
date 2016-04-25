@@ -3,13 +3,15 @@ package com.example.selenium.spree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -90,6 +92,39 @@ public class ShoppingSpreeTests implements SeleniumTest {
     String expected = "https://www.google.com/?";
     String msg = "Found: " + actual;
     Assert.assertTrue(msg, actual.startsWith(expected));
+  }
+  
+  @Test
+  public void testDepartmentsCombo() {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    WebElement deptCmb = homePage.getDepartmentCmb();
+
+    String attr = deptCmb.getAttribute("aria-label");
+    Assert.assertEquals("Taxon", attr);
+    
+    String height = deptCmb.getCssValue("height");
+    Assert.assertEquals("26px", height);
+    
+    Point location = deptCmb.getLocation();
+    String msg = "location = "  +location;
+    Assert.assertTrue(msg, location.getX() > 100);
+    Assert.assertTrue(msg, location.getY() < 200);
+
+    Dimension size = deptCmb.getSize();
+    msg = "size = "  + size;
+    Assert.assertTrue(msg, size.getWidth() > 100 && size.getWidth() < 200);
+    Assert.assertTrue(msg, size.getHeight() > 15 && size.getHeight() < 25);
+  
+    String tagName = deptCmb.getTagName();
+    Assert.assertEquals("select", tagName);
+
+    Assert.assertTrue(deptCmb.isDisplayed());
+    Assert.assertFalse(deptCmb.isSelected());
+    Assert.assertTrue(deptCmb.isEnabled());
+
+    String text = deptCmb.getText();
+    Assert.assertEquals("xxxx", text);
   }
   
 //  @After
