@@ -3,12 +3,10 @@ package com.example.selenium.spree;
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ProductPage {
-
-  RemoteWebDriver webDriver;
+public class ProductPage extends SpreePage {
 
   public ProductPage(RemoteWebDriver webDriver) {
-    this.webDriver = webDriver;
+    super(webDriver);
   }
 
   public void open() {
