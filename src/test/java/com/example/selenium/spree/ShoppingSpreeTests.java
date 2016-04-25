@@ -1,27 +1,25 @@
 package com.example.selenium.spree;
 
-import ch.qos.logback.classic.Level;
-import com.example.selenium.LogbackUtils;
-import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import ch.qos.logback.classic.Level;
 
 public class ShoppingSpreeTests {
 
   static {
     LogbackUtils.initLogback(Level.WARN);
-    LogbackUtils.setLevel(DefaultCssErrorHandler.class, Level.ERROR);
   }
 
   private WebDriver webDriver;
 
   @Before
   public void beforeMethod() throws Exception {
-    webDriver = new HtmlUnitDriver();
+    webDriver = new FirefoxDriver();
   }
 
   @Test
