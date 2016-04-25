@@ -36,10 +36,16 @@ public class ShoppingSpreeTests {
   public void testHomePageTitle() {
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
-
     homePage.validateTitle();
   }
 
+  @Test
+  public void testProductPageTitle() {
+    ProductPage productPage = new ProductPage(webDriver);
+    productPage.open();
+    productPage.validateTitle();
+  }
+  
   @After
   public void afterMethod() {
     webDriver.quit();
