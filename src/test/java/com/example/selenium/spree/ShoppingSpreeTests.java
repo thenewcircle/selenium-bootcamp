@@ -104,7 +104,13 @@ public class ShoppingSpreeTests implements SeleniumTest {
     Assert.assertEquals("Taxon", attr);
     
     String height = deptCmb.getCssValue("height");
-    Assert.assertEquals("26px", height);
+    if (homePage.isThisFirefox()) {
+      Assert.assertEquals("18px", height);
+    } else if (homePage.isThisIe()) {
+      Assert.assertEquals("15.79px", height);
+    } else {
+      Assert.assertEquals("17px", height);
+    }
     
     Point location = deptCmb.getLocation();
     String msg = "location = "  +location;
@@ -124,7 +130,11 @@ public class ShoppingSpreeTests implements SeleniumTest {
     Assert.assertTrue(deptCmb.isEnabled());
 
     String text = deptCmb.getText();
-    Assert.assertEquals("xxxx", text);
+    if (homePage.isThisIe()) {
+      Assert.assertEquals("All departments Categories Brand", text);
+    } else {
+      Assert.assertEquals("All departments\nCategories\nBrand", text);
+    }
   }
   
 //  @After
@@ -138,7 +148,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
   
