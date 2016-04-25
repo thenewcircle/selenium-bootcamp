@@ -49,7 +49,7 @@ public class ShoppingSpreeTests {
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
     // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    // data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
     return data;
   }
 }
