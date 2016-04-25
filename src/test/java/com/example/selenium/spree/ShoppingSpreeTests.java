@@ -34,13 +34,10 @@ public class ShoppingSpreeTests {
   
   @Test
   public void testHomePageTitle() {
-//    webDriver.get("http://spree.newcircle.com");
-//    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
-
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
 
-    Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
+    homePage.validateTitle();
   }
 
   @After
