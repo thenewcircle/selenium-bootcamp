@@ -16,8 +16,9 @@ public class CartPage extends SpreePage {
         "Shopping Cart - Spree Demo Site");
   }
 
-  public void open() {
+  public static CartPage open(RemoteWebDriver webDriver) {
     webDriver.navigate().to("http://spree.newcircle.com/cart");
+    return new CartPage(webDriver);
   }
 
   public ProductsPage clickContinueShopping() {

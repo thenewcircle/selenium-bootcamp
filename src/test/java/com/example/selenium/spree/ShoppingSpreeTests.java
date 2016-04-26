@@ -59,8 +59,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testCartPageTitle() {
-    CartPage cartPage = new CartPage(webDriver);
-    cartPage.open();
+    CartPage cartPage = CartPage.open(webDriver);
   }
   
   @Test
@@ -69,8 +68,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
       return;
     }
     
-    CartPage cartPage = new CartPage(webDriver);
-    cartPage.open();
+    CartPage cartPage = CartPage.open(webDriver);
     
     HomePage homePage = HomePage.open(webDriver);
     
