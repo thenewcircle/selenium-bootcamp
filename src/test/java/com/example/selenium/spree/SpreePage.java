@@ -33,9 +33,9 @@ public class SpreePage {
   }
 
   public boolean isMac() {
-    String name = webDriver.getCapabilities().getPlatform().family().name();
+    String name = webDriver.getCapabilities().getPlatform().name();
     System.out.println("Platform is " + name);
-    return "osx".equals(name);
+    return "MAC".equals(name);
   }
 
   public void clearSearch() {
