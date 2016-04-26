@@ -1,5 +1,6 @@
 package com.example.selenium.spree;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -59,5 +60,20 @@ public class SpreePage {
     logo.click();
     
     return new HomePage(webDriver);
+  }
+
+  public void validateCartLink(int quantity, String amount) {
+    WebElement cartLnk = webDriver.findElementByPartialLinkText("CART:");
+    String actual = cartLnk.getText();
+    
+    if (quantity == 0) {
+      String expected = "CART: (EMPTY)";
+      Assert.assertEquals(expected, actual);
+      
+    } else {
+      String expected = "CART: (" + quantity + ") $" + amount;
+      Assert.assertEquals(expected, actual);
+      
+    }
   }
 }

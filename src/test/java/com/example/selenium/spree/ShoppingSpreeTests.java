@@ -42,6 +42,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
   public void beforeMethod() throws Exception {
     webDriver = wdf.create();
     webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    webDriver.get("http://spree.newcircle.com/asdf");
+    webDriver.manage().deleteAllCookies();
   }
   
   @Test
@@ -171,6 +174,30 @@ public class ShoppingSpreeTests implements SeleniumTest {
     wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/"));
     
     // homePage.validateUrl();
+  }
+  
+  @Test
+  public void testShoppingSpree() throws Exception {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+
+    ProductsPage productsPage = homePage.search("Mug");
+
+    ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+    productPage.clickThumbnail(1);
+    productPage.validateImageSrc(
+      "http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
+    productPage.setQuantity(3);
+    productPage.validateCartLink(0, null);
+    
+    CartPage cartPage = productPage.clickAddToCart();
+    cartPage.validateUrl();
+    cartPage.validateCartLink(3, "41.97");
+
+    productsPage = cartPage.clickContinueShopping();
+    productsPage.validateUrl();
   }
   
 //@After
