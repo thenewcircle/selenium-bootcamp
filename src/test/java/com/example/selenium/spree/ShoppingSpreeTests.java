@@ -105,11 +105,20 @@ public class ShoppingSpreeTests implements SeleniumTest {
     
     String height = deptCmb.getCssValue("height");
     if (homePage.isThisFirefox()) {
-      Assert.assertEquals("18px", height);
+      if (homePage.isMac()) {
+        Assert.assertEquals("19.3333px", height);
+      } else {
+        Assert.assertEquals("18px", height);
+      }
     } else if (homePage.isThisIe()) {
       Assert.assertEquals("15.79px", height);
+
     } else {
-      Assert.assertEquals("17px", height);
+      if (homePage.isMac()) {
+        Assert.assertEquals("18px", height);
+      } else {
+        Assert.assertEquals("17px", height);
+      }
     }
     
     Point location = deptCmb.getLocation();
@@ -137,10 +146,27 @@ public class ShoppingSpreeTests implements SeleniumTest {
     }
   }
   
-//  @After
-//  public void afterMethod() {
-//    webDriver.quit();
-//  }
+  @Test
+  public void testSearchSpree() throws Exception {
+    HomePage homePage = new HomePage(webDriver);
+    homePage.open();
+    
+    ProductsPage productsPage = homePage.search("Bag");
+    productsPage.validateUrl();
+    productsPage.validateTitle();
+    productsPage.clearSearch();
+
+    homePage = productsPage.clickLogo();
+    
+    Thread.sleep(10*1000);
+    
+    homePage.validateUrl();
+  }
+  
+//@After
+//public void afterMethod() {
+//  webDriver.quit();
+//}
 
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {

@@ -31,4 +31,33 @@ public class SpreePage {
     return "internet explorer".equals(name) && 
            "6".equals(version);
   }
+
+  public boolean isMac() {
+    String name = webDriver.getCapabilities().getPlatform().family().name();
+    System.out.println("Platform is " + name);
+    return "osx".equals(name);
+  }
+
+  public void clearSearch() {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+  
+    // String text = searchTF.getAttribute("value");
+    // Assert.assertEquals("", text);
+  }
+
+  public ProductsPage search(String text) {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.sendKeys(text);
+    searchTF.submit();
+    
+    return new ProductsPage(webDriver);
+  }
+
+  public HomePage clickLogo() {
+    WebElement logo = webDriver.findElementById("logo");
+    logo.click();
+    
+    return new HomePage(webDriver);
+  }
 }
