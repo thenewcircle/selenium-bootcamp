@@ -43,8 +43,8 @@ public class ShoppingSpreeTests implements SeleniumTest {
     webDriver = wdf.create();
     webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-    webDriver.get("http://spree.newcircle.com/asdf");
-    webDriver.manage().deleteAllCookies();
+//    webDriver.get("http://spree.newcircle.com/asdf");
+//    webDriver.manage().deleteAllCookies();
   }
   
   @Test
