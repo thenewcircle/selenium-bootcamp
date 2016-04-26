@@ -17,11 +17,11 @@ public class HomePage extends SpreePage {
      Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
   }
 
-  public void validateUrl() {
-    String expected = "http://spree.newcircle.com/";
-    String actual = webDriver.getCurrentUrl();
-    Assert.assertEquals(expected, actual);
-  }
+//  public void validateUrl() {
+//    String expected = "http://spree.newcircle.com/";
+//    String actual = webDriver.getCurrentUrl();
+//    Assert.assertEquals(expected, actual);
+//  }
 }
 
 

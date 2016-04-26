@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,6 +15,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ch.qos.logback.classic.Level;
 
@@ -38,6 +41,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Before
   public void beforeMethod() throws Exception {
     webDriver = wdf.create();
+    webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
   }
   
   @Test
@@ -148,6 +152,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testSearchSpree() throws Exception {
+    if (webDriver instanceof SafariDriver) {
+      return;
+    }
+
     HomePage homePage = new HomePage(webDriver);
     homePage.open();
     
@@ -158,9 +166,11 @@ public class ShoppingSpreeTests implements SeleniumTest {
 
     homePage = productsPage.clickLogo();
     
-    Thread.sleep(10*1000);
+    // Thread.sleep(10*1000);
+    WebDriverWait wait = new WebDriverWait(webDriver, 5, 250);
+    wait.until(ExpectedConditions.urlContains("http://spree.newcircle.com/"));
     
-    homePage.validateUrl();
+    // homePage.validateUrl();
   }
   
 //@After
@@ -173,8 +183,14 @@ public class ShoppingSpreeTests implements SeleniumTest {
     List<Object[]> data = new ArrayList<>();
     data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
     data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
-    // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    
+    String OS = System.getProperty("os.name");
+    if (OS.startsWith("Windows")) {
+      data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    } else {
+      data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
+    }
+
     return data;
   }
   
