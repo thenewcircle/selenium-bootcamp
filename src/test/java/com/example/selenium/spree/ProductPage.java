@@ -6,16 +6,21 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ProductPage extends SpreePage {
 
-  public ProductPage(RemoteWebDriver webDriver) {
-    super(webDriver);
+  public ProductPage(RemoteWebDriver webDriver, String name) {
+    super(webDriver,
+        toUrl(name),
+        name + " - Spree Demo Site");
   }
 
-  public void open() {
-    webDriver.get("http://spree.newcircle.com/products/spree-tote");
+  private static String toUrl(String name) {
+    name = name.toLowerCase();
+    name = name.replace(" ", "-").replace(".", "");
+    return "http://spree.newcircle.com/products/" + name;
   }
 
-  public void validateTitle() {
-    Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
+  public static ProductPage open(RemoteWebDriver webDriver, String name) {
+    webDriver.get(toUrl(name));
+    return new ProductPage(webDriver, name);
   }
 
   public void validateImageSrc(String expected) {

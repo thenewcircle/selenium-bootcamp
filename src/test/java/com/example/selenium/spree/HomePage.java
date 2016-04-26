@@ -6,22 +6,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class HomePage extends SpreePage {
 
   public HomePage(RemoteWebDriver webDriver) {
-    super(webDriver);
+    super(webDriver,
+        "http://spree.newcircle.com",
+        "Spree Demo Site");
   }
 
-  public void open() {
+  public static HomePage open(RemoteWebDriver webDriver) {
     webDriver.get("http://spree.newcircle.com");
+    return new HomePage(webDriver);
   }
-
-  public void validateTitle() {
-     Assert.assertEquals("Spree Demo Site", webDriver.getTitle());
-  }
-
-//  public void validateUrl() {
-//    String expected = "http://spree.newcircle.com/";
-//    String actual = webDriver.getCurrentUrl();
-//    Assert.assertEquals(expected, actual);
-//  }
 }
 
 

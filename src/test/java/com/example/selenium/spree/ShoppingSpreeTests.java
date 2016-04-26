@@ -49,23 +49,18 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testHomePageTitle() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
-    homePage.validateTitle();
+    HomePage homePage = HomePage.open(webDriver);
   }
 
   @Test
   public void testProductPageTitle() {
-    ProductPage productPage = new ProductPage(webDriver);
-    productPage.open();
-    productPage.validateTitle();
+    ProductPage productPage = ProductPage.open(webDriver, "Spree Mug");
   }
   
   @Test
   public void testCartPageTitle() {
     CartPage cartPage = new CartPage(webDriver);
     cartPage.open();
-    cartPage.validateTitle();
   }
   
   @Test
@@ -76,20 +71,17 @@ public class ShoppingSpreeTests implements SeleniumTest {
     
     CartPage cartPage = new CartPage(webDriver);
     cartPage.open();
-    cartPage.validateTitle();
     
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
-    homePage.validateTitle();
+    HomePage homePage = HomePage.open(webDriver);
     
     webDriver.navigate().back();
-    cartPage.validateTitle();
+    //cartPage.validateTitle();
     
     webDriver.navigate().forward();
-    homePage.validateTitle();
+    //homePage.validateTitle();
 
     webDriver.navigate().refresh();
-    homePage.validateTitle();
+    //homePage.validateTitle();
   }
   
   @Test
@@ -103,8 +95,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testDepartmentsCombo() {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     WebElement deptCmb = homePage.getDepartmentCmb();
 
     String attr = deptCmb.getAttribute("aria-label");
@@ -159,12 +150,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
       return;
     }
 
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
     
     ProductsPage productsPage = homePage.search("Bag");
-    productsPage.validateUrl();
-    productsPage.validateTitle();
     productsPage.clearSearch();
 
     homePage = productsPage.clickLogo();
@@ -178,8 +166,7 @@ public class ShoppingSpreeTests implements SeleniumTest {
   
   @Test
   public void testShoppingSpree() throws Exception {
-    HomePage homePage = new HomePage(webDriver);
-    homePage.open();
+    HomePage homePage = HomePage.open(webDriver);
 
     ProductsPage productsPage = homePage.search("Mug");
 
@@ -193,11 +180,9 @@ public class ShoppingSpreeTests implements SeleniumTest {
     productPage.validateCartLink(0, null);
     
     CartPage cartPage = productPage.clickAddToCart();
-    cartPage.validateUrl();
     cartPage.validateCartLink(3, "41.97");
 
     productsPage = cartPage.clickContinueShopping();
-    productsPage.validateUrl();
   }
   
 //@After

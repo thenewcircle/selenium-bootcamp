@@ -3,13 +3,29 @@ package com.example.selenium.spree;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SpreePage {
 
   RemoteWebDriver webDriver;
 
-  public SpreePage(RemoteWebDriver webDriver) {
+  public SpreePage(RemoteWebDriver webDriver,
+                   String expectedUrl,
+                   String expectedTitle) {
     this.webDriver = webDriver;
+    
+    PageFactory.initElements(webDriver, this);
+
+//    String actualUrl = webDriver.getCurrentUrl();
+//    String msg = "Found " + actualUrl;
+//    Assert.assertTrue(msg, actualUrl.contains(expectedUrl));
+    WebDriverWait wait = new WebDriverWait(webDriver, 5);
+    wait.until(ExpectedConditions.urlContains(expectedUrl));
+    
+    String actualTitle = webDriver.getTitle();
+    Assert.assertEquals(expectedTitle, actualTitle);
   }
 
   public WebElement getDepartmentCmb() {
