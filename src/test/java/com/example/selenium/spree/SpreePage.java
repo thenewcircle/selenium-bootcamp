@@ -17,4 +17,27 @@ public abstract class SpreePage {
     WebElement deptCmb = webDriver.findElementById("taxon");
     return deptCmb;
   }
+
+  public ProductsPage search(String text) {
+    // Get the search text field
+    WebElement searchTF = webDriver.findElementById("keywords");
+    
+    // search for ...
+    searchTF.sendKeys(text);
+    searchTF.submit();
+    
+    return new ProductsPage(webDriver);
+  }
+
+  public void clearSearch() {
+    WebElement searchTF = webDriver.findElementById("keywords");
+    searchTF.clear();
+  }
+
+  public HomePage clickLogo() {
+    WebElement logo = webDriver.findElementById("logo");
+    logo.click();
+    return new HomePage(webDriver);
+  }
 }
+
