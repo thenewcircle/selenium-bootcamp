@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -16,16 +17,19 @@ import org.openqa.selenium.safari.SafariDriver;
 import ch.qos.logback.classic.Level;
 
 @RunWith(Parameterized.class)
-public class ShoppingSpreeTests {
-
-  static {
-    LogbackUtils.initLogback(Level.WARN);
-  }
-
-  private RemoteWebDriver webDriver;
-  
+public class ShoppingSpreeTests implements SeleniumTest {
+  static { LogbackUtils.initLogback(Level.WARN); }
   private WebDriverFactory wdf;
+  private RemoteWebDriver webDriver;
 
+  @Rule
+  public final ScreenshotRule screenshotRule = 
+    new ScreenshotRule(this, "c:\\tmp\\test-failures");
+  
+  public RemoteWebDriver getWebDriver() {
+    return webDriver;
+  }
+  
   public ShoppingSpreeTests(WebDriverFactory wdf, String name) {
     this.wdf = wdf;
   }
@@ -37,14 +41,18 @@ public class ShoppingSpreeTests {
 
   @Test
   public void testHomePageTitle() {
-    webDriver.get("http://spree.newcircle.com");
-    Assert.assertEquals("Spree Demo Site", 
-                        webDriver.getTitle());
-    
-    Assert.assertEquals("http://spree.newcircle.com/", 
-                        webDriver.getCurrentUrl());
+    HomePage homePage = Pages.openHomePage(webDriver);
+    homePage.validateUrl();
+    homePage.validateTitle();
   }
 
+  @Test
+  public void testCartPageTitle() {
+    CartPage cartPage = Pages.openCartPage(webDriver);
+    cartPage.validateUrl();
+    cartPage.validateTitle();
+  }
+  
   @Test
   public void testGoogle() {
     webDriver.get("http://google.com");
@@ -78,6 +86,8 @@ public class ShoppingSpreeTests {
     webDriver.navigate().refresh();
     Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
     Assert.assertEquals("http://spree.newcircle.com/products/spree-tote", webDriver.getCurrentUrl());
+    
+    Assert.assertTrue(false);;
   }
   
   @Test
@@ -106,10 +116,10 @@ public class ShoppingSpreeTests {
     }
   }
   
-  @After
-  public void afterMethod() {
-    webDriver.quit();
-  }
+//  @After
+//  public void afterMethod() {
+//    webDriver.quit();
+//  }
   
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
