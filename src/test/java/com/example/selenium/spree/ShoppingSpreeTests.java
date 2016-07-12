@@ -3,7 +3,6 @@ package com.example.selenium.spree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
@@ -11,6 +10,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -86,8 +90,6 @@ public class ShoppingSpreeTests implements SeleniumTest {
     webDriver.navigate().refresh();
     Assert.assertEquals("Spree Tote - Spree Demo Site", webDriver.getTitle());
     Assert.assertEquals("http://spree.newcircle.com/products/spree-tote", webDriver.getCurrentUrl());
-    
-    Assert.assertTrue(false);;
   }
   
   @Test
@@ -116,6 +118,80 @@ public class ShoppingSpreeTests implements SeleniumTest {
     }
   }
   
+  
+  
+  @Test
+  public void testDepartmentsCombo() {
+    HomePage homePage = Pages.openHomePage(webDriver);
+    WebElement deptCmb = homePage.getDepartmentCmb();
+
+    //  ... that getAttribute("aria-label") is Taxon.
+    String attrValue = deptCmb.getAttribute("aria-label");
+    Assert.assertEquals("Taxon", attrValue);
+
+    
+    //  ...that getCssValue("height") is 26px.
+    if (webDriver instanceof FirefoxDriver) {
+      String cssValue = deptCmb.getCssValue("height");
+      Assert.assertEquals("20px", cssValue);
+      
+    } else if (webDriver instanceof InternetExplorerDriver) {
+      String cssValue = deptCmb.getCssValue("height");
+      Assert.assertEquals("15.79px", cssValue);
+    } else {
+      
+      String cssValue = deptCmb.getCssValue("height");
+      Assert.assertEquals("17px", cssValue);
+    }
+    
+    
+    //  ...that getLocation().getX() is greater than 100.
+    //  ...that getLocation().getY() is less than 200.
+    Point location = deptCmb.getLocation();
+    String msg = "Found: " + location;
+    Assert.assertTrue(msg, location.x > 100);
+    Assert.assertTrue(msg, location.y < 200);
+    
+    //  ...that getSize().getWidth() is between 100 & 120.
+    //  ...that getSize().getHeight() is between 15 & 25.
+    Dimension size = deptCmb.getSize();
+    msg = "Found: " + size;
+    Assert.assertTrue(msg, size.width > 100 && size.width < 120);
+    Assert.assertTrue(msg, size.height > 15 && size.height < 25);
+
+    //  ...that getTagName() is select.
+    String tag = deptCmb.getTagName();
+    Assert.assertEquals("select", tag);
+    
+    //  ...that isDisplayed() is true.
+    boolean displayed = deptCmb.isDisplayed();
+    Assert.assertTrue(displayed);
+    
+    //  ...that isSelected() is false.
+    boolean selected = deptCmb.isSelected();
+    Assert.assertFalse(selected);
+    
+    //  ...that isEnabled() is true.
+    boolean enabled = deptCmb.isEnabled();
+    Assert.assertTrue(enabled);
+    
+    //  ...that getText() is...
+    String bn = webDriver.getCapabilities().getBrowserName();
+    
+    if ("internet explorer".equals(bn)) {
+      String text = deptCmb.getText();
+      String expected = "All departments Categories Brand";
+      Assert.assertEquals(expected, text);
+      
+    } else {
+      String text = deptCmb.getText();
+      String expected = "All departments\nCategories\nBrand";
+      Assert.assertEquals(expected, text);
+    }
+  }
+  
+  
+
 //  @After
 //  public void afterMethod() {
 //    webDriver.quit();
