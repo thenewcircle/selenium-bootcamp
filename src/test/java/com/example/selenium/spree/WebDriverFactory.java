@@ -4,6 +4,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public interface WebDriverFactory {
 
-  RemoteWebDriver create();
+  RemoteWebDriver create() throws Exception;
 
 }

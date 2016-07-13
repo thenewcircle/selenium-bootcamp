@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Assume;
@@ -17,6 +18,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ch.qos.logback.classic.Level;
 
@@ -41,6 +44,10 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Before
   public void beforeMethod() throws Exception {
     webDriver = wdf.create();
+    webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    webDriver.get("http://spree.newcircle.com");
+    webDriver.manage().deleteAllCookies();
   }
 
   @Test
@@ -199,13 +206,28 @@ public class ShoppingSpreeTests implements SeleniumTest {
     productsPage.clearSearch();    
     
     homePage = productsPage.clickLogo();
-    Thread.sleep(15 * 1000);
-    
     homePage.validateTitle();
-    homePage.validateUrl();
+    // homePage.validateUrl();
   }
   
+  @Test
+  public void testShoppingSpree() throws Exception {
+    HomePage homePage = Pages.openHomePage(webDriver);
+    
+    ProductsPage productsPage = homePage.search("Mug");
 
+    ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+    productPage.validateImageSrc("http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?1420925090");
+    productPage.clickThumbnail(1);
+    productPage.validateImageSrc("http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?1420925091");
+    productPage.setQuantity(3);
+    productPage.validateCartLink(0, null);
+    
+    CartPage cartPage = productPage.clickAddToCart();
+    cartPage.validateCartLink(3, "41.97");
+    productsPage = cartPage.clickContinueShopping();
+  }
+  
 //  @After
 //  public void afterMethod() {
 //    webDriver.quit();
@@ -214,10 +236,11 @@ public class ShoppingSpreeTests implements SeleniumTest {
   @Parameterized.Parameters(name = "{1}")
   public static Iterable<Object[]> createTestParameters() {
     List<Object[]> data = new ArrayList<>();
-    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
-    data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
-    // data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
-    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+//    data.add(new Object[]{ new FirefoxDriverFactory(),          "Firefox" });
+//    data.add(new Object[]{ new ChromeDriverFactory(),           "Chrome" });
+//     data.add(new Object[]{ new SafariDriverFactory(),           "Safari" });
+//    data.add(new Object[]{ new InternetExplorerDriverFactory(), "IE" });
+    data.add(new Object[]{ new GridDriverFactory(), "Grid" });
     return data;
   }
 }

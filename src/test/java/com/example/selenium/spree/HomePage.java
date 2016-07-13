@@ -3,14 +3,15 @@ package com.example.selenium.spree;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends SpreePage {
 
   // private final RemoteWebDriver webDriver;
 
   public HomePage(RemoteWebDriver webDriver) {
-    super(webDriver);
-    // this.webDriver = webDriver;
+    super(webDriver, ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
   }
 
   public void validateTitle() {
