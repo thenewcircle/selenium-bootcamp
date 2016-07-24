@@ -1,19 +1,16 @@
 package com.example.selenium.spree;
 
-/*
 import org.testng.Assert;
 import org.testng.annotations.*;
-*/
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
 
-public class ShoppingSpreeTests_TestNG {
+public class ShoppingSpreeTests {
 
     static {
         LogbackUtils.initLogback(Level.WARN);
     }
 
-/*
     @BeforeClass
     public void beforeClass() throws Exception {
         System.out.println("Before class");
@@ -45,5 +42,4 @@ public class ShoppingSpreeTests_TestNG {
     public void afterClass() {
         System.out.println("After class");
     }
-*/
 }
