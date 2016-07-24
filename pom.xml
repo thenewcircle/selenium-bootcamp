@@ -35,12 +35,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit</groupId>
-					<artifactId>junit-legacy</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
  -->
 <!-- 
