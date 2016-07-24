@@ -15,41 +15,41 @@ import ch.qos.logback.classic.Level;
 
 public class ShoppingSpreeTests_JUnit {
 
-  static {
-    LogbackUtils.initLogback(Level.WARN);
-  }
+    static {
+        LogbackUtils.initLogback(Level.WARN);
+    }
 
 /*
-  @BeforeClass
-  public static void beforeClass() throws Exception {
-    System.out.println("Before class");
-  }
-  
-  @Before
-  public void beforeMethod() throws Exception {
-    System.out.println("Before method");
-  }
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+        System.out.println("Before class");
+    }
 
-  @Test
-  public void testA() {
-    System.out.println("Test A");
-    Assert.assertEquals(1, 2);
-  }
+    @Before
+    public void beforeMethod() throws Exception {
+        System.out.println("Before method");
+    }
 
-  @Test
-  public void testB() {
-    System.out.println("Test B");
-    Assert.assertEquals(1, 1);
-  }
+    @Test
+    public void testA() {
+        System.out.println("Test A");
+        Assert.assertEquals(1, 2);
+    }
 
-  @After
-  public void afterMethod() {
-    System.out.println("After method\n");
-  }
+    @Test
+    public void testB() {
+        System.out.println("Test B");
+        Assert.assertEquals(1, 1);
+    }
 
-  @AfterClass
-  public static void afterClass() {
-    System.out.println("After class");
-  }
+    @After
+    public void afterMethod() {
+        System.out.println("After method\n");
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("After class");
+    }
 */
 }

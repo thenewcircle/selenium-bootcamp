@@ -4,47 +4,46 @@ package com.example.selenium.spree;
 import org.testng.Assert;
 import org.testng.annotations.*;
 */
-import com.example.selenium.spree.support.LogbackUtils;
-
 import ch.qos.logback.classic.Level;
+import com.example.selenium.spree.support.LogbackUtils;
 
 public class ShoppingSpreeTests_TestNG {
 
-  static {
-    LogbackUtils.initLogback(Level.WARN);
-  }
-  
+    static {
+        LogbackUtils.initLogback(Level.WARN);
+    }
+
 /*
-  @BeforeClass
-  public void beforeClass() throws Exception {
-    System.out.println("Before class");
-  }
-  
-  @BeforeMethod
-  public void beforeMethod() throws Exception {
-    System.out.println("Before method");
-  }
+    @BeforeClass
+    public void beforeClass() throws Exception {
+        System.out.println("Before class");
+    }
 
-  @Test
-  public void testA() {
-    System.out.println("Test A");
-    Assert.assertEquals(1, 2);
-  }
+    @BeforeMethod
+    public void beforeMethod() throws Exception {
+        System.out.println("Before method");
+    }
 
-  @Test
-  public void testB() {
-    System.out.println("Test B");
-    Assert.assertEquals(1, 1);
-  }
+    @Test
+    public void testA() {
+        System.out.println("Test A");
+        Assert.assertEquals(1, 2);
+    }
 
-  @AfterMethod
-  public void afterMethod() {
-    System.out.println("After method\n");
-  }
+    @Test
+    public void testB() {
+        System.out.println("Test B");
+        Assert.assertEquals(1, 1);
+    }
 
-  @AfterClass
-  public void afterClass() {
-    System.out.println("After class");
-  }
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("After method\n");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        System.out.println("After class");
+    }
 */
 }
