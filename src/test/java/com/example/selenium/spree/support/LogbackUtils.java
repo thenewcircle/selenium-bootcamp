@@ -1,4 +1,4 @@
-package com.example.selenium.spree;
+package com.example.selenium.spree.support;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
