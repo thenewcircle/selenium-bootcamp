@@ -79,6 +79,13 @@ public class ShoppingSpreeTests implements ITest {
         Assert.assertTrue(url.startsWith("https://www.google.com"), "Found " + url);
     }
 
+    @Test
+    public void testNoComments() {
+        webDriver.get("http://www.example.com");
+        String source = webDriver.getPageSource();
+        Assert.assertFalse(source.contains("<!--"), "Found " + source);
+    }
+
     @AfterMethod
     public void afterMethod() {
         webDriver.quit();
