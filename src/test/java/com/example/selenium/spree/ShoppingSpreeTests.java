@@ -2,6 +2,8 @@ package com.example.selenium.spree;
 
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -9,11 +11,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.ITest;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +92,27 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @AfterMethod
-    public void afterMethod() {
+    public void afterMethod(ITestResult results) throws IOException {
+        try {
+            if (results.isSuccess() == false) {
+                File screenShotDir = new File("\\tmp\\test-failures");
+                if (screenShotDir.mkdirs() == false) {
+                    throw new IOException("Cannot create directory: " + screenShotDir.getAbsolutePath());
+                }
+
+                File tempFile = webDriver.getScreenshotAs(OutputType.FILE);
+
+                String fileName = String.format("%s.%s [%s].png",
+                        getClass().getSimpleName(),
+                        results.getMethod().getMethodName(),
+                        driverType);
+
+                FileUtils.copyFile(tempFile, new File(screenShotDir, fileName));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         webDriver.quit();
     }
 
@@ -95,9 +120,9 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        // data.add(new ShoppingSpreeTests(DriverType.IE));
+        data.add(new ShoppingSpreeTests(DriverType.IE));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
-        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        data.add(new ShoppingSpreeTests(DriverType.Firefox));
         return data.toArray();
     }
 }
