@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -149,6 +150,12 @@ public class ShoppingSpreeTests implements ITest {
     public void testProductPage() {
         ProductPage prodPage = Pages.openProductPage(webDriver);
         prodPage.validateTitle();
+    }
+
+    @Test
+    public void testDepartmentsCombo() {
+        HomePage homePage = Pages.openHomePage(webDriver);
+        WebElement deptCmb = homePage.getDepartmentCmb();
     }
 
     @Test(dependsOnMethods = "testCartPageTitle")
