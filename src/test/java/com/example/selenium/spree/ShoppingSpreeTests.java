@@ -169,6 +169,16 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testRefresh() throws Exception {
+        webDriver.navigate().to("http://spree.newcircle.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+        Thread.sleep(1000);
+
+        webDriver.navigate().refresh();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+    }
+
+    @Test
     public void testGetGoogleUrl() {
         webDriver.get("http://google.com");
 
