@@ -17,4 +17,9 @@ public class CartPage extends SpreePage {
         String title = webDriver.getTitle();
         Assert.assertEquals(title, "Shopping Cart - Spree Demo Site");
     }
+
+    public ProductsPage clickContinueShopping() {
+        webDriver.findElementByLinkText("Continue Shopping").click();
+        return new ProductsPage(webDriver);
+    }
 }

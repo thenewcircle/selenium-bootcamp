@@ -261,6 +261,41 @@ public class ShoppingSpreeTests implements ITest {
         Assert.assertFalse(source.contains("<!--"), "Found " + source);
     }
 
+    @Test
+    public void testShoppingSpree() throws Exception {
+        HomePage homePage = Pages.openHomePage(webDriver);
+
+        ProductsPage productsPage = homePage.search("Mug");
+
+        // Rule #1: Use by Link Text to click on the "Spree Mug" link
+        ProductPage productPage = productsPage.clickProductLnk("Spree Mug");
+
+        // Rule #2: Use by CSS Selector to get the main image
+        productPage.validateImageSrc("http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?");
+
+        // Rule #3: Use by XPath to click on the second thumbnail (0-based math)
+        productPage.clickThumbnail(1);
+
+        productPage.validateImageSrc("http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
+
+        // Rule #4: Use by Name to get quantity TF
+        productPage.setQuantity(3);
+
+        // Rule #5: Use Partial Link Text to get the cart link.
+        productPage.validateCartLink(0, null);
+
+        // Rule #6: Use by Tag Name to click on the Add-To-Cart "button"
+        CartPage cartPage = productPage.clickAddToCart();
+
+        // cartPage.validateUrl();
+        cartPage.validateCartLink(3, "41.97");
+
+        // Rule #7: Use any strategy to click on "Continue Shopping"
+        productsPage = cartPage.clickContinueShopping();
+
+        // productsPage.validateUrl();
+    }
+
     @AfterMethod
     public void afterMethod(ITestResult results) throws IOException {
         try {
