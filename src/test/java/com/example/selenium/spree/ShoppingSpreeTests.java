@@ -194,6 +194,23 @@ public class ShoppingSpreeTests implements ITest {
         }
     }
 
+    @Test
+    public void testSearchSpree() {
+        HomePage homePage = Pages.openHomePage(webDriver);
+
+        ProductsPage productsPage = homePage.search("Bag");
+        productsPage.validateUrl();
+        productsPage.validateTitle();
+
+        productsPage.validateSearchText("Bag");
+        productsPage.clearSearch();
+        productsPage.validateSearchText("");
+
+        homePage = productsPage.clickLogo();
+        homePage.validateUrl();
+        homePage.validateTitle();
+    }
+
     @Test(dependsOnMethods = "testCartPageTitle")
     public void testBackAndForth() throws Exception {
         webDriver.get("http://spree.newcircle.com/products/spree-bag");
