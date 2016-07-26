@@ -228,8 +228,6 @@ public class ShoppingSpreeTests implements ITest {
         webDriver.navigate().forward();
         Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
         Thread.sleep(1000);
-
-        Assert.assertTrue(false);
     }
 
     @Test(dependsOnMethods = "testBackAndForth")
@@ -287,9 +285,9 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        data.add(new ShoppingSpreeTests(DriverType.IE));
+        // data.add(new ShoppingSpreeTests(DriverType.IE));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
-        data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
         return data.toArray();
     }
 }

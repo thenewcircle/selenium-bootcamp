@@ -2,14 +2,19 @@ package com.example.selenium.spree;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class SpreePage {
 
     RemoteWebDriver webDriver;
 
-    public SpreePage(RemoteWebDriver webDriver) {
+    public SpreePage(RemoteWebDriver webDriver, ExpectedCondition condition) {
         this.webDriver = webDriver;
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 5);
+        wait.until(condition);
     }
 
     public WebElement getDepartmentCmb() {
