@@ -142,6 +142,14 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testCartPageTitle() {
+        webDriver.navigate().to("http://spree.newcircle.com/cart");
+
+        String title = webDriver.getTitle();
+        Assert.assertEquals(title, "Shopping Cart - Spree Demo Site");
+    }
+
+    @Test
     public void testGetGoogleUrl() {
         webDriver.get("http://google.com");
 
@@ -186,9 +194,9 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        data.add(new ShoppingSpreeTests(DriverType.IE));
+        // data.add(new ShoppingSpreeTests(DriverType.IE));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
-        data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
         return data.toArray();
     }
 }
