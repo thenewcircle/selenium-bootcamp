@@ -3,11 +3,13 @@ package com.example.selenium.spree;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
-public class ProductPage {
-    private RemoteWebDriver webDriver;
+public class ProductPage extends SpreePage {
+
+    // private RemoteWebDriver webDriver;
 
     public ProductPage(RemoteWebDriver webDriver) {
-        this.webDriver = webDriver;
+        // this.webDriver = webDriver;
+        super(webDriver);
     }
 
     public void validateTitle() {
