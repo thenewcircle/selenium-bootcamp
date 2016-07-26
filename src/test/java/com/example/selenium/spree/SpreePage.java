@@ -56,14 +56,14 @@ public class SpreePage {
     }
 
     public void validateCartLink(int quantity, String amount) {
-        WebElement cartLnk = webDriver.findElementByPartialLinkText("Cart: ");
+        WebElement cartLnk = webDriver.findElementByPartialLinkText("CART: ");
         String text = cartLnk.getText();
 
         if (quantity == 0) {
-            Assert.assertEquals(text, "Cart: (Empty)");
+            Assert.assertEquals(text, "CART: (EMPTY)");
 
         } else {
-            String actual = String.format("Cart: (%s) $%s", quantity, amount);
+            String actual = String.format("CART: (%S) $%s", quantity, amount);
             Assert.assertEquals(text, actual);
         }
 

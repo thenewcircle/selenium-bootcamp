@@ -19,7 +19,7 @@ public class CartPage extends SpreePage {
     }
 
     public ProductsPage clickContinueShopping() {
-        webDriver.findElementByLinkText("Continue Shopping").click();
+        webDriver.findElementByLinkText("Continue shopping").click();
         return new ProductsPage(webDriver);
     }
 }

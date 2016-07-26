@@ -11,7 +11,8 @@ public class ProductPage extends SpreePage {
 
     public ProductPage(RemoteWebDriver webDriver) {
         // this.webDriver = webDriver;
-        super(webDriver, ExpectedConditions.urlToBe("http://spree.newcircle.com/products/spree-tote"));
+        super(webDriver, ExpectedConditions.urlContains("http://spree.newcircle.com/products/"));
+        // super(webDriver, ExpectedConditions.urlContains("http://spree.newcircle.com/products/"+product));
     }
 
     public void validateTitle() {
@@ -22,10 +23,11 @@ public class ProductPage extends SpreePage {
     public void validateImageSrc(String expectedUrl) {
         WebElement mainImg = webDriver.findElementByCssSelector("#main-image>img");
         String actualUrl = mainImg.getAttribute("src");
-        Assert.assertEquals(actualUrl, expectedUrl);
+        Assert.assertTrue(actualUrl.startsWith(expectedUrl), "Found " + actualUrl);
     }
 
     public void clickThumbnail(int i) {
+        i = i + 1;
         String path = ".//*[@id='product-thumbnails']/li[" + i + "]/a/img";
         WebElement imgThmb = webDriver.findElementByXPath(path);
         imgThmb.click();
@@ -33,6 +35,7 @@ public class ProductPage extends SpreePage {
 
     public void setQuantity(int q) {
         WebElement quantityTF = webDriver.findElementByName("quantity");
+        quantityTF.clear();
         quantityTF.sendKeys(""+q);
     }
 

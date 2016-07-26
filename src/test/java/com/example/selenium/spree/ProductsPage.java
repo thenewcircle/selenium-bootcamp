@@ -8,7 +8,7 @@ import org.testng.Assert;
 public class ProductsPage extends SpreePage {
 
     public ProductsPage(RemoteWebDriver webDriver) {
-        super(webDriver, ExpectedConditions.urlToBe("http://spree.newcircle.com/products?utf8=%E2%9C%93&taxon=&keywords=Bag"));
+        super(webDriver, ExpectedConditions.urlContains("http://spree.newcircle.com/products"));
     }
 
     public void validateUrl() {

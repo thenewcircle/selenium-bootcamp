@@ -276,6 +276,7 @@ public class ShoppingSpreeTests implements ITest {
         // Rule #3: Use by XPath to click on the second thumbnail (0-based math)
         productPage.clickThumbnail(1);
 
+                                   // http://spree.newcircle.com/spree/products/45/product/spree_mug.jpeg?1420925090
         productPage.validateImageSrc("http://spree.newcircle.com/spree/products/46/product/spree_mug_back.jpeg?");
 
         // Rule #4: Use by Name to get quantity TF
@@ -323,9 +324,9 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        // data.add(new ShoppingSpreeTests(DriverType.IE));
+        data.add(new ShoppingSpreeTests(DriverType.IE));
+        data.add(new ShoppingSpreeTests(DriverType.Firefox));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
-        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
         return data.toArray();
     }
 }
