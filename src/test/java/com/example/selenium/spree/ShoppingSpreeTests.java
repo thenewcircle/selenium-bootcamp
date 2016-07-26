@@ -141,10 +141,8 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testCartPageTitle() {
-        webDriver.navigate().to("http://spree.newcircle.com/cart");
-
-        String title = webDriver.getTitle();
-        Assert.assertEquals(title, "Shopping Cart - Spree Demo Site");
+        CartPage cartPage = Pages.openCartPage(webDriver);
+        cartPage.validateTitle();
     }
 
     @Test(dependsOnMethods = "testCartPageTitle")

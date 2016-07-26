@@ -8,4 +8,9 @@ public class Pages {
         webDriver.get("http://spree.newcircle.com");
         return new HomePage(webDriver);
     }
+
+    public static CartPage openCartPage(RemoteWebDriver webDriver) {
+        webDriver.navigate().to("http://spree.newcircle.com/cart");
+        return new CartPage(webDriver);
+    }
 }
