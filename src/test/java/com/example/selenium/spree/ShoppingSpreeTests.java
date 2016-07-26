@@ -3,10 +3,7 @@ package com.example.selenium.spree;
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -15,6 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.ITest;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Factory;
@@ -154,8 +152,46 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testDepartmentsCombo() {
+        if (DriverType.Edge == driverType) {
+            throw new SkipException("Cannot test on Edge");
+        }
+
         HomePage homePage = Pages.openHomePage(webDriver);
         WebElement deptCmb = homePage.getDepartmentCmb();
+
+        String attr = deptCmb.getAttribute("aria-label");
+        Assert.assertEquals(attr, "Taxon");
+
+        String color = deptCmb.getCssValue("background-color");
+        Assert.assertEquals(color, "rgba(255, 255, 255, 1)");
+
+        Point location = deptCmb.getLocation();
+        Assert.assertTrue(location.x > 100, "x > 100 " + location);
+        Assert.assertTrue(location.y < 200, "y < 200 " + location);
+
+        Dimension size = deptCmb.getSize();
+        Assert.assertTrue(size.width > 100 && size.width < 200, "width 100-200 " + size);
+        Assert.assertTrue(size.height > 15 && size.height < 25, "height 15-25" + size);
+
+        String tagName = deptCmb.getTagName();
+        Assert.assertEquals(tagName, "select");
+
+        boolean displayed = deptCmb.isDisplayed();
+        Assert.assertTrue(displayed);
+
+        boolean selected = deptCmb.isSelected();
+        Assert.assertFalse(selected);
+
+        boolean enabled = deptCmb.isEnabled();
+        Assert.assertTrue(enabled);
+
+        if (DriverType.IE == driverType) {
+            String text = deptCmb.getText();
+            Assert.assertEquals(text, "All departments Categories Brand");
+        } else {
+            String text = deptCmb.getText();
+            Assert.assertEquals(text, "All departments\nCategories\nBrand");
+        }
     }
 
     @Test(dependsOnMethods = "testCartPageTitle")
@@ -234,9 +270,9 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        // data.add(new ShoppingSpreeTests(DriverType.IE));
+        data.add(new ShoppingSpreeTests(DriverType.IE));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
-        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        data.add(new ShoppingSpreeTests(DriverType.Firefox));
         return data.toArray();
     }
 }
