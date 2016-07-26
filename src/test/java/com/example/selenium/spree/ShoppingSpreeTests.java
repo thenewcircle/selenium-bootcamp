@@ -135,10 +135,8 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testHomePage() {
-        webDriver.get("http://spree.newcircle.com");
-
-        String title = webDriver.getTitle();
-        Assert.assertEquals(title, "Spree Demo Site");
+        HomePage homePage = Pages.openHomePage(webDriver);
+        homePage.validateTitle();
     }
 
     @Test
