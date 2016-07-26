@@ -13,4 +13,9 @@ public class Pages {
         webDriver.navigate().to("http://spree.newcircle.com/cart");
         return new CartPage(webDriver);
     }
+
+    public static ProductPage openProductPage(RemoteWebDriver webDriver) {
+        webDriver.get("http://spree.newcircle.com/products/spree-tote");
+        return new ProductPage(webDriver);
+    }
 }
