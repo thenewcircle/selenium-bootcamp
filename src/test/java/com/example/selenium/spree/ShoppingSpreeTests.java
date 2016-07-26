@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ShoppingSpreeTests implements ITest {
 
@@ -64,6 +65,8 @@ public class ShoppingSpreeTests implements ITest {
         }
 
         testName = aMethod.getName() + " [" + driverType + "]";
+        // 5 second buffer
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test
