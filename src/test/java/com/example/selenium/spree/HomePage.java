@@ -10,7 +10,7 @@ public class HomePage extends SpreePage {
 
     public HomePage(RemoteWebDriver webDriver) {
         // this.webDriver = webDriver;
-        super(webDriver, ExpectedConditions.urlToBe("http://spree.newcircle.com/xxx"));
+        super(webDriver, ExpectedConditions.urlToBe("http://spree.newcircle.com/"));
     }
 
     public void validateTitle() {

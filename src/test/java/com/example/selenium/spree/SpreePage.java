@@ -2,11 +2,16 @@ package com.example.selenium.spree;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class SpreePage {
+
+    @FindBy(id = "keywords")
+    WebElement searchTF;
 
     RemoteWebDriver webDriver;
 
@@ -15,29 +20,32 @@ public class SpreePage {
 
         WebDriverWait wait = new WebDriverWait(webDriver, 5);
         wait.until(condition);
+
+        PageFactory.initElements(webDriver, this);
     }
 
     public WebElement getDepartmentCmb() {
         return webDriver.findElementById("taxon");
     }
 
-    public WebElement getSearchTF() {
-        return webDriver.findElementById("keywords");
-    }
+//    public WebElement getSearchTF() {
+//        return webDriver.findElement(By.id("keywords"));
+//        // return webDriver.findElementById("keywords");
+//    }
 
     public ProductsPage search(String keywords) {
-        getSearchTF().sendKeys(keywords);
-        getSearchTF().submit();
+        searchTF.sendKeys(keywords);
+        searchTF.submit();
         return new ProductsPage(webDriver);
     }
 
     public void validateSearchText(String expected) {
-        String actual = getSearchTF().getAttribute("value");
+        String actual = searchTF.getAttribute("value");
         Assert.assertEquals(actual, expected);
     }
 
     public void clearSearch() {
-        getSearchTF().clear();
+        searchTF.clear();
     }
 
     public HomePage clickLogo() {
