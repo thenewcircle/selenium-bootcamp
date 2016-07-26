@@ -3,7 +3,9 @@ package com.example.selenium.spree;
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -66,6 +68,72 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testCapabilities() {
+
+        Capabilities capabilities = webDriver.getCapabilities();
+
+        String name = capabilities.getBrowserName();
+        if (webDriver instanceof ChromeDriver) {
+            Assert.assertEquals(name, "chrome");
+
+        } else if (webDriver instanceof InternetExplorerDriver) {
+            Assert.assertEquals(name, "internet explorer");
+
+        } else if (webDriver instanceof FirefoxDriver) {
+            Assert.assertEquals(name, "firefox");
+
+        } else {
+            throw new UnsupportedOperationException("The browser is not supported: " + name);
+        }
+
+
+        if ("chrome".equals(name)) {
+            String version = capabilities.getVersion();
+            Assert.assertEquals(version, "51.0.2704.103");
+
+        } else if ("internet explorer".equals(name)) {
+            String version = capabilities.getVersion();
+            Assert.assertEquals(version, "11");
+
+        } else if ("firefox".equals(name)) {
+            String version = capabilities.getVersion();
+            Assert.assertEquals(version, "47.0.1");
+
+        } else {
+            throw new UnsupportedOperationException("The browser is not supported: " + name);
+        }
+
+
+        if (DriverType.Chrome == driverType) {
+            Platform platform = capabilities.getPlatform();
+            Assert.assertEquals(platform.name(), "XP");
+            Assert.assertEquals(platform.family().name(), "WINDOWS");
+            Assert.assertEquals(platform.getMajorVersion(), 10);
+            Assert.assertEquals(platform.getMinorVersion(), 0);
+
+        } else if (DriverType.IE == driverType){
+            Platform platform = capabilities.getPlatform();
+            Assert.assertEquals(platform.name(), "WINDOWS");
+            Assert.assertEquals(platform.family().name(), "ANY");
+            Assert.assertEquals(platform.getMajorVersion(), 10);
+            Assert.assertEquals(platform.getMinorVersion(), 0);
+
+        } else if (DriverType.Firefox == driverType){
+            Platform platform = capabilities.getPlatform();
+            Assert.assertEquals(platform.name(), "WINDOWS");
+            Assert.assertEquals(platform.family().name(), "ANY");
+            Assert.assertEquals(platform.getMajorVersion(), 10);
+            Assert.assertEquals(platform.getMinorVersion(), 0);
+
+        } else {
+            throw new UnsupportedOperationException("The browser is not supported: " + name);
+        }
+
+        boolean enabled = capabilities.isJavascriptEnabled();
+        Assert.assertTrue(enabled);
+    }
+
+    @Test
     public void testHomePage() {
         webDriver.get("http://spree.newcircle.com");
 
@@ -96,9 +164,7 @@ public class ShoppingSpreeTests implements ITest {
         try {
             if (results.isSuccess() == false) {
                 File screenShotDir = new File("\\tmp\\test-failures");
-                if (screenShotDir.mkdirs() == false) {
-                    throw new IOException("Cannot create directory: " + screenShotDir.getAbsolutePath());
-                }
+                screenShotDir.mkdirs();
 
                 File tempFile = webDriver.getScreenshotAs(OutputType.FILE);
 
