@@ -195,7 +195,7 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
-    public void testSearchSpree() {
+    public void testSearchSpree() throws InterruptedException {
         HomePage homePage = Pages.openHomePage(webDriver);
 
         ProductsPage productsPage = homePage.search("Bag");
