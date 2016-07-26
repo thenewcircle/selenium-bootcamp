@@ -149,7 +149,7 @@ public class ShoppingSpreeTests implements ITest {
         Assert.assertEquals(title, "Shopping Cart - Spree Demo Site");
     }
 
-    @Test
+    @Test(dependsOnMethods = "testCartPageTitle")
     public void testBackAndForth() throws Exception {
         webDriver.get("http://spree.newcircle.com/products/spree-bag");
         Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
@@ -166,9 +166,11 @@ public class ShoppingSpreeTests implements ITest {
         webDriver.navigate().forward();
         Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
         Thread.sleep(1000);
+
+        Assert.assertTrue(false);
     }
 
-    @Test
+    @Test(dependsOnMethods = "testBackAndForth")
     public void testRefresh() throws Exception {
         webDriver.navigate().to("http://spree.newcircle.com/products/spree-bag");
         Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
