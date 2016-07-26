@@ -150,6 +150,25 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testBackAndForth() throws Exception {
+        webDriver.get("http://spree.newcircle.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+        Thread.sleep(1000);
+
+        webDriver.navigate().to("http://spree.newcircle.com/products/spree-tote");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
+        Thread.sleep(1000);
+
+        webDriver.navigate().back();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+        Thread.sleep(1000);
+
+        webDriver.navigate().forward();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
+        Thread.sleep(1000);
+    }
+
+    @Test
     public void testGetGoogleUrl() {
         webDriver.get("http://google.com");
 
