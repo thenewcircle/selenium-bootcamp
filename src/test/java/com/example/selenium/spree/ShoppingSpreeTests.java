@@ -154,6 +154,16 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void isSecure() {
+        webDriver.get("http://google.com");
+        Assert.assertEquals(webDriver.getTitle(), "Google");
+
+        String url = webDriver.getCurrentUrl();
+        Assert.assertTrue(url.startsWith("https://"));
+    }
+
+
+    @Test
     public void testDepartmentsCombo() {
         if (DriverType.Edge == driverType) {
             throw new SkipException("Cannot test on Edge");
@@ -328,5 +338,42 @@ public class ShoppingSpreeTests implements ITest {
         data.add(new ShoppingSpreeTests(DriverType.Firefox));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
         return data.toArray();
+    }
+
+    @Test
+    public void testRecording() {
+        FirefoxDriver wd;
+        wd = new FirefoxDriver();
+        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd.get("http://spree.newcircle.com/");
+        wd.findElement(By.id("keywords")).click();
+        wd.findElement(By.id("keywords")).clear();
+        wd.findElement(By.id("keywords")).sendKeys("Mug");
+        wd.findElement(By.xpath("//li[@id='search-bar']/form/input[2]")).click();
+        wd.findElement(By.linkText("Spree Mug")).click();
+        wd.findElement(By.xpath("//ul[@id='product-thumbnails']/li[2]/a/img")).click();
+        if (!(wd.findElements(By.xpath("//div[@id='main-image']/img")).size() != 0)) {
+            System.out.println("verifyElementPresent failed");
+        }
+        if (!(wd.findElements(By.xpath("//div[@id='main-image']/img")).size() != 0)) {
+            System.out.println("verifyElementPresent failed");
+        }
+        wd.findElement(By.id("quantity")).click();
+        wd.findElement(By.id("quantity")).clear();
+        wd.findElement(By.id("quantity")).sendKeys("3");
+        wd.findElement(By.id("add-to-cart-button")).click();
+        if (!wd.findElement(By.tagName("html")).getText().contains("$41.97")) {
+            System.out.println("verifyTextPresent failed");
+        }
+        wd.quit();
+    }
+
+    public static boolean isAlertPresent(FirefoxDriver wd) {
+        try {
+            wd.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
     }
 }
