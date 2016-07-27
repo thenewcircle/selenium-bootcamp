@@ -334,8 +334,8 @@ public class ShoppingSpreeTests implements ITest {
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
-        data.add(new ShoppingSpreeTests(DriverType.IE));
-        data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        // data.add(new ShoppingSpreeTests(DriverType.IE));
+        // data.add(new ShoppingSpreeTests(DriverType.Firefox));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
         return data.toArray();
     }
