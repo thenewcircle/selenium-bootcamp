@@ -1,7 +1,8 @@
-from enum import Enum
-from selenium import webdriver
 import os
 import unittest
+from enum import Enum
+from selenium import webdriver
+from com.example.selenium.spree.Pages import Pages
 
 
 class DriverType(Enum):
@@ -114,9 +115,8 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.assertTrue(url.startswith("https://www.google.com/?"), msg)
 
     def testHomePage(self):
-        self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
-        title = self.webDriver.title
-        self.assertEquals("Spree Demo Site", title)
+        homePage = Pages.openHomePage(self)
+        homePage.validateTitle()
         
     def testA(self):
         self.assertTrue(True)

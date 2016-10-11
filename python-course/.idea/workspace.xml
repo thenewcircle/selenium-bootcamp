@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043d3776-ef6d-4ce2-9804-93fe728cfc1c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/jacobp.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../java-course/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../java-course/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../java-course/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../java-course/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../java-course/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" afterPath="$PROJECT_DIR$/../java-course/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python-course.iml" afterPath="$PROJECT_DIR$/.idea/python-course.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
     </list>
@@ -31,7 +27,7 @@
     <SUITE FILE_PATH="coverage/python-course$Unittest_testHomePage.coverage" NAME="Unittest testHomePage Coverage Results" MODIFIED="1476173517804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testB.coverage" NAME="Unittest ShoppingSpreeTests.testB Coverage Results" MODIFIED="1476176630056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittests_in_ShoppingSpreeTests__1_.coverage" NAME="Unittests in ShoppingSpreeTests (1) Coverage Results" MODIFIED="1476046784635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
-    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testHomePage.coverage" NAME="Unittest ShoppingSpreeTests.testHomePage Coverage Results" MODIFIED="1476171632694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
+    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testHomePage.coverage" NAME="Unittest ShoppingSpreeTests.testHomePage Coverage Results" MODIFIED="1476184340325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testNoComments.coverage" NAME="Unittest ShoppingSpreeTests.testNoComments Coverage Results" MODIFIED="1476176189438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testCapabilities.coverage" NAME="Unittest ShoppingSpreeTests.testCapabilities Coverage Results" MODIFIED="1476178738813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testBackAndForth.coverage" NAME="Unittest ShoppingSpreeTests.testBackAndForth Coverage Results" MODIFIED="1476179892930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
@@ -48,11 +44,31 @@
       <file leaf-file-name="ShoppingSpreeTests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="171">
+              <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pages.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/Pages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,6 +89,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
+        <option value="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" />
+        <option value="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" />
       </list>
     </option>
   </component>
@@ -99,7 +117,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -112,39 +130,109 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="D:\tools\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../classes/9999-Selenium Bootcamp - Jon/selenium-polyglot/selenium-python" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittest ShoppingSpreeTests.testRefresh">
-    <configuration default="false" name="Unittest ShoppingSpreeTests.testA" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/example/selenium/spree" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python-course" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
-      <option name="CLASS_NAME" value="ShoppingSpreeTests" />
-      <option name="METHOD_NAME" value="testA" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest ShoppingSpreeTests.testHomePage">
     <configuration default="false" name="Unittest ShoppingSpreeTests.testCapabilities" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,6 +316,29 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
       <option name="CLASS_NAME" value="ShoppingSpreeTests" />
       <option name="METHOD_NAME" value="testRefresh" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest ShoppingSpreeTests.testHomePage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/example/selenium/spree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python-course" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
+      <option name="CLASS_NAME" value="ShoppingSpreeTests" />
+      <option name="METHOD_NAME" value="testHomePage" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -470,19 +581,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in ShoppingSpreeTests" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testA" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCapabilities" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testBackAndForth" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testRefresh" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCapabilities" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testBackAndForth" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testRefresh" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testHomePage" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testRefresh" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testBackAndForth" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCapabilities" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testA" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testHomePage" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testRefresh" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testBackAndForth" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCapabilities" />
       </list>
     </recent_temporary>
   </component>
@@ -509,15 +620,6 @@
     <history-entry file="Unittest_ShoppingSpreeTests_testBackAndForth - 2016.10.11 at 02h 58m 28s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testBackAndForth" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testCapabilities - 2016.10.11 at 02h 37m 24s.xml">
-      <configuration name="Unittest ShoppingSpreeTests.testCapabilities" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testCapabilities - 2016.10.11 at 02h 37m 38s.xml">
-      <configuration name="Unittest ShoppingSpreeTests.testCapabilities" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testCapabilities - 2016.10.11 at 02h 38m 11s.xml">
-      <configuration name="Unittest ShoppingSpreeTests.testCapabilities" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_ShoppingSpreeTests_testCapabilities - 2016.10.11 at 02h 38m 39s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testCapabilities" configurationId="tests" />
     </history-entry>
@@ -530,6 +632,15 @@
     <history-entry file="Unittest_ShoppingSpreeTests_testCartPage - 2016.10.11 at 02h 52m 00s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testCartPage" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_ShoppingSpreeTests_testHomePage - 2016.10.11 at 04h 10m 31s.xml">
+      <configuration name="Unittest ShoppingSpreeTests.testHomePage" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_ShoppingSpreeTests_testHomePage - 2016.10.11 at 04h 11m 39s.xml">
+      <configuration name="Unittest ShoppingSpreeTests.testHomePage" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_ShoppingSpreeTests_testHomePage - 2016.10.11 at 04h 12m 36s.xml">
+      <configuration name="Unittest ShoppingSpreeTests.testHomePage" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittest_ShoppingSpreeTests_testRefresh - 2016.10.11 at 03h 01m 09s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testRefresh" configurationId="tests" />
     </history-entry>
@@ -538,17 +649,17 @@
     <frame x="-8" y="-8" width="1296" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23063973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23058252" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36806723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36806723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43193278" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43193278" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -581,7 +692,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,7 +702,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -601,7 +712,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -611,7 +722,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,7 +732,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,7 +742,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -644,12 +755,36 @@
       </provider>
     </entry>
     <entry file="file://D:/tools/Python35/Lib/unittest/case.py" />
+    <entry file="file://$PROJECT_DIR$/com/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/Pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="32" />
+        <state relative-caret-position="171">
+          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
