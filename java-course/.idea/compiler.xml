@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="java-course" />
         <module name="selenium-bootcamp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="java-course" target="1.8" />
       <module name="selenium-bootcamp" target="1.8" />
     </bytecodeTargetLevel>
   </component>

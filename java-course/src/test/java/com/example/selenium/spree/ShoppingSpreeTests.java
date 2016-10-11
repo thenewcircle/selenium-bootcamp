@@ -193,7 +193,7 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testProductPage() {
-        Pages.openProductPage(webDriver, "Spring Tote");
+        Pages.openProductPage(webDriver, "Spree Tote");
     }
 
     @Test
@@ -210,6 +210,13 @@ public class ShoppingSpreeTests implements ITest {
         String url = webDriver.getCurrentUrl();
         String msg = "Found " + url;
         Assert.assertTrue(url.startsWith("https://www.google.com/?"), msg);
+    }
+
+    @Test
+    public void testNoComments() {
+        webDriver.get("https://www.example.com");
+        String source = webDriver.getPageSource();
+        Assert.assertFalse(source.contains("<!--"));
     }
 
     @AfterMethod
