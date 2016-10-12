@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b175513-8df7-43bd-ae1a-aab8f31af5cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../python-course/com/example/selenium/spree/Pages.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../python-course/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../python-course/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../python-course/com/example/selenium/spree/ShoppingSpreeTests.py" afterPath="$PROJECT_DIR$/../python-course/com/example/selenium/spree/ShoppingSpreeTests.py" />
     </list>
     <ignored path="selenium-bootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,12 +27,32 @@
       <file leaf-file-name="ShoppingSpreeTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="196" column="5" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
+            <state relative-caret-position="274">
+              <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
               <folding>
-                <element signature="e#6430#6431#0" expanded="true" />
-                <element signature="e#6492#6493#0" expanded="true" />
+                <element signature="e#6536#6537#0" expanded="true" />
+                <element signature="e#6581#6582#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pages.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,12 +86,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/CartPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
       </list>
     </option>
@@ -100,10 +117,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="754" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -130,7 +146,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,7 +193,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -749,6 +765,7 @@
       <workItem from="1476169948856" duration="821000" />
       <workItem from="1476171035643" duration="7000" />
       <workItem from="1476175513114" duration="1445000" />
+      <workItem from="1476245244226" duration="984000" />
     </task>
     <servers />
   </component>
@@ -785,14 +802,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31973000" />
+    <option name="totallyTimeSpent" value="32957000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="754" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -803,7 +819,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25970873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16520788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45882353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -815,6 +831,7 @@
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -844,11 +861,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2737">
           <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -882,8 +910,8 @@
         <state relative-caret-position="3298">
           <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,8 +937,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -920,8 +948,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,8 +959,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,8 +970,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -953,8 +981,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -964,8 +992,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -975,8 +1003,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -986,16 +1014,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1020,14 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1044,13 +1057,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="196" column="5" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
+        <state relative-caret-position="274">
+          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
           <folding>
-            <element signature="e#6430#6431#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6581#6582#0" expanded="true" />
           </folding>
         </state>
       </provider>

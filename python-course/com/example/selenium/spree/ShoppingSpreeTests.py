@@ -53,14 +53,10 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
 
     def testCartPage(self):
-        self.webDriver.get("https://spreecommerce-demo.herokuapp.com/cart")
-
-        title = self.webDriver.title
-        self.assertEquals("Shopping Cart - Spree Demo Site", title)
-
-        url = self.webDriver.current_url
-        self.assertEquals("https://spreecommerce-demo.herokuapp.com/cart", url)
-
+        cart_page = Pages.openCartPage(self)
+        cart_page.validateTitle()
+        cart_page.validateUrl()
+        
     def testCapabilities(self):
         capabilities = self.webDriver.capabilities
 
@@ -117,7 +113,8 @@ class ShoppingSpreeTests(unittest.TestCase):
     def testHomePage(self):
         home_page = Pages.openHomePage(self)
         home_page.validateTitle()
-        
+        home_page.validateUrl()
+
     def testA(self):
         self.assertTrue(True)
 
