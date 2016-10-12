@@ -100,7 +100,7 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
-    public void testSearchSpree() {
+    public void testSearchSpree() throws InterruptedException {
         HomePage homePage = Pages.openHomePage(webDriver);
 
         ProductsPage productsPage = homePage.search("Bag");
@@ -110,6 +110,8 @@ public class ShoppingSpreeTests implements ITest {
         productsPage.validateSearchText("");
 
         productsPage.clickLogo();
+        Thread.sleep(5*1000);
+        productsPage.validateUrl();
     }
 
     @Test

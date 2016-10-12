@@ -1,6 +1,8 @@
 import os
 import unittest
 from enum import Enum
+from time import sleep
+
 from selenium import webdriver
 from com.example.selenium.spree.Pages import Pages
 
@@ -119,6 +121,21 @@ class ShoppingSpreeTests(unittest.TestCase):
         home_page = Pages.openHomePage(self)
         home_page.validateTitle()
         home_page.validateUrl()
+
+    def testSearchSpree(self):
+        homePage = Pages.openHomePage(self)
+    
+        productsPage = homePage.search("Bag")
+        productsPage.validateUrl()
+        productsPage.validateTitle()
+    
+        productsPage.validateSearchText("Bag")
+        productsPage.clearSearch()
+        productsPage.validateSearchText("")
+    
+        homePage = productsPage.clickLogo()
+        sleep(5)
+        homePage.validateUrl()
 
     def testDepartmentsCombo(self):
         homePage = Pages.openHomePage(self)
