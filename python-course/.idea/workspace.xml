@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043d3776-ef6d-4ce2-9804-93fe728cfc1c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ProductsPage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../java-course/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../java-course/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../java-course/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" afterPath="$PROJECT_DIR$/../java-course/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py" />
     </list>
@@ -22,7 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/python-course$Unittests_in_ShoppingSpreeTests__2_.coverage" NAME="Unittests in ShoppingSpreeTests (2) Coverage Results" MODIFIED="1476254772185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testB.coverage" NAME="Unittest ShoppingSpreeTests.testB Coverage Results" MODIFIED="1476176630056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
-    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testSearchSpree.coverage" NAME="Unittest ShoppingSpreeTests.testSearchSpree Coverage Results" MODIFIED="1476276797989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
+    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testSearchSpree.coverage" NAME="Unittest ShoppingSpreeTests.testSearchSpree Coverage Results" MODIFIED="1476280692440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittests_in_ShoppingSpreeTests__1_.coverage" NAME="Unittests in ShoppingSpreeTests (1) Coverage Results" MODIFIED="1476254752122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testNoComments.coverage" NAME="Unittest ShoppingSpreeTests.testNoComments Coverage Results" MODIFIED="1476176189438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testCapabilities.coverage" NAME="Unittest ShoppingSpreeTests.testCapabilities Coverage Results" MODIFIED="1476178738813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="ShoppingSpreeTests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -59,51 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pages.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/Pages.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SpreePage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductsPage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ProductsPage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartPage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/CartPage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -566,52 +524,52 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 43m 57s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 43m 32s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 48m 08s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 44m 13s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 48m 38s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 45m 02s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 49m 06s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 45m 44s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 50m 06s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 46m 41s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 50m 33s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 47m 30s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 51m 25s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 49m 04s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 52m 20s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 49m 27s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 53m 16s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 58m 05s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 05h 53m 48s.xml">
+    <history-entry file="Unittest_ShoppingSpreeTests_testSearchSpree - 2016.10.12 at 06h 58m 28s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testSearchSpree" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15884861" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20897156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3693495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36859688" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42668137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42650333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -634,7 +592,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -748,6 +706,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/tools/Python35/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="73" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/CartPage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -772,34 +746,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
+    <entry file="file://C:/tools/Python35/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="11" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/tools/Python35/Lib/unittest/case.py">
+    <entry file="file://C:/tools/Python35/Lib/site-packages/selenium/webdriver/support/wait.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="162">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/tools/Python35/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="699" column="14" selection-start-line="699" selection-start-column="14" selection-end-line="699" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

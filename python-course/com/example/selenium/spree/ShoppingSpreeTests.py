@@ -4,7 +4,12 @@ from enum import Enum
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 from com.example.selenium.spree.Pages import Pages
+from com.example.selenium.spree.SpreePage import url_to_be
 
 
 class DriverType(Enum):
@@ -13,7 +18,6 @@ class DriverType(Enum):
     IE = 3
     Safari = 4
     Edge = 5
-
 
 class ShoppingSpreeTests(unittest.TestCase):
     
@@ -33,6 +37,8 @@ class ShoppingSpreeTests(unittest.TestCase):
             self.webDriver = webdriver.Edge()
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
+            
+        self.webDriver.implicitly_wait(5)
 
     def testRefresh(self):
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-bag")
@@ -134,8 +140,6 @@ class ShoppingSpreeTests(unittest.TestCase):
         productsPage.validateSearchText("")
     
         homePage = productsPage.clickLogo()
-        sleep(5)
-        homePage.validateUrl()
 
     def testDepartmentsCombo(self):
         homePage = Pages.openHomePage(self)

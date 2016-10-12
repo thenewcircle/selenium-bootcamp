@@ -110,8 +110,6 @@ public class ShoppingSpreeTests implements ITest {
         productsPage.validateSearchText("");
 
         productsPage.clickLogo();
-        Thread.sleep(5*1000);
-        productsPage.validateUrl();
     }
 
     @Test
