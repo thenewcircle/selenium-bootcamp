@@ -40,6 +40,11 @@ class ShoppingSpreeTests(unittest.TestCase):
             
         self.webDriver.implicitly_wait(5)
 
+        
+        self.webDriver.execute_script()
+        self.webDriver.find_element(By.XPATH, ".//*[@id='product_1']/div/a/img")
+        self.webDriver.find_element_by_xpath(".//*[@id='product_1']/div/a/img")
+
     def testRefresh(self):
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-bag")
         self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
