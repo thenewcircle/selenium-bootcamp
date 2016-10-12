@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043d3776-ef6d-4ce2-9804-93fe728cfc1c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/CartPage.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/CartPage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py" afterPath="$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py" />
     </list>
     <ignored path="python-course.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,10 +23,10 @@
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testNoComments.coverage" NAME="Unittest ShoppingSpreeTests.testNoComments Coverage Results" MODIFIED="1476176189438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testCapabilities.coverage" NAME="Unittest ShoppingSpreeTests.testCapabilities Coverage Results" MODIFIED="1476178738813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testRefresh.coverage" NAME="Unittest ShoppingSpreeTests.testRefresh Coverage Results" MODIFIED="1476180053366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
-    <SUITE FILE_PATH="coverage/python-course$Unittests_in_ShoppingSpreeTests.coverage" NAME="Unittests in ShoppingSpreeTests Coverage Results" MODIFIED="1476242080896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
+    <SUITE FILE_PATH="coverage/python-course$Unittests_in_ShoppingSpreeTests.coverage" NAME="Unittests in ShoppingSpreeTests Coverage Results" MODIFIED="1476252428447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testGetGoogleUrl.coverage" NAME="Unittest ShoppingSpreeTests.testGetGoogleUrl Coverage Results" MODIFIED="1476174951974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testA.coverage" NAME="Unittest ShoppingSpreeTests.testA Coverage Results" MODIFIED="1476177079177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
-    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testCartPage.coverage" NAME="Unittest ShoppingSpreeTests.testCartPage Coverage Results" MODIFIED="1476249706355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
+    <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testCartPage.coverage" NAME="Unittest ShoppingSpreeTests.testCartPage Coverage Results" MODIFIED="1476252406266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_testHomePage.coverage" NAME="Unittest testHomePage Coverage Results" MODIFIED="1476173517804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testHomePage.coverage" NAME="Unittest ShoppingSpreeTests.testHomePage Coverage Results" MODIFIED="1476249350429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
     <SUITE FILE_PATH="coverage/python-course$Unittest_ShoppingSpreeTests_testBackAndForth.coverage" NAME="Unittest ShoppingSpreeTests.testBackAndForth Coverage Results" MODIFIED="1476179892930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/example/selenium/spree" />
@@ -42,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShoppingSpreeTests.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ShoppingSpreeTests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+            <state relative-caret-position="91">
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pages.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/Pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="88">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -69,8 +68,8 @@
       <file leaf-file-name="SpreePage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="66">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -79,8 +78,8 @@
       <file leaf-file-name="ProductPage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            <state relative-caret-position="176">
+              <caret line="8" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +88,8 @@
       <file leaf-file-name="CartPage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/CartPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="84" selection-start-line="2" selection-start-column="0" selection-end-line="11" selection-end-column="84" />
+            <state relative-caret-position="176">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,8 +98,8 @@
       <file leaf-file-name="HomePage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="176">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,12 +120,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" />
-        <option value="$PROJECT_DIR$/com/example/selenium/spree/CartPage.py" />
         <option value="$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py" />
         <option value="$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py" />
-        <option value="$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py" />
         <option value="$PROJECT_DIR$/com/example/selenium/spree/Pages.py" />
+        <option value="$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py" />
+        <option value="$PROJECT_DIR$/com/example/selenium/spree/CartPage.py" />
+        <option value="$PROJECT_DIR$/com/example/selenium/spree/HomePage.py" />
       </list>
     </option>
   </component>
@@ -268,7 +267,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../classes/9999-Selenium Bootcamp - Jon/selenium-polyglot/selenium-python" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittest ShoppingSpreeTests.testProductPage">
+  <component name="RunManager" selected="Python tests.Unittests in ShoppingSpreeTests">
     <configuration default="false" name="Unittest ShoppingSpreeTests.testCartPage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -625,8 +624,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testProductPage" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testCartPage" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testProductPage" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testHomePage" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testRefresh" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest ShoppingSpreeTests.testBackAndForth" />
@@ -656,8 +655,8 @@
     <history-entry file="Unittest_ShoppingSpreeTests_testCartPage - 2016.10.11 at 22h 21m 59s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testCartPage" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testHomePage - 2016.10.11 at 04h 12m 36s.xml">
-      <configuration name="Unittest ShoppingSpreeTests.testHomePage" configurationId="tests" />
+    <history-entry file="Unittest_ShoppingSpreeTests_testCartPage - 2016.10.11 at 23h 07m 00s.xml">
+      <configuration name="Unittest ShoppingSpreeTests.testCartPage" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_ShoppingSpreeTests_testHomePage - 2016.10.11 at 20h 48m 23s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testHomePage" configurationId="tests" />
@@ -674,10 +673,10 @@
     <history-entry file="Unittest_ShoppingSpreeTests_testProductPage - 2016.10.11 at 22h 58m 14s.xml">
       <configuration name="Unittest ShoppingSpreeTests.testProductPage" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_ShoppingSpreeTests_testRefresh - 2016.10.11 at 03h 01m 09s.xml">
-      <configuration name="Unittest ShoppingSpreeTests.testRefresh" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_ShoppingSpreeTests - 2016.10.11 at 20h 16m 25s.xml">
+      <configuration name="Unittests in ShoppingSpreeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_ShoppingSpreeTests - 2016.10.11 at 23h 09m 00s.xml">
       <configuration name="Unittests in ShoppingSpreeTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -826,52 +825,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/HomePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="176">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/CartPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="84" selection-start-line="2" selection-start-column="0" selection-end-line="11" selection-end-column="84" />
+        <state relative-caret-position="176">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ProductPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="176">
+          <caret line="8" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
+    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/SpreePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="66">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/Pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="88">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/example/selenium/spree/ShoppingSpreeTests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

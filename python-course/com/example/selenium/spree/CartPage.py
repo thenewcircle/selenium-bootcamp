@@ -1,7 +1,11 @@
-class CartPage:
+from com.example.selenium.spree.SpreePage import SpreePage
+
+
+class CartPage(SpreePage):
 
     def __init__(self, test):
-        self.test = test
+        # self.test = test
+        super().__init__(test)
 
     def validateTitle(self):
         title = self.test.webDriver.title

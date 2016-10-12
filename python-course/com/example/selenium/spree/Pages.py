@@ -15,7 +15,6 @@ class Pages:
         test.webDriver.get('https://spreecommerce-demo.herokuapp.com/cart')
         return CartPage(test)
     
-    
     @classmethod
     def openProductPage(cls, test):
         test.webDriver.get('https://spreecommerce-demo.herokuapp.com/products/spree-tote')
