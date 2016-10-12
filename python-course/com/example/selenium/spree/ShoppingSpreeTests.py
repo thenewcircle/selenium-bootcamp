@@ -21,13 +21,13 @@ class ShoppingSpreeTests(unittest.TestCase):
         if DriverType.Firefox == driver_type:
             self.webDriver = webdriver.Firefox()
         elif DriverType.Chrome == driver_type:
-            path = os.environ["webdriver_chrome_driver"]
-            self.webDriver = webdriver.Chrome(path)
+            # path = os.environ["webdriver_chrome_driver"]
+            self.webDriver = webdriver.Chrome()
         elif DriverType.IE == driver_type:
-            path = os.environ["webdriver_ie_driver"]
-            self.webDriver = webdriver.Ie(path)
+            # path = os.environ["webdriver_ie_driver"]
+            self.webDriver = webdriver.Ie()
         elif DriverType.Edge == driver_type:
-            path = os.environ["webdriver_edge_driver"]
+            # path = os.environ["webdriver_edge_driver"]
             self.webDriver = webdriver.Edge()
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
@@ -115,8 +115,8 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.assertTrue(url.startswith("https://www.google.com/?"), msg)
 
     def testHomePage(self):
-        homePage = Pages.openHomePage(self)
-        homePage.validateTitle()
+        home_page = Pages.openHomePage(self)
+        home_page.validateTitle()
         
     def testA(self):
         self.assertTrue(True)
