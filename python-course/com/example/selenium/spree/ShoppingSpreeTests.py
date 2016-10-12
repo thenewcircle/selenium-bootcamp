@@ -120,6 +120,10 @@ class ShoppingSpreeTests(unittest.TestCase):
         home_page.validateTitle()
         home_page.validateUrl()
 
+    def testDepartmentsCombo(self):
+        homePage = Pages.openHomePage(self)
+        deptCmb = home_page.getDepartmentCmb()
+
     def testA(self):
         self.assertTrue(True)
 

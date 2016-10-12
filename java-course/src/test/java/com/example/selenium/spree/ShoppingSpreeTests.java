@@ -5,6 +5,7 @@ import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -114,7 +115,7 @@ public class ShoppingSpreeTests implements ITest {
     @Test
     public void testDepartmentsCombo() {
         HomePage homePage = Pages.openHomePage(webDriver);
-        homePage.getDepartmentCmb();
+        WebElement depCmb = homePage.getDepartmentCmb();
     }
 
     @Test
