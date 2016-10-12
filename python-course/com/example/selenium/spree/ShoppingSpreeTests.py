@@ -122,7 +122,36 @@ class ShoppingSpreeTests(unittest.TestCase):
 
     def testDepartmentsCombo(self):
         homePage = Pages.openHomePage(self)
-        deptCmb = home_page.getDepartmentCmb()
+        deptCmb = homePage.getDepartmentCmb()
+
+        attr = deptCmb.get_attribute("aria-label")
+        self.assertEquals("Taxon", attr)
+    
+        color = deptCmb.value_of_css_property("background-color")
+        self.assertEquals("rgba(255, 255, 255, 1)", color)
+    
+        location = deptCmb.location
+        self.assertTrue(location["x"] > 100, "Actual " + str(location["x"]))
+        self.assertTrue(location["y"] < 200, "Actual " + str(location["y"]))
+    
+        size = deptCmb.size
+        self.assertTrue(size["width"] >= 100 & size["width"] <= 200, "Actual " + str(size["width"]))
+        self.assertTrue(size["height"] >= 15 & size["height"] <= 25, "Actual " + str(size["height"]))
+    
+        tagName = deptCmb.tag_name
+        self.assertEquals("select", tagName)
+    
+        displayed = deptCmb.is_displayed()
+        self.assertTrue(displayed)
+    
+        selected = deptCmb.is_selected()
+        self.assertFalse(selected)
+    
+        enabled = deptCmb.is_enabled()
+        self.assertTrue(enabled)
+    
+        text = deptCmb.text
+        self.assertEquals("All departments\nCategories\nBrand", text)
 
     def testA(self):
         self.assertTrue(True)
