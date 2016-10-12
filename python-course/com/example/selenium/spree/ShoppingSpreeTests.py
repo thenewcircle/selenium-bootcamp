@@ -57,6 +57,11 @@ class ShoppingSpreeTests(unittest.TestCase):
         cart_page.validateTitle()
         cart_page.validateUrl()
         
+    def testProductPage(self):
+        prod_page = Pages.openProductPage(self)
+        prod_page.validateTitle()
+        prod_page.validateUrl()
+        
     def testCapabilities(self):
         capabilities = self.webDriver.capabilities
 
