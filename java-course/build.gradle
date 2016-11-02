@@ -12,10 +12,6 @@ version = 'class-SNAPSHOT'
 
 defaultTasks 'clean', 'test'
 
-repositories {
-  mavenCentral()
-}
-
 sourceSets {
     main {
         java { srcDir 'src/main/java' }

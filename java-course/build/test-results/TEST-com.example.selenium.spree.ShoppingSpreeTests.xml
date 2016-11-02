@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.selenium.spree.ShoppingSpreeTests" tests="2" skipped="0" failures="1" errors="0" timestamp="2016-11-02T19:25:06" hostname="Dragon" time="0.005">
+<testsuite name="com.example.selenium.spree.ShoppingSpreeTests" tests="2" skipped="0" failures="1" errors="0" timestamp="2016-11-02T19:41:51" hostname="Dragon" time="0.004">
   <properties/>
-  <testcase name="testA" classname="com.example.selenium.spree.ShoppingSpreeTests" time="0.003">
+  <testcase name="testA" classname="com.example.selenium.spree.ShoppingSpreeTests" time="0.002">
     <failure message="java.lang.AssertionError: expected [2] but found [1]" type="java.lang.AssertionError">java.lang.AssertionError: expected [2] but found [1]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
@@ -57,7 +57,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="testB" classname="com.example.selenium.spree.ShoppingSpreeTests" time="0.0"/>
+  <testcase name="testB" classname="com.example.selenium.spree.ShoppingSpreeTests" time="0.001"/>
   <system-out><![CDATA[Test A
 Test B
 ]]></system-out>
