@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Build Suite" thread-count="1" parallel="false">
+    <test verbose="2" name="Test Suite" annotations="JDK">
+        <packages>
+            <package name="com.example.selenium.spree.*"/>
+        </packages>
+    </test>
+</suite>

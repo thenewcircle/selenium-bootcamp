@@ -20,8 +20,18 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../9999-Selenium Bootcamp - Jon/selenium-polyglot/selenium-scala" value="1466959409498" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="masterDetails">
     <states>
@@ -31,7 +41,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.20086393" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
