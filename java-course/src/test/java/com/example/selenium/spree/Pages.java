@@ -1,6 +1,6 @@
 package com.example.selenium.spree;
 
-import org.openqa.selenium.remote.RemoteWebDriver;
+        import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by jacobp on 11/2/2016.
@@ -16,8 +16,9 @@ public class Pages {
         return new CartPage(webDriver);
     }
 
-    public static ProductPage openProductPage(RemoteWebDriver webDriver) {
-        webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-tote");
-        return new ProductPage(webDriver);
+    public static ProductPage openProductPage(RemoteWebDriver webDriver, String prodName) {
+        String url = ProductPage.getUrlFromName(prodName);
+        webDriver.get(url);
+        return new ProductPage(webDriver, prodName);
     }
 }
