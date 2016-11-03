@@ -26,6 +26,8 @@ sourceSets {
 dependencies {
     testCompile "org.testng:testng:6.9.10"
 
+    testCompile("org.glassfish.jersey.core:jersey-client:2.24")
+
     testCompile "org.seleniumhq.selenium:selenium-java:3.0.1"
     testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.0.1"
 
