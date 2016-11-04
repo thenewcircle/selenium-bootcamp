@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
@@ -19,6 +20,7 @@ import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ShoppingSpreeTests implements ITest {
 
-    enum DriverType { Chrome, Firefox, IE, Safari, Edge }
+    enum DriverType { Chrome, Firefox, IE, Safari, Edge, Grid }
     DriverType driverType;
     String testName;
 
@@ -47,7 +49,15 @@ public class ShoppingSpreeTests implements ITest {
 
     @BeforeMethod
     public void beforeMethod(Method aMethod) throws Exception {
-        if (DriverType.Safari == driverType) {
+
+        if (DriverType.Grid == driverType) {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setBrowserName("firefox");
+
+            URL remoteAddress = new URL("http://192.168.101.7:4444/wd/hub");
+            webDriver = new RemoteWebDriver(remoteAddress,capabilities);
+
+        } else if (DriverType.Safari == driverType) {
             webDriver = new SafariDriver();
 
         } else if (DriverType.Firefox == driverType) {
@@ -303,7 +313,8 @@ public class ShoppingSpreeTests implements ITest {
         // data.add(new ShoppingSpreeTests(DriverType.IE));
         // data.add(new ShoppingSpreeTests(DriverType.Safari));
          // data.add(new ShoppingSpreeTests(DriverType.Firefox));
-        data.add(new ShoppingSpreeTests(DriverType.Chrome));
+        // data.add(new ShoppingSpreeTests(DriverType.Chrome));
+         data.add(new ShoppingSpreeTests(DriverType.Grid));
         return data.toArray();
     }
 }

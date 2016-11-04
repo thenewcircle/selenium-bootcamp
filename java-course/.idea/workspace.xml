@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec7edefa-1ed5-4d52-9569-a306896437a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductsPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/AbstractTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/BasicTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AbstractPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AddPersonDlg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/CompaniesPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/Dashboard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/GlobalAddMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/HamburgerMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/LoginPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ModalPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ProsperWorksPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/CartPage.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/CartPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/HomePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java" />
     </list>
     <ignored path="selenium-bootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,14 +35,43 @@
     <favorites_list name="selenium-bootcamp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.19452888">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ShoppingSpreeTests.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
+          <file leaf-file-name="BasicTests.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/BasicTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="98" column="2" selection-start-line="98" selection-start-column="2" selection-end-line="98" selection-end-column="2" />
+                <state relative-caret-position="185">
+                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#349#350#0" expanded="true" />
+                    <element signature="e#382#383#0" expanded="true" />
+                    <element signature="e#1162#1163#0" expanded="true" />
+                    <element signature="e#1194#1195#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModalPage.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ModalPage.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="15" column="0" selection-start-line="14" selection-start-column="1" selection-end-line="15" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#319#320#0" expanded="true" />
+                    <element signature="e#351#352#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AbstractPage.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AbstractPage.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -51,22 +83,16 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ProductPage.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java">
+          <file leaf-file-name="ProsperWorksPage.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ProsperWorksPage.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpreePage.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="391">
+                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#242#243#0" expanded="true" />
+                    <element signature="e#274#275#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -114,8 +140,23 @@
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/Pages.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/ProsperWorksPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/AbstractTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/Dashboard.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/GlobalAddMenu.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/HamburgerMenu.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/CompaniesPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/Dashboard.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AbstractPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ModalPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ProsperWorksPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AddPersonDlg.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/BasicTests.java" />
       </list>
     </option>
   </component>
@@ -214,7 +255,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -228,12 +269,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,23 +292,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="c:\tools\nodejs\node.exe" />
     <property name="extract.method.default.visibility" value="public" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dvlp\new-circle\classes\4315- Selenium Bootcamp\selenium-bootcamp\java-course" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.prosperworks.selenium.pages" />
+      <recent name="com.prosperworks.selenium" />
+      <recent name="com.example.selenium.spree" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dvlp\new-circle\classes\4315- Selenium Bootcamp\selenium-bootcamp\java-course\src\test\suites" />
       <recent name="C:\dvlp\new-circle\classes\4315- Selenium Bootcamp\selenium-bootcamp\java-course\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.prosperworks.selenium.pages" />
+      <recent name="com.prosperworks.selenium" />
       <recent name="com.example.selenium.spree.useragent" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.selenium.spree" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dvlp\new-circle\classes\4315- Selenium Bootcamp\selenium-bootcamp\java-course" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ShoppingSpreeTests.testShoppingSpree">
+  <component name="RunManager" selected="TestNG.BasicTests">
     <configuration default="false" name="ShoppingSpreeTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -282,39 +330,6 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="ShoppingSpreeTests.testCapabilities" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.example.selenium.spree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="selenium-bootcamp" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.example.selenium.spree" />
-      <option name="MAIN_CLASS_NAME" value="com.example.selenium.spree.ShoppingSpreeTests" />
-      <option name="METHOD_NAME" value="testCapabilities" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -414,6 +429,39 @@
       <option name="METHOD_NAME" value="testShoppingSpree" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="BasicTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.prosperworks.selenium.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="selenium-bootcamp" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.prosperworks.selenium" />
+      <option name="MAIN_CLASS_NAME" value="com.prosperworks.selenium.BasicTests" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -780,18 +828,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testCapabilities" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testDepartmentsCombo" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testSearchSpree" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testShoppingSpree" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testDepartmentsCombo" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testSearchSpree" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testShoppingSpree" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.BasicTests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testShoppingSpree" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testDepartmentsCombo" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testSearchSpree" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testCapabilities" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.BasicTests" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testShoppingSpree" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testDepartmentsCombo" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.ShoppingSpreeTests.testSearchSpree" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
@@ -812,47 +860,48 @@
       <workItem from="1478118826062" duration="16628000" />
       <workItem from="1478190435982" duration="136000" />
       <workItem from="1478190734340" duration="318000" />
-      <workItem from="1478191141581" duration="21894000" />
+      <workItem from="1478191141581" duration="23625000" />
+      <workItem from="1478216235727" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 14h 50m 44s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 28m 14s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 15m 14s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 28m 57s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 17m 56s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 32m 15s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 25m 53s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 32m 42s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 39m 36s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 40m 05s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 42m 53s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 46m 57s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 45m 54s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 47m 54s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 46m 52s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 48m 30s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 49m 06s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 48m 49s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ShoppingSpreeTests_testShoppingSpree - 2016.11.03 at 15h 54m 05s.xml">
-      <configuration name="ShoppingSpreeTests.testShoppingSpree" configurationId="TestNG" />
+    <history-entry file="BasicTests - 2016.11.03 at 17h 52m 16s.xml">
+      <configuration name="BasicTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45940000" />
+    <option name="totallyTimeSpent" value="52198000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -861,22 +910,22 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2363222" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31428573" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36134455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48708206" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20212767" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19327731" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40504202" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -892,16 +941,42 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="33" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/BasicTests.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,7 +994,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -928,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +1019,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -954,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +1044,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -988,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="244" column="27" selection-start-line="244" selection-start-column="27" selection-end-line="244" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="21" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-451">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +1158,7 @@
         <state relative-caret-position="170">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1129,29 +1195,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="98" column="2" selection-start-line="98" selection-start-column="2" selection-end-line="98" selection-end-column="2" />
+        <state relative-caret-position="425">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/AbstractTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/SpreePage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ShoppingSpreeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="167">
+          <caret line="304" column="19" selection-start-line="304" selection-start-column="19" selection-end-line="304" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/selenium/spree/ProductPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/GlobalAddMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/CompaniesPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/HamburgerMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AbstractPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ModalPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="0" selection-start-line="14" selection-start-column="1" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/AddPersonDlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/BasicTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/prosperworks/selenium/pages/ProsperWorksPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
