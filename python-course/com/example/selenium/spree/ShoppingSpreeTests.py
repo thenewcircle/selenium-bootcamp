@@ -35,10 +35,22 @@ class ShoppingSpreeTests(unittest.TestCase):
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
             
+    def testNoComments(self):
+        source = self.webDriver.page_source
+        self.assertFalse("<!--" in source)
+
     def testHomePage(self):
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
         title = self.webDriver.title
         self.assertEquals("Spree Demo Site", title)
     
     def tearDown(self):
+    
+        directory = "\\tmp\\test-failures"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            
+        file_name = directory + "\\ShoppingSpreeTests-" + self._testMethodName + ".png"
+        self.webDriver.get_screenshot_as_file(file_name)
+        
         self.webDriver.quit()
