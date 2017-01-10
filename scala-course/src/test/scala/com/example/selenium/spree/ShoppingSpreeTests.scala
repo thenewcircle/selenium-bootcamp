@@ -12,7 +12,8 @@ class ShoppingSpreeTests extends FunSuite with BeforeAndAfterEach with BeforeAnd
     // System.setProperty("webdriver.gecko.driver", "c:\\tools\\selenium\\geckodriver.exe")
     // webDriver = new FirefoxDriver()
 
-    System.setProperty("webdriver.chrome.driver", "c:\\tools\\selenium\\chromedriver.exe")
+    val path = System.getenv("webdriver_chrome_driver")
+    System.setProperty("webdriver.chrome.driver", path)
     webDriver = new ChromeDriver()
   }
 

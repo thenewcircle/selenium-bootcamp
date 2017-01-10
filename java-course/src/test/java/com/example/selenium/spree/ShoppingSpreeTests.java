@@ -21,7 +21,8 @@ public class ShoppingSpreeTests {
 //        System.setProperty("webdriver.gecko.driver", "c:\\tools\\selenium\\geckodriver.exe");
 //        webDriver = new FirefoxDriver();
 
-        System.setProperty("webdriver.chrome.driver", "c:\\tools\\selenium\\chromedriver.exe");
+        String path = System.getenv("webdriver_chrome_driver");
+        System.setProperty("webdriver.chrome.driver", path);
         webDriver = new ChromeDriver();
     }
 

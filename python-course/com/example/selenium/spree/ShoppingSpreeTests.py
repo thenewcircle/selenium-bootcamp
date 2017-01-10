@@ -1,3 +1,4 @@
+import os
 import unittest
 
 from selenium import webdriver
@@ -6,7 +7,9 @@ class ShoppingSpreeTests(unittest.TestCase):
 
     def setUp(self):
         # self.webDriver = webdriver.Firefox(executable_path="c:\\tools\\selenium\\geckodriver.exe")
-        self.webDriver = webdriver.Chrome(executable_path="c:\\tools\\selenium\\chromedriver.exe")
+        # self.webDriver = webdriver.Chrome(executable_path="c:\\tools\\selenium\\chromedriver.exe")
+        path = os.environ["webdriver_chrome_driver"]
+        self.webDriver = webdriver.Chrome(executable_path=path)
 
     def testHomePage(self):
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
