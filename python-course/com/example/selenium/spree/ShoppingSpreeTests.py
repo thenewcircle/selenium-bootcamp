@@ -14,7 +14,7 @@ class DriverType(Enum):
 class ShoppingSpreeTests(unittest.TestCase):
 
     def setUp(self):
-        driver_type = DriverType.Firefox
+        driver_type = DriverType.Chrome
     
         if DriverType.Firefox == driver_type:
             path = os.environ["webdriver_firefox_marionette"]
@@ -34,6 +34,16 @@ class ShoppingSpreeTests(unittest.TestCase):
         
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
+            
+    def testGetGoogleUrl(self):
+        self.webDriver.get("http://google.com")
+
+        title = self.webDriver.title
+        self.assertEquals("Google", title)
+
+        url = self.webDriver.current_url
+        msg = "Found " + url
+        self.assertTrue(url.startswith("https://www.google.com"), msg)
             
     def testNoComments(self):
         source = self.webDriver.page_source
