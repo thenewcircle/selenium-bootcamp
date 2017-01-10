@@ -13,3 +13,6 @@ hs_err_pid*
 target/
 .idea/workspace.xml
 test-output/
+scala-course/.idea/workspace.xml
+java-course/.idea/workspace.xml
+python-course/.idea/workspace.xml
