@@ -1,26 +1,29 @@
+import os
 import unittest
 
+from selenium import webdriver
 
 class ShoppingSpreeTests(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        print("Before class")
-
     def setUp(self):
-        print("Before method")
+        # self.webDriver = webdriver.Firefox(executable_path="c:\\tools\\selenium\\geckodriver.exe")
 
+        path = os.environ["webdriver_chrome_driver"]
+        self.webDriver = webdriver.Chrome(executable_path=path)
+
+        # self.webDriver = webdriver.Ie(executable_path="c:\\tools\\selenium\\IEDriverServer.exe")
+        # self.webDriver = webdriver.Safari()
+
+    def testHomePage(self):
+        self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
+        title = self.webDriver.title
+        self.assertEquals("Spree Demo Site", title)
+    
     def testA(self):
-        print("Test A")
-        self.assertEquals(1, 2)
+        self.assertTrue(True)
 
     def testB(self):
-        print("Test B")
         self.assertEquals(1, 1)
 
     def tearDown(self):
-        print("After method\n")
-
-    @classmethod
-    def tearDownClass(cls):
-        print("After class")
+        self.webDriver.quit()
