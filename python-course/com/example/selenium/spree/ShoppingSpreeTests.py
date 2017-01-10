@@ -1,10 +1,16 @@
 import unittest
 
+from selenium import webdriver
 
 class ShoppingSpreeTests(unittest.TestCase):
 
     def setUp(self):
-        pass
+        self.webDriver = webdriver.Firefox(executable_path="c:\\tools\\selenium\\geckodriver.exe")
+
+    def testHomePage(self):
+        self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
+        title = self.webDriver.title
+        self.assertEquals("Spree Demo Site", title)
 
     def testA(self):
         self.assertTrue(True)
@@ -13,5 +19,5 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.assertEquals(1, 1)
 
     def tearDown(self):
-        pass
+        self.webDriver.quit()
 
