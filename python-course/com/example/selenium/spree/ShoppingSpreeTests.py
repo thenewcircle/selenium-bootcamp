@@ -35,6 +35,30 @@ class ShoppingSpreeTests(unittest.TestCase):
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
             
+    def testCapabilities(self):
+        capabilities = self.webDriver.capabilities
+
+        name = capabilities["browserName"]
+        if "firefox" == name:
+            version = capabilities["browserVersion"]
+            self.assertEquals("50.1.0", version)
+
+            platform = capabilities["platform"]
+            self.assertEquals("WINDOWS_NT", platform)
+        
+        elif "chrome" == name:
+            version = capabilities["version"]
+            self.assertEquals("55.0.2883.87", version)
+
+            platform = capabilities["platform"]
+            self.assertEquals("Windows NT", platform)
+        
+        elif "internet explorer" == name:
+            pass
+    
+        js = capabilities["javascriptEnabled"]
+        self.assertTrue(js)
+
     def testGetGoogleUrl(self):
         self.webDriver.get("http://google.com")
 
