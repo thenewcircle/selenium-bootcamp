@@ -2,6 +2,7 @@ package com.example.selenium.spree;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -21,9 +22,13 @@ public class ShoppingSpreeTests {
 //        System.setProperty("webdriver.gecko.driver", "c:\\tools\\selenium\\geckodriver.exe");
 //        webDriver = new FirefoxDriver();
 
-        String path = System.getenv("webdriver_chrome_driver");
-        System.setProperty("webdriver.chrome.driver", path);
-        webDriver = new ChromeDriver();
+//        String path = System.getenv("webdriver_chrome_driver");
+//        System.setProperty("webdriver.chrome.driver", path);
+//        webDriver = new ChromeDriver();
+
+        String path = System.getenv("webdriver_ie_driver");
+        System.setProperty("webdriver.ie.driver", path);
+        webDriver = new InternetExplorerDriver();
     }
 
     @Test
