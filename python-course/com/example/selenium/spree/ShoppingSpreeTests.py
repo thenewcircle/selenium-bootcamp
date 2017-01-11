@@ -1,45 +1,44 @@
 import os
 import unittest
-from enum import Enum
+# from enum import Enum
 
 from selenium import webdriver
+from ddt import ddt, idata, data
 
 from com.example.selenium.spree.pages import Pages
 
+# driver_types = ["chrome", "firefox", "ie", "edge", "safari"]
+driver_types = ["chrome"]
 
-class DriverType(Enum):
-    Chrome = 1
-    Firefox = 2
-    IE = 3
-    Safari = 4
-    Edge = 5
-
-
+@ddt
 class ShoppingSpreeTests(unittest.TestCase):
 
-    def setUp(self):
-        driver_type = DriverType.Chrome
+    def create_driver(self, driver_type):
+        # driver_type = DriverType.Chrome
     
-        if DriverType.Firefox == driver_type:
-            path = os.environ["webdriver_firefox_marionette"]
+        if "firefox" == driver_type:
+            path = os.environ["webdriver_firefox_driver"]
             self.webDriver = webdriver.Firefox(executable_path=path)
         
-        elif DriverType.Chrome == driver_type:
+        elif "chrome" == driver_type:
             path = os.environ["webdriver_chrome_driver"]
             self.webDriver = webdriver.Chrome(executable_path=path)
         
-        elif DriverType.IE == driver_type:
+        elif "ie" == driver_type:
             path = os.environ["webdriver_ie_driver"]
             self.webDriver = webdriver.Ie(executable_path=path)
         
-        elif DriverType.Edge == driver_type:
+        elif "edge" == driver_type:
             path = os.environ["webdriver_edge_driver"]
             self.webDriver = webdriver.Edge(executable_path=path)
         
-        elif DriverType.Safari == driver_type:
+        elif "safari"== driver_type:
             self.webDriver = webdriver.Safari()
             
-    def testBackAndForth(self):
+    @idata(driver_types)
+    def testBackAndForth(self, driver_type):
+        self.create_driver(driver_type)
+    
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-bag")
         self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
 
@@ -55,17 +54,26 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.webDriver.refresh()
         self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
 
-    def testProductPage(self):
+    @idata(driver_types)
+    def testProductPage(self, driver_type):
+        self.create_driver(driver_type)
+
         prod_page = Pages.openProductPage(self)
         prod_page.validateTitle()
         prod_page.validateUrl()
 
-    def testCartPage(self):
+    @idata(driver_types)
+    def testCartPage(self, driver_type):
+        self.create_driver(driver_type)
+
         cart_page = Pages.openCartPage(self)
         cart_page.validateTitle()
         cart_page.validateUrl()
 
-    def testCapabilities(self):
+    @idata(driver_types)
+    def testCapabilities(self, driver_type):
+        self.create_driver(driver_type)
+
         capabilities = self.webDriver.capabilities
 
         name = capabilities["browserName"]
@@ -89,7 +97,10 @@ class ShoppingSpreeTests(unittest.TestCase):
         js = capabilities["javascriptEnabled"]
         self.assertTrue(js)
 
-    def testGetGoogleUrl(self):
+    @idata(driver_types)
+    def testGetGoogleUrl(self, driver_type):
+        self.create_driver(driver_type)
+
         self.webDriver.get("http://google.com")
 
         title = self.webDriver.title
@@ -99,11 +110,17 @@ class ShoppingSpreeTests(unittest.TestCase):
         msg = "Found " + url
         self.assertTrue(url.startswith("https://www.google.com"), msg)
             
-    def testNoComments(self):
+    @idata(driver_types)
+    def testNoComments(self, driver_type):
+        self.create_driver(driver_type)
+
         source = self.webDriver.page_source
         self.assertFalse("<!--" in source)
 
-    def testHomePage(self):
+    @idata(driver_types)
+    def testHomePage(self, driver_type):
+        self.create_driver(driver_type)
+
         home_page = Pages.openHomePage(self)
         home_page.validateTitle()
         home_page.validateUrl()
