@@ -1,7 +1,8 @@
 class Pages:
-
+    from com.example.selenium.spree.home_page import HomePage
+    
     @classmethod
-    def openHomePage(cls, test):
+    def openHomePage(cls, test) -> HomePage:
         test.webDriver.get('https://spreecommerce-demo.herokuapp.com')
 
         from com.example.selenium.spree.home_page import HomePage

@@ -1,6 +1,5 @@
 import os
 import unittest
-# from enum import Enum
 
 from selenium import webdriver
 from ddt import ddt, idata, data
@@ -34,7 +33,56 @@ class ShoppingSpreeTests(unittest.TestCase):
         
         elif "safari"== driver_type:
             self.webDriver = webdriver.Safari()
-            
+
+    def is_chrome(self):
+        return "chrome" == self.webDriver.capabilities["browserName"]
+
+    def is_firefox(self):
+        return "firefox" == self.webDriver.capabilities["browserName"]
+
+    def is_ie(self):
+        return "internet explorer" == self.webDriver.capabilities["browserName"]
+
+    @idata(driver_types)
+    def testDepartmentsCombo(self, driver_type):
+        self.create_driver(driver_type)
+        homePage = Pages.openHomePage(self)
+        deptCmb = homePage.getDepartmentCmb()
+        
+        attr = deptCmb.get_attribute("aria-label")
+        self.assertEquals("Taxon", attr)
+
+        color = deptCmb.value_of_css_property("background-color")
+        if self.is_chrome() or self.is_ie():
+            self.assertEquals("rgba(255, 255, 255, 1)", color)
+        elif self.is_firefox() :
+            self.assertEquals("rgb(255, 255, 255)", color)
+        else:
+            self.fail("Unsupported scenario: " + self.webDriver.capabilities["browserName"])
+
+        location = deptCmb.location
+        msg = "Found " + str(location)
+        self.assertTrue(int(location["x"]) > 100, msg) # missing what?
+        self.assertTrue(int(location["y"]) < 200, msg) # missing what?
+
+        size = deptCmb.size
+        msg = "Found " + str(size)
+        self.assertTrue(int(size["height"]) > 15 and
+                        int(size["height"]) < 40, msg)
+
+        self.assertEquals("select", deptCmb.tag_name)
+
+        self.assertTrue(deptCmb.is_displayed())
+
+        self.assertFalse(deptCmb.is_selected())
+
+        self.assertTrue(deptCmb.is_enabled())
+
+        if self.is_ie():
+            self.assertEquals("All departments Categories Brand", deptCmb.text)
+        else:
+            self.assertEquals("All departments\nCategories\nBrand", deptCmb.text)
+
     @idata(driver_types)
     def testBackAndForth(self, driver_type):
         self.create_driver(driver_type)
