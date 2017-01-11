@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ch.qos.logback.classic.Level;
@@ -26,9 +27,11 @@ public class ShoppingSpreeTests {
 //        System.setProperty("webdriver.chrome.driver", path);
 //        webDriver = new ChromeDriver();
 
-        String path = System.getenv("webdriver_ie_driver");
-        System.setProperty("webdriver.ie.driver", path);
-        webDriver = new InternetExplorerDriver();
+//        String path = System.getenv("webdriver_ie_driver");
+//        System.setProperty("webdriver.ie.driver", path);
+//        webDriver = new InternetExplorerDriver();
+
+        webDriver = new SafariDriver();
     }
 
     @Test

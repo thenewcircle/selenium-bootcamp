@@ -10,8 +10,9 @@ class ShoppingSpreeTests(unittest.TestCase):
         # self.webDriver = webdriver.Chrome(executable_path="c:\\tools\\selenium\\chromedriver.exe")
         # path = os.environ["webdriver_chrome_driver"]
         # self.webDriver = webdriver.Chrome(executable_path=path)
-        path = os.environ["webdriver_ie_driver"]
-        self.webDriver = webdriver.Ie(executable_path=path)
+        # path = os.environ["webdriver_ie_driver"]
+        # self.webDriver = webdriver.Ie(executable_path=path)
+        self.webDriver = webdriver.Safari()
 
     def testHomePage(self):
         self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
