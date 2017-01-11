@@ -1,23 +1,13 @@
 import os
-import unittest
+import pytest
 from enum import Enum
 
 from selenium import webdriver
 
-from com.example.selenium.spree.pages import Pages
 
+class ShoppingSpreeTests:
 
-class DriverType(Enum):
-    Chrome = 1
-    Firefox = 2
-    IE = 3
-    Safari = 4
-    Edge = 5
-
-
-class ShoppingSpreeTests(unittest.TestCase):
-
-    def setUp(self):
+    def setup_method(self, method):
         driver_type = DriverType.Chrome
     
         if DriverType.Firefox == driver_type:
@@ -39,33 +29,7 @@ class ShoppingSpreeTests(unittest.TestCase):
         elif DriverType.Safari == driver_type:
             self.webDriver = webdriver.Safari()
             
-    def testBackAndForth(self):
-        self.webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-bag")
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.get("https://spreecommerce-demo.herokuapp.com/products/spree-tote")
-        self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.back()
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.forward()
-        self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.refresh()
-        self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
-
-    def testProductPage(self):
-        prod_page = Pages.openProductPage(self)
-        prod_page.validateTitle()
-        prod_page.validateUrl()
-
-    def testCartPage(self):
-        cart_page = Pages.openCartPage(self)
-        cart_page.validateTitle()
-        cart_page.validateUrl()
-
-    def testCapabilities(self):
+    def test_capabilities(self):
         capabilities = self.webDriver.capabilities
 
         name = capabilities["browserName"]
@@ -89,7 +53,7 @@ class ShoppingSpreeTests(unittest.TestCase):
         js = capabilities["javascriptEnabled"]
         self.assertTrue(js)
 
-    def testGetGoogleUrl(self):
+    def test_get_google_url(self):
         self.webDriver.get("http://google.com")
 
         title = self.webDriver.title
@@ -99,20 +63,16 @@ class ShoppingSpreeTests(unittest.TestCase):
         msg = "Found " + url
         self.assertTrue(url.startswith("https://www.google.com"), msg)
             
-    def testNoComments(self):
+    def test_NoComments(self):
         source = self.webDriver.page_source
         self.assertFalse("<!--" in source)
 
-    def testHomePage(self):
-        home_page = Pages.openHomePage(self)
-        home_page.validateTitle()
-        home_page.validateUrl()
-        
-        # self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
-        # title = self.webDriver.title
-        # self.assertEquals("Spree Demo Site", title)
+    def test_HomePage(self):
+        self.webDriver.get("https://spreecommerce-demo.herokuapp.com")
+        title = self.webDriver.title
+        self.assertEquals("Spree Demo Site", title)
     
-    def tearDown(self):
+    def teardown_methodDown(self, method):
     
         directory = "\\tmp\\test-failures"
         if not os.path.exists(directory):
@@ -122,3 +82,11 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.webDriver.get_screenshot_as_file(file_name)
         
         self.webDriver.quit()
+
+
+class DriverType(Enum):
+    Chrome = 1
+    Firefox = 2
+    IE = 3
+    Safari = 4
+    Edge = 5
