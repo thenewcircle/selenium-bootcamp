@@ -1,5 +1,6 @@
 import os
 import unittest
+from time import sleep
 
 from selenium import webdriver
 from ddt import ddt, idata, data
@@ -13,7 +14,6 @@ driver_types = ["chrome"]
 class ShoppingSpreeTests(unittest.TestCase):
 
     def create_driver(self, driver_type):
-        # driver_type = DriverType.Chrome
     
         if "firefox" == driver_type:
             path = os.environ["webdriver_firefox_driver"]
@@ -34,6 +34,8 @@ class ShoppingSpreeTests(unittest.TestCase):
         elif "safari"== driver_type:
             self.webDriver = webdriver.Safari()
 
+        self.webDriver.implicitly_wait(5)
+
     def is_chrome(self):
         return "chrome" == self.webDriver.capabilities["browserName"]
 
@@ -42,6 +44,49 @@ class ShoppingSpreeTests(unittest.TestCase):
 
     def is_ie(self):
         return "internet explorer" == self.webDriver.capabilities["browserName"]
+
+    def testShoppingSpree(self):
+        self.create_driver("chrome")
+        home_page = Pages.openHomePage(self)
+        
+        products_page = home_page.search("Mug") #search by id
+        products_page.validateUrl()
+
+        product_page = products_page.clickProductLnk("Spree Mug") # byf link text
+        
+        url = "https://spreecommerce-demo.herokuapp.com/spree/products/45/product/spree_mug.jpeg?"
+        product_page.validateImageSrc(url) # search by css selector
+
+        product_page.clickThumbnail(1) # use x-path
+        url = "https://spreecommerce-demo.herokuapp.com/spree/products/46/product/spree_mug_back.jpeg?"
+        product_page.validateImageSrc(url) # search by css selector
+
+        product_page.setQuantity(3) # use by name
+
+        product_page.validateCartLink(0, None) # use partial link text
+
+        product_page.clickAddToCart() # use tag name
+        product_page.confirmCartResponse("Item Added To Cart") # use by class name
+
+        product_page.validateCartLink(3, "41.97")
+
+        cart_page = product_page.clickShoppingCart() # use partial link
+        cart_page.clickContinueShopping() # use whatever
+
+    def testSearchSpree(self):
+        self.create_driver("firefox")
+        home_page = Pages.openHomePage(self)
+    
+        products_page = home_page.search("Bag")
+        products_page.validateUrl()
+        products_page.validateTitle()
+
+        products_page.validateSearchText("Bag")
+        products_page.clearSearch()
+        products_page.validateSearchText("")
+
+        home_page = products_page.clickLogo()
+        home_page.validateUrl()
 
     @idata(driver_types)
     def testDepartmentsCombo(self, driver_type):
@@ -186,4 +231,5 @@ class ShoppingSpreeTests(unittest.TestCase):
         file_name = directory + "\\ShoppingSpreeTests-" + self._testMethodName + ".png"
         self.webDriver.get_screenshot_as_file(file_name)
         
+        self.webDriver.close()
         self.webDriver.quit()
