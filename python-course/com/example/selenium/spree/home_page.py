@@ -1,7 +1,11 @@
-class HomePage:
+from com.example.selenium.spree.spree_page import SpreePage, url_to_be
+
+
+class HomePage(SpreePage):
 
     def __init__(self, test):
-        self.test = test
+        # self.test = test
+        super().__init__(test, url_to_be("https://selenium.jacobparr.com/"))
 
     def validateTitle(self):
         title = self.test.webDriver.title
