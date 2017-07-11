@@ -1,7 +1,6 @@
 from com.example.selenium.spree.CartPage import CartPage, CART_PAGE_URL
-from com.example.selenium.spree.HomePage import HomePage
+from com.example.selenium.spree.HomePage import HomePage, BASE_URL
 from com.example.selenium.spree.ProductPage import ProductPage, PRODUCT_PAGE_URL
-from com.example.selenium.spree.SpreePage import BASE_URL
 
 
 class Pages:

@@ -1,4 +1,6 @@
-from com.example.selenium.spree.SpreePage import SpreePage, BASE_URL
+from com.example.selenium.spree.SpreePage import SpreePage
+
+BASE_URL = "https://selenium.jacobparr.com/"
 
 
 class HomePage(SpreePage):
@@ -13,3 +15,6 @@ class HomePage(SpreePage):
 
     def getDepartmentCmb(self):
         return self.webDriver.find_element_by_id("taxon")
+
+    def getSearchBox(self):
+        return self.webDriver.find_element_by_id("keywords")

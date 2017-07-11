@@ -4,8 +4,9 @@ from enum import Enum
 
 from selenium import webdriver
 
+from com.example.selenium.spree.HomePage import BASE_URL
 from com.example.selenium.spree.Pages import Pages
-from com.example.selenium.spree.SpreePage import BASE_URL
+from selenium.webdriver.support.ui import Select
 
 
 class DriverType(Enum):
@@ -116,6 +117,26 @@ class ShoppingSpreeTests(unittest.TestCase):
         deptCmb = homePage.getDepartmentCmb()
         print("deptCmb text=" + deptCmb.text)
         print("bg color=" + deptCmb.value_of_css_property("background-color"))
+        # deptCmb.click()
+        # Select(deptCmb).select_by_visible_text("Brand");
+        # self.webDriver.find_element_by_xpath("//select[@name='taxon']/option[text()='Categories']").click()
+        homePage.getSearchBox().send_keys("Hello Cisco")
+        homePage.getSearchBox().clear()
+        homePage.getSearchBox().submit()
+
+    def testSearchSpree(self):
+        homePage = Pages.openHomePage(self)
+
+        productsPage = homePage.search("Bag")
+        productsPage.validateUrl("Bag")
+        productsPage.validateTitle()
+
+        productsPage.validateSearchText("Bag")
+        productsPage.clearSearch()
+        productsPage.validateSearchText("")
+
+        homePage = productsPage.clickLogo()
+
 
     def testHomePage(self):
         home_page = Pages.openHomePage(self)

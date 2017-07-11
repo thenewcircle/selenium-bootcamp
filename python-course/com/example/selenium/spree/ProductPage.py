@@ -1,4 +1,5 @@
-from com.example.selenium.spree.SpreePage import SpreePage, BASE_URL
+from com.example.selenium.spree.HomePage import BASE_URL
+from com.example.selenium.spree.SpreePage import SpreePage
 
 PRODUCT_PAGE_URL = BASE_URL + "products/spree-tote"
 

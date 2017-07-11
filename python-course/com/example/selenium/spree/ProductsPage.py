@@ -1,15 +1,15 @@
 from com.example.selenium.spree.HomePage import BASE_URL
 from com.example.selenium.spree.SpreePage import SpreePage
 
-CART_PAGE_URL = BASE_URL + "cart"
+PRODUCTS_PAGE_URL = BASE_URL + "search/"
 
 
-class CartPage(SpreePage):
+class ProductsPage(SpreePage):
     def __init__(self, shoppingSpreeTests):
         SpreePage.__init__(self, shoppingSpreeTests)
 
     def validateTitle(self):
-        self._validateTitle("Shopping Cart - Spree Demo Site")
+        self._validateTitle("Spree Demo Site")
 
-    def validateUrl(self):
-        self._validateUrl(CART_PAGE_URL)
+    def validateUrl(self, searchTerm):
+        self._validateUrl(PRODUCTS_PAGE_URL + searchTerm.lower())
