@@ -123,26 +123,26 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.assertEquals(1, 1)
 
     def tearDown(self):
-        if hasattr(self, '_outcome'):  # Python 3.4+
-            result = self.defaultTestResult()  # these 2 methods have no side effects
-            self._feedErrorsToResult(result, self._outcome.errors)
-        else:  # Python 3.2 - 3.3 or 2.7
-            result = getattr(self, '_outcomeForDoCleanups', self._resultForDoCleanups)
-        error = self.list2reason(result.errors)
-        failure = self.list2reason(result.failures)
-        ok = not error and not failure
-
-        # demo:   report short info immediately (not important)
-        if not ok:
-            typ, text = ('ERROR', error) if error else ('FAIL', failure)
-            msg = [x for x in text.split('\n')[1:] if not x.startswith(' ')][0]
-            print("\n%s: %s\n     %s" % (typ, self.id(), msg))
-            directory = "test-failures"
-            if not os.path.exists(directory):
-                os.makedirs(directory)
-
-            file_name = directory + "//ShoppingSpreeTests-" + self._testMethodName + ".png"
-            self.webDriver.get_screenshot_as_file(file_name)
+        # if hasattr(self, '_outcome'):  # Python 3.4+
+        #     result = self.defaultTestResult()  # these 2 methods have no side effects
+        #     self._feedErrorsToResult(result, self._outcome.errors)
+        # else:  # Python 3.2 - 3.3 or 2.7
+        #     result = getattr(self, '_outcomeForDoCleanups', self._resultForDoCleanups)
+        # error = self.list2reason(result.errors)
+        # failure = self.list2reason(result.failures)
+        # ok = not error and not failure
+        #
+        # # demo:   report short info immediately (not important)
+        # if not ok:
+        #     typ, text = ('ERROR', error) if error else ('FAIL', failure)
+        #     msg = [x for x in text.split('\n')[1:] if not x.startswith(' ')][0]
+        #     print("\n%s: %s\n     %s" % (typ, self.id(), msg))
+        #     directory = "test-failures"
+        #     if not os.path.exists(directory):
+        #         os.makedirs(directory)
+        #
+        #     file_name = directory + "//ShoppingSpreeTests-" + self._testMethodName + ".png"
+        #     self.webDriver.get_screenshot_as_file(file_name)
 
         self.webDriver.quit()
 
