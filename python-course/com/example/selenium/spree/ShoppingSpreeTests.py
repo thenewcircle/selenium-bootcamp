@@ -21,10 +21,10 @@ class ShoppingSpreeTests(unittest.TestCase):
         driver_type = DriverType.Chrome
 
         if DriverType.Firefox == driver_type:
-            path = "/Users/gilzhaiek/Dev/newcircle/selenium_cisco/python-course/geckodriver"
+            path = "../../../../geckodriver"
             self.webDriver = webdriver.Firefox(executable_path=path)
         elif DriverType.Chrome == driver_type:
-            path = "/Users/gilzhaiek/Dev/newcircle/selenium_cisco/python-course/chromedriver"
+            path = "../../../../chromedriver"
             self.webDriver = webdriver.Chrome(executable_path=path)
         elif DriverType.IE == driver_type:
             # path = os.environ["webdriver_ie_driver"]
@@ -115,6 +115,7 @@ class ShoppingSpreeTests(unittest.TestCase):
         homePage = Pages.openHomePage(self)
         deptCmb = homePage.getDepartmentCmb()
         print("deptCmb text=" + deptCmb.text)
+        print("bg color=" + deptCmb.value_of_css_property("background-color"))
 
     def testHomePage(self):
         home_page = Pages.openHomePage(self)
