@@ -111,6 +111,11 @@ class ShoppingSpreeTests(unittest.TestCase):
         msg = "Found " + url
         self.assertTrue(url.startswith("https://www.google.com/?"), msg)
 
+    def testDepartmentsCombo(self):
+        homePage = Pages.openHomePage(self)
+        deptCmb = homePage.getDepartmentCmb()
+        print("deptCmb text=" + deptCmb.text)
+
     def testHomePage(self):
         home_page = Pages.openHomePage(self)
         home_page.validateTitle()
