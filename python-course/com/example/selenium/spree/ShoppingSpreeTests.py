@@ -116,6 +116,16 @@ class ShoppingSpreeTests(unittest.TestCase):
         home_page.validateTitle()
         home_page.validateUrl()
 
+    def testProductPage(self):
+        product_page = Pages.openProductPage(self)
+        product_page.validateTitle()
+        product_page.validateUrl()
+
+    def testCartPage(self):
+        cart_page = Pages.openCartPage(self)
+        cart_page.validateTitle()
+        cart_page.validateUrl()
+
     def testA(self):
         self.assertTrue(True)
 
