@@ -85,6 +85,8 @@ public class ShoppingSpreeTests implements ITest {
         webDriver.get("https://cisco.com");
         String title = webDriver.getTitle();
         System.out.println(title);
+        String source = webDriver.getPageSource();
+        Assert.assertTrue(source.contains("<!--"));
     }
 
     @Test

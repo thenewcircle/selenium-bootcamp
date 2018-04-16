@@ -1,9 +1,10 @@
 import unittest
 
+import os
 from selenium import webdriver
 from ddt import ddt, idata
 
-driver_types = ["chrome", "firefox"]
+driver_types = ["chrome"]
 
 
 @ddt
@@ -26,7 +27,7 @@ class ShoppingSpreeTests(unittest.TestCase):
         title = self.webDriver.title
         self.assertEquals("Google", title)
         url = self.webDriver.current_url
-        self.assertTrue(url.startswith("https://www.google.com"))
+        self.assertTrue(url.startswith("httpsXX://www.google.com"))
         self.assertEquals(url, "https://www.google.com/?gws_rd=ssl")
 
     @idata(driver_types)
@@ -36,20 +37,28 @@ class ShoppingSpreeTests(unittest.TestCase):
         title = self.webDriver.title
         self.assertEquals("Spree Demo Site", title)
 
-    @idata(driver_types)
-    def testA(self, driver_type):
-        print("Test A")
-
-        self.create_driver(driver_type)
-        self.assertTrue(1 == 1)
-
-    @idata(driver_types)
-    def testB(self, driver_type):
-        print("Test B")
-
-        self.create_driver(driver_type)
-        self.assertEquals(1, 1)
 
     def tearDown(self):
-        print("After method\n")
+        if hasattr(self, '_outcome'):  # Python 3.4+
+            result = self.defaultTestResult()  # these 2 methods have no side effects
+            self._feedErrorsToResult(result, self._outcome.errors)
+        else:  # Python 3.2 - 3.3 or 2.7
+            result = getattr(self, '_outcomeForDoCleanups', self._resultForDoCleanups)
+        error = self.list2reason(result.errors)
+        failure = self.list2reason(result.failures)
+        ok = not error and not failure
+
+        # demo:   report short info immediately (not important)
+        if not ok:
+            directory = "test-failures"
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+
+            file_name = directory + "//ShoppingSpreeTests-" + self._testMethodName + ".png"
+            self.webDriver.get_screenshot_as_file(file_name)
+
         self.webDriver.quit()
+
+    def list2reason(self, exc_list):
+        if exc_list and exc_list[-1][0] is self:
+            return exc_list[-1][1]
