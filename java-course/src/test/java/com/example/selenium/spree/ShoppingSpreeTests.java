@@ -68,6 +68,7 @@ public class ShoppingSpreeTests implements ITest {
         Assert.assertEquals(title, "Google");
         String url = webDriver.getCurrentUrl();
         Assert.assertEquals(url, "https://www.google.com/?gws_rd=ssl");
+        Assert.assertTrue(url.startsWith("https://www.google.com"));
     }
 
     @Test
