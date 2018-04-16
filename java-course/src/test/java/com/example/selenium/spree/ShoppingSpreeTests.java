@@ -48,17 +48,26 @@ public class ShoppingSpreeTests implements ITest {
     public void beforeMethod(Method aMethod) throws Exception {
         testName = aMethod.getName() + " [" + driverType + "]";
 
-        if(driverType == DriverType.Chrome) {
+        if (driverType == DriverType.Chrome) {
             System.out.println("Before method\n");
             System.setProperty("webdriver.chrome.driver",
                     "/Users/gilzhaiek/projects/nc/selenium-bootcamp-java/chromedriver");
             webDriver = new ChromeDriver();
-        } else if(driverType == DriverType.Firefox) {
+        } else if (driverType == DriverType.Firefox) {
             System.out.println("Before method\n");
             System.setProperty("webdriver.gecko.driver",
                     "/Users/gilzhaiek/projects/nc/selenium-bootcamp-java/geckodriver");
             webDriver = new FirefoxDriver();
         }
+    }
+
+    @Test
+    public void testGetGoogleUrl() {
+        webDriver.get("http://google.com");
+        String title = webDriver.getTitle();
+        Assert.assertEquals(title, "Google");
+        String url = webDriver.getCurrentUrl();
+        Assert.assertEquals(url, "https://www.google.com/?gws_rd=ssl");
     }
 
     @Test
@@ -69,7 +78,7 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
-    public void tetCiscoPage() {
+    public void testCiscoPage() {
         webDriver.get("https://cisco.com");
         String title = webDriver.getTitle();
         System.out.println(title);
