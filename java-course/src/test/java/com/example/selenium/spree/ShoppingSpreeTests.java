@@ -109,6 +109,37 @@ public class ShoppingSpreeTests implements ITest {
         Assert.assertTrue(source.contains("<!--"));
     }
 
+    @Test
+    public void testCartPage() {
+        webDriver.navigate().to("https://selenium.jacobparr.com/cart");
+        Assert.assertEquals(webDriver.getTitle(), "Shopping Cart - Spree Demo Site");
+        Assert.assertEquals(webDriver.getCurrentUrl(), "https://selenium.jacobparr.com/cart");
+    }
+
+    @Test
+    public void testBackAndForth() {
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-tote");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
+
+        webDriver.navigate().back();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().forward();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
+    }
+
+    @Test
+    public void testRefresh() {
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().refresh();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+    }
+
     @AfterMethod
     public void afterMethod(ITestResult results) throws Exception {
         System.out.println("After method\n");
