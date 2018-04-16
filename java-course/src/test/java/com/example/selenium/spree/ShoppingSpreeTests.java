@@ -67,8 +67,10 @@ public class ShoppingSpreeTests implements ITest {
         String title = webDriver.getTitle();
         Assert.assertEquals(title, "Google");
         String url = webDriver.getCurrentUrl();
-        Assert.assertEquals(url, "https://www.google.com/?gws_rd=ssl");
-        Assert.assertTrue(url.startsWith("https://www.google.com"));
+        Assert.assertEquals(url, "https://www.google.com/?gws_rd=ssl",
+                "Got URL:" + url + " but expected https://www.google.com/?gws_rd=ssl");
+        Assert.assertTrue(url.startsWith("https://www.google.com"),
+                "URL:" + url + " did not start with https://www.google.com");
     }
 
     @Test
