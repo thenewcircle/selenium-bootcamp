@@ -1,30 +1,45 @@
 package com.example.selenium.spree;
 
-import org.testng.Assert;
-import org.testng.annotations.*;
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class ShoppingSpreeTests {
+    RemoteWebDriver webDriver;
 
     static {
         LogbackUtils.initLogback(Level.WARN);
     }
 
-    @BeforeClass
-    public void beforeClass() throws Exception {
-        System.out.println("Before class");
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("Before method\n");
+        System.setProperty("webdriver.gecko.driver",
+                "/Users/gilzhaiek/projects/nc/selenium-bootcamp-java/geckodriver");
+        webDriver = new FirefoxDriver();
+
+//        System.setProperty("webdriver.chrome.driver",
+//                "/Users/gilzhaiek/projects/nc/selenium-bootcamp-java/chromedriver");
+//        webDriver = new ChromeDriver();
+
     }
 
-    @BeforeMethod
-    public void beforeMethod() throws Exception {
-        System.out.println("Before method");
+    @Test
+    public void testHomePage() {
+        webDriver.get("https://selenium.jacobparr.com");
+        String title = webDriver.getTitle();
+        Assert.assertEquals(title, "Spree Demo Site");
     }
 
     @Test
     public void testA() {
         System.out.println("Test A");
-        Assert.assertEquals(1, 2);
+        Assert.assertTrue(1 == 1);
     }
 
     @Test
@@ -36,10 +51,7 @@ public class ShoppingSpreeTests {
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method\n");
+        webDriver.quit();
     }
 
-    @AfterClass
-    public void afterClass() {
-        System.out.println("After class");
-    }
 }

@@ -3,16 +3,13 @@ import unittest
 
 class ShoppingSpreeTests(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        print("Before class")
 
     def setUp(self):
         print("Before method")
 
     def testA(self):
         print("Test A")
-        self.assertEquals(1, 2)
+        self.assertTrue(1 == 1)
 
     def testB(self):
         print("Test B")
@@ -20,7 +17,3 @@ class ShoppingSpreeTests(unittest.TestCase):
 
     def tearDown(self):
         print("After method\n")
-
-    @classmethod
-    def tearDownClass(cls):
-        print("After class")
