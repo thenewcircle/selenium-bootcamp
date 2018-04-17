@@ -18,9 +18,9 @@ class BaseTests(unittest.TestCase):
         self.chrome_path = os.path.join(self.drivers_path, "chromedriver")
 
         if "firefox" == driver_type:
-            self.webDriver = webdriver.Firefox(executable_path=self.firefox_path)
+            self.web_driver = webdriver.Firefox(executable_path=self.firefox_path)
         elif "chrome" == driver_type:
-            self.webDriver = webdriver.Chrome(executable_path=self.chrome_path)
+            self.web_driver = webdriver.Chrome(executable_path=self.chrome_path)
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
@@ -39,9 +39,9 @@ class BaseTests(unittest.TestCase):
                 os.makedirs(directory)
 
             file_name = directory + "//ShoppingSpreeTests-" + self._testMethodName + ".png"
-            self.webDriver.get_screenshot_as_file(file_name)
+            self.web_driver.get_screenshot_as_file(file_name)
 
-        self.webDriver.quit()
+        self.web_driver.quit()
 
     def list2reason(self, exc_list):
         if exc_list and exc_list[-1][0] is self:
