@@ -6,9 +6,13 @@ class BasePage(object):
         if navigate_to:
             self.navigate()
 
+    def url_to_be(self, web_driver):
+        return self.url == web_driver.current_url
+
     def navigate(self):
         self.test.web_driver.get(self.url)
-        self.assert_on_page()
+        from selenium.webdriver.support.wait import WebDriverWait
+        WebDriverWait(self.test.web_driver, 30).until(self.url_to_be)
 
     def assert_on_page(self):
         self.test.assertEquals(self.test.web_driver.title, self.title)

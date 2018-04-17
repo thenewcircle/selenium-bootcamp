@@ -17,7 +17,6 @@ public class HomePage extends BasePage {
         loginButton.click();
 
         LoginPage loginPage = new LoginPage(webDriver, false);
-        loginPage.assertOnPage();
 
         return loginPage;
     }

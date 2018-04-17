@@ -21,6 +21,7 @@ class BaseTests(unittest.TestCase):
             self.web_driver = webdriver.Firefox(executable_path=self.firefox_path)
         elif "chrome" == driver_type:
             self.web_driver = webdriver.Chrome(executable_path=self.chrome_path)
+        self.web_driver.implicitly_wait(5)
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+

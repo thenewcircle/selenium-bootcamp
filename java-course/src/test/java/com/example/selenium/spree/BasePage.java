@@ -1,6 +1,7 @@
 package com.example.selenium.spree;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class BasePage {
@@ -16,7 +17,11 @@ public class BasePage {
 
         if(navigateTo) {
             navigate();
+        } else {
+            assertOnPage();
         }
+
+        PageFactory.initElements(this.webDriver, this);
     }
 
     protected void navigate() {

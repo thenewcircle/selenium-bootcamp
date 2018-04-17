@@ -1,3 +1,5 @@
+from selenium.webdriver.support import expected_conditions
+
 from BasePage import BasePage
 from NewsFeedPage import NewsFeedPage
 
@@ -33,6 +35,10 @@ class LoginPage(BasePage):
         self.get_login_button().click()
 
         password_input = self.get_password_input()
+        from selenium.webdriver.support.wait import WebDriverWait
+        WebDriverWait(self.test.webDriver, 30).until(
+            expected_conditions.visibility_of(password_input)
+        )
         self.test.assertTrue(password_input.is_displayed())
         self.test.assertTrue(password_input.is_enabled())
         password_input.send_keys(password)
