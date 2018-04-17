@@ -26,11 +26,6 @@ public class LoginPage extends BasePage {
         return new NewsFeedPage();
     }
 
-    public void navigateTo() {
-        webDriver.navigate().to(URL);
-        Assert.assertEquals(webDriver.getTitle(), "Cisco.com Login Page");
-    }
-
     private WebElement getLoginButton() {
         return webDriver.findElement(By.id("login-button"));
     }
@@ -48,9 +43,8 @@ public class LoginPage extends BasePage {
         getLoginButton().click();
 
         WebElement passwordInput = getPasswordInput();
-        if (!passwordInput.isDisplayed()) {
-            return false;
-        }
+        Assert.assertTrue(passwordInput.isDisplayed());
+        Assert.assertTrue(passwordInput.isEnabled());
 
         passwordInput.sendKeys(password);
         getLoginButton().click();

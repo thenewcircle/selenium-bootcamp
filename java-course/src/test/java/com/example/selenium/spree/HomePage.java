@@ -12,11 +12,6 @@ public class HomePage extends BasePage {
                 navigateTo);
     }
 
-    public static HomePage navigateTo(RemoteWebDriver webDriver, boolean navigateTo) {
-        HomePage homePage = new HomePage(webDriver, navigateTo);
-        return homePage;
-    }
-
     public LoginPage navigateToLoginPage() {
         WebElement loginButton = webDriver.findElement(By.xpath("//*[@id=\"actions\"]/li[1]/a"));
         loginButton.click();
