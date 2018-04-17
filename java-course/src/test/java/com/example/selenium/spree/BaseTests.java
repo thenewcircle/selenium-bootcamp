@@ -13,12 +13,9 @@ import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Factory;
 
 import java.io.File;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BaseTests implements ITest {
     String projectPath = "/Users/gilzhaiek/projects/nc/selenium-bootcamp-java";
@@ -42,14 +39,6 @@ public class BaseTests implements ITest {
     @Override
     public String getTestName() {
         return testName;
-    }
-
-    @Factory()
-    public static Object[] testFactory() {
-        List<ShoppingSpreeTests> data = new ArrayList<>();
-        data.add(new ShoppingSpreeTests(ShoppingSpreeTests.DriverType.Firefox));
-        data.add(new ShoppingSpreeTests(ShoppingSpreeTests.DriverType.Chrome));
-        return data.toArray();
     }
 
     @BeforeMethod

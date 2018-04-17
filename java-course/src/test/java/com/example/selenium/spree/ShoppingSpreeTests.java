@@ -2,11 +2,23 @@ package com.example.selenium.spree;
 
 import org.openqa.selenium.Capabilities;
 import org.testng.Assert;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingSpreeTests extends BaseTests {
     public ShoppingSpreeTests(DriverType driverType) {
         super(driverType);
+    }
+
+    @Factory()
+    public static Object[] testFactory() {
+        List<ShoppingSpreeTests> data = new ArrayList<>();
+        data.add(new ShoppingSpreeTests(BaseTests.DriverType.Firefox));
+        data.add(new ShoppingSpreeTests(BaseTests.DriverType.Chrome));
+        return data.toArray();
     }
 
     @Test
