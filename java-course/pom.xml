@@ -146,6 +146,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Adding for FileUtils -->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+
 		<!-- Logging APIs - Logback and SLF4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

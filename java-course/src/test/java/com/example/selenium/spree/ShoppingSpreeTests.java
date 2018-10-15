@@ -2,14 +2,19 @@ package com.example.selenium.spree;
 
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.ITest;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,8 +94,20 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @AfterMethod
-    public void afterMethod() {
+    public void afterMethod(ITestResult results) throws IOException {
         System.out.println("After method\n");
+
+        if (!results.isSuccess()) {
+            File screenShotDir = new File("test-failures");
+            screenShotDir.mkdirs();
+            File tempFile = webDriver.getScreenshotAs(OutputType.FILE);
+
+            String className = getClass().getSimpleName();
+            String methodName = results.getMethod().getMethodName();
+            String fileName = String.format("%s.%s [%s].png", className, methodName, driverType);
+            FileUtils.copyFile(tempFile, new File(screenShotDir, fileName));
+        }
+
         webDriver.quit();
     }
 
