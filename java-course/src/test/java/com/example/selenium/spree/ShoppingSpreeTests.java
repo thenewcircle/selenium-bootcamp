@@ -12,12 +12,12 @@ public class ShoppingSpreeTests {
     }
 
     @BeforeClass
-    public void beforeClass() throws Exception {
+    public void beforeClass(){
         System.out.println("Before class");
     }
 
     @BeforeMethod
-    public void beforeMethod() throws Exception {
+    public void beforeMethod() {
         System.out.println("Before method");
     }
 
