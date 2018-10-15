@@ -7,16 +7,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
+import org.testng.ITest;
 import org.testng.annotations.*;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingSpreeTests {
+public class ShoppingSpreeTests implements ITest {
     enum DriverType {Chrome, Firefox, Safari}
 
     private RemoteWebDriver webDriver;
     private DriverType driverType;
+    private String testName;
 
     static {
         LogbackUtils.initLogback(Level.WARN);
@@ -35,6 +38,11 @@ public class ShoppingSpreeTests {
         this.driverType = driverType;
     }
 
+    @Override
+    public String getTestName() {
+        return testName;
+    }
+
     @BeforeClass
     public void beforeClass() {
         System.out.println("Before class");
@@ -43,8 +51,9 @@ public class ShoppingSpreeTests {
     // Runs before each test
     // Here we need to create the webDriver
     @BeforeMethod
-    public void beforeMethod() {
+    public void beforeMethod(Method aMethod) {
         System.out.println("Before method");
+        testName = aMethod.getName() + " [" + driverType + "]";
 
         switch (this.driverType) {
             case Chrome:
