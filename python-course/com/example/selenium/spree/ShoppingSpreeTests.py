@@ -12,9 +12,13 @@ class ShoppingSpreeTests(unittest.TestCase):
 
     def setUp(self):
         print("Before method")
-        geckoDriverPath = os.environ['GECKO_DRIVER']
-        self.webDriverFirefox = webdriver.Firefox(executable_path=geckoDriverPath)
-        # self.webDriverChrome = webdriver.Chrome()
+        # plug this in the .bash_profile file
+        # export GECKO_DRIVER=/Users/$USER/geckodriver
+        # And copy geckodriver to that location
+        self.webDriver = webdriver.Firefox(executable_path=os.environ['GECKO_DRIVER'])
+
+        # self.webDriver = webdriver.Chrome()
+        
         # self.webDriver = webdriver.Safari()
 
     def setupForAB(self):
