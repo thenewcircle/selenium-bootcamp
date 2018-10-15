@@ -24,7 +24,7 @@ public class ShoppingSpreeTests {
     @Test
     public void testA() {
         System.out.println("Test A");
-        Assert.assertEquals(1, 2);
+        Assert.assertEquals(2, 2);
     }
 
     @Test
