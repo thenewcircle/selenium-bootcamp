@@ -7,7 +7,7 @@ from ddt import ddt, idata
 
 @ddt
 class ShoppingSpreeTests(unittest.TestCase):
-    driver_types = ["chrome", "firefox", "safari"]
+    driver_types = ["chrome"] #, "firefox", "safari"]
 
     @classmethod
     def setUpClass(cls):
@@ -27,29 +27,22 @@ class ShoppingSpreeTests(unittest.TestCase):
         elif "safari" == driver_type:
             self.webDriver = webdriver.Safari()
 
-    def setupForAB(self):
-        print("Test AB supported setup")
-
-    @idata(driver_types)
-    def testA(self, driver_type):
-        self.create_driver(driver_type)
-        self.setupForAB()
-        print("Test A ")
-        self.assertEquals(2, 2)
-
-    @idata(driver_types)
-    def testB(self, driver_type):
-        self.create_driver(driver_type)
-        self.setupForAB()
-        print("Test B")
-        self.assertEquals(1, 1)
-
     @idata(driver_types)
     def testHomePage(self, driver_type):
         self.create_driver(driver_type)
         self.webDriver.get("https://selenium.jacobparr.com")
         title = self.webDriver.title
         self.assertEquals("Spree Demo Site", title)
+
+    @idata(driver_types)
+    def testGetGoogleUrl(self, driver_type):
+        self.create_driver(driver_type)
+        self.webDriver.get("https://www.google.com")
+
+        title = self.webDriver.title
+        self.assertEquals("Google", title)
+        url = self.webDriver.current_url
+        self.assertEquals("https://www.google.com/", url)
 
     def tearDown(self):
         print("After method\n")
