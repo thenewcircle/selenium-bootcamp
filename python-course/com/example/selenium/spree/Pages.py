@@ -1,6 +1,7 @@
 from com.example.selenium.spree.pages.CartPage import CartPage
 from com.example.selenium.spree.pages.HomePage import HomePage
 from com.example.selenium.spree.pages.ProductPage import ProductPage
+from com.example.selenium.spree.pages.YahooPage import YahooPage
 
 
 class Pages:
@@ -19,3 +20,8 @@ class Pages:
     def openProductPage(cls, test):
         test.webDriver.get(ProductPage.url)
         return ProductPage(test)
+
+    @classmethod
+    def openYahooFinancePage(cls, test):
+        test.webDriver.get(YahooPage.url)
+        return YahooPage(test)

@@ -36,19 +36,12 @@ class ShoppingSpreeTests2(unittest.TestCase):
             self.webDriver = webdriver.Safari()
 
     @idata(driver_types)
-    def testDepartmentsCombo(self, driver_type):
+    def testYahooFinance(self, driver_type):
         self.create_driver(driver_type)
-        homePage = Pages.openHomePage(self)
-        deptCmb:WebElement = homePage.getDepartmentCmb()
-        attr = deptCmb.get_attribute("aria-label")
-        cssValue = deptCmb.value_of_css_property("border")
-        size = deptCmb.size
-        tagName = deptCmb.tag_name
-        text = deptCmb.text
-        displayed = deptCmb.is_displayed()
-        selected = deptCmb.is_selected()
-        enabled = deptCmb.is_enabled()
-        color = deptCmb.value_of_css_property("background-color")
+        yahooFinancePage = Pages.openYahooFinancePage(self)
+        financeTable:WebElement = yahooFinancePage.getFinanceTable()
+        text = financeTable.text
+        color = financeTable.value_of_css_property("background-color")
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
