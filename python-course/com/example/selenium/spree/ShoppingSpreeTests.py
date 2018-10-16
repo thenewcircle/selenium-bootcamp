@@ -3,6 +3,7 @@ import unittest
 
 from selenium import webdriver
 from ddt import ddt, idata
+from selenium.webdriver.remote.webelement import WebElement
 
 from com.example.selenium.spree.Pages import Pages
 
@@ -116,6 +117,14 @@ class ShoppingSpreeTests(unittest.TestCase):
         selected = deptCmb.is_selected()
         enabled = deptCmb.is_enabled()
         color = deptCmb.value_of_css_property("background-color")
+
+    @idata(driver_types)
+    def testYahooFinance(self, driver_type):
+        self.create_driver(driver_type)
+        yahooFinancePage = Pages.openYahooFinancePage(self)
+        financeTable:WebElement = yahooFinancePage.getFinanceTable()
+        text = financeTable.text
+        color = financeTable.value_of_css_property("background-color")
 
     @idata(driver_types)
     def testGetGoogleUrl(self, driver_type):

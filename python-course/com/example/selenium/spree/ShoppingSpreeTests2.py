@@ -36,12 +36,20 @@ class ShoppingSpreeTests2(unittest.TestCase):
             self.webDriver = webdriver.Safari()
 
     @idata(driver_types)
-    def testYahooFinance(self, driver_type):
+    def testSearchSpree(self, driver_type):
         self.create_driver(driver_type)
-        yahooFinancePage = Pages.openYahooFinancePage(self)
-        financeTable:WebElement = yahooFinancePage.getFinanceTable()
-        text = financeTable.text
-        color = financeTable.value_of_css_property("background-color")
+        homePage = Pages.openHomePage(self)
+
+        productsPage = homePage.search("Bag")
+        productsPage.validateTitle()
+        productsPage.validateUrl()
+
+        # productsPage.validateSearchText("Bag")
+        # productsPage.clearSearch()
+        # productsPage.validateSearchText("")
+
+        # homePage = productsPage.clickLogo()
+        # homePage.validateUrl()
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
