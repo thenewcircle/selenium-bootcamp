@@ -34,5 +34,10 @@ Thumbs.db
 #####################
 *.iml
 .idea/
+python-course/venv/
 .gradle
 local.properties
+
+# Testing leftovers #
+*.png
+*.log
