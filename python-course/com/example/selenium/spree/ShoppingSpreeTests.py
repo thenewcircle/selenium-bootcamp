@@ -7,7 +7,10 @@ from ddt import ddt, idata
 
 @ddt
 class ShoppingSpreeTests(unittest.TestCase):
-    driver_types = ["chrome"]  # , "firefox", "safari"]
+    CHROME = "chrome"
+    FIREFOX = "firefox"
+    SAFARI = "safari"
+    driver_types = [SAFARI, CHROME, FIREFOX]
 
     @classmethod
     def setUpClass(cls):
@@ -17,21 +20,33 @@ class ShoppingSpreeTests(unittest.TestCase):
         print("Before method")
 
     def create_driver(self, driver_type):
-        if "firefox" == driver_type:
+        if self.FIREFOX == driver_type:
             # plug this in the .bash_profile file
             # export GECKO_DRIVER=/Users/$USER/geckodriver
             # And copy geckodriver to that location
             self.webDriver = webdriver.Firefox(executable_path=os.environ['GECKO_DRIVER'])
-        elif "chrome" == driver_type:
+        elif self.CHROME == driver_type:
             self.webDriver = webdriver.Chrome()
-        elif "safari" == driver_type:
+        elif self.SAFARI == driver_type:
             self.webDriver = webdriver.Safari()
 
     @idata(driver_types)
     def testCapabilities(self, driver_type):
         self.create_driver(driver_type)
         capabilities = self.webDriver.capabilities
-        name = capabilities["browserName"]
+        name = capabilities["browserName"].lower()
+
+        self.assertEquals(name, driver_type)
+        if (driver_type == self.CHROME):
+            version = capabilities["version"]
+            platform = capabilities["platform"]
+            js = capabilities["javascriptEnabled"]
+        elif (driver_type == self.FIREFOX):
+            version = capabilities["browserVersion"]
+            platform = capabilities["platformVersion"]
+        elif (driver_type == self.SAFARI):
+            version = capabilities["browserVersion"]
+            platform = capabilities["platformName"]
 
     @idata(driver_types)
     def testCartPage(self, driver_type):
@@ -48,7 +63,6 @@ class ShoppingSpreeTests(unittest.TestCase):
         self.create_driver(driver_type)
         # LAB 11.c
 
-
     @idata(driver_types)
     def testHomePage(self, driver_type):
         self.create_driver(driver_type)
@@ -56,14 +70,13 @@ class ShoppingSpreeTests(unittest.TestCase):
         title = self.webDriver.title
         self.assertEquals("Spree Demo Site", title)
 
-
     @idata(driver_types)
     def testGetGoogleUrl(self, driver_type):
         self.create_driver(driver_type)
         self.webDriver.get("https://www.google.com")
 
         source = self.webDriver.page_source
-        self.assertFalse("<!--" in source)
+        self.assertTrue("<!--" in source)
 
         title = self.webDriver.title
         self.assertEquals("Google", title)

@@ -78,7 +78,22 @@ public class ShoppingSpreeTests implements ITest {
     @Test
     public void testCapabilities() {
         Capabilities capabilities = webDriver.getCapabilities();
-        String name = capabilities.getBrowserName();
+        String name = capabilities.getBrowserName().toLowerCase();
+        String version = capabilities.getVersion();
+        String os = capabilities.getPlatform().name();
+        boolean js = capabilities.isJavascriptEnabled();
+
+        switch (driverType) {
+            case Chrome:
+                Assert.assertEquals(name, "chrome");
+                break;
+            case Firefox:
+                Assert.assertEquals(name, "firefox");
+                break;
+            case Safari:
+                Assert.assertEquals(name, "safari");
+                break;
+        }
     }
 
     @Test
