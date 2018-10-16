@@ -8,12 +8,12 @@ from com.example.selenium.spree.Pages import Pages
 
 
 @ddt
-class ShoppingSpreeTests(unittest.TestCase):
+class ShoppingSpreeTests2(unittest.TestCase):
     BASE_URL = "https://selenium.jacobparr.com/"
     CHROME = "chrome"
     FIREFOX = "firefox"
     SAFARI = "safari"
-    driver_types = [SAFARI, CHROME, FIREFOX]
+    driver_types = [SAFARI]
 
     @classmethod
     def setUpClass(cls):
@@ -32,53 +32,6 @@ class ShoppingSpreeTests(unittest.TestCase):
             self.webDriver = webdriver.Chrome()
         elif self.SAFARI == driver_type:
             self.webDriver = webdriver.Safari()
-
-    @idata(driver_types)
-    def testCapabilities(self, driver_type):
-        self.create_driver(driver_type)
-        capabilities = self.webDriver.capabilities
-        name = capabilities["browserName"].lower()
-
-        self.assertEquals(name, driver_type)
-        if (driver_type == self.CHROME):
-            version = capabilities["version"]
-            platform = capabilities["platform"]
-            js = capabilities["javascriptEnabled"]
-        elif (driver_type == self.FIREFOX):
-            version = capabilities["browserVersion"]
-            platform = capabilities["platformVersion"]
-        elif (driver_type == self.SAFARI):
-            version = capabilities["browserVersion"]
-            platform = capabilities["platformName"]
-
-    @idata(driver_types)
-    def testCartPage(self, driver_type):
-        self.create_driver(driver_type)
-        # LAB 11.a
-
-    @idata(driver_types)
-    def testRefresh(self, driver_type):
-        self.create_driver(driver_type)
-        self.webDriver.get(self.BASE_URL + "products/spree-bag")
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.refresh()
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-    @idata(driver_types)
-    def testBackAndForth(self, driver_type):
-        self.create_driver(driver_type)
-        self.webDriver.get(self.BASE_URL + "products/spree-bag")
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.get(self.BASE_URL + "products/spree-tote")
-        self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.back()
-        self.assertEquals("Spree Bag - Spree Demo Site", self.webDriver.title)
-
-        self.webDriver.forward()
-        self.assertEquals("Spree Tote - Spree Demo Site", self.webDriver.title)
 
 
     @idata(driver_types)
@@ -102,18 +55,6 @@ class ShoppingSpreeTests(unittest.TestCase):
         product_page.validateTitle()
         product_page.validateUrl()
 
-    @idata(driver_types)
-    def testGetGoogleUrl(self, driver_type):
-        self.create_driver(driver_type)
-        self.webDriver.get("https://www.google.com")
-
-        source = self.webDriver.page_source
-        self.assertTrue("<!--" in source)
-
-        title = self.webDriver.title
-        self.assertEquals("Google", title)
-        url = self.webDriver.current_url
-        self.assertEquals("https://www.google.com/", url)
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
