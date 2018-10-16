@@ -3,6 +3,7 @@ package com.example.selenium.spree;
 import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -76,7 +77,8 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testCapabilities() {
-        // LAB 10.e
+        Capabilities capabilities = webDriver.getCapabilities();
+        String name = capabilities.getBrowserName();
     }
 
     @Test

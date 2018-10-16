@@ -30,7 +30,8 @@ class ShoppingSpreeTests(unittest.TestCase):
     @idata(driver_types)
     def testCapabilities(self, driver_type):
         self.create_driver(driver_type)
-        # LAB 10.a
+        capabilities = self.webDriver.capabilities
+        name = capabilities["browserName"]
 
     @idata(driver_types)
     def testCartPage(self, driver_type):
