@@ -3,6 +3,7 @@ package com.example.selenium.spree;
 import com.example.selenium.spree.pages.CartPage;
 import com.example.selenium.spree.pages.HomePage;
 import com.example.selenium.spree.pages.ProductPage;
+import com.example.selenium.spree.pages.YahooFinancialPage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Pages {
@@ -19,5 +20,10 @@ public class Pages {
     public static ProductPage openProductPage(RemoteWebDriver webDriver) {
         webDriver.get(ProductPage.URL);
         return new ProductPage(webDriver);
+    }
+
+    public static YahooFinancialPage openYahooFinance(RemoteWebDriver webDriver) {
+        webDriver.get(YahooFinancialPage.URL);
+        return new YahooFinancialPage(webDriver);
     }
 }

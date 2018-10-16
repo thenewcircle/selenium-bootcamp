@@ -4,8 +4,10 @@ import ch.qos.logback.classic.Level;
 import com.example.selenium.spree.pages.CartPage;
 import com.example.selenium.spree.pages.HomePage;
 import com.example.selenium.spree.pages.ProductPage;
+import com.example.selenium.spree.pages.YahooFinancialPage;
 import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
@@ -38,8 +40,8 @@ public class ShoppingSpreeTests implements ITest {
     @Factory()
     public static Object[] testFactory() {
         List<ShoppingSpreeTests> data = new ArrayList<>();
-        data.add(new ShoppingSpreeTests(DriverType.Safari));
-        data.add(new ShoppingSpreeTests(DriverType.Firefox));
+        //data.add(new ShoppingSpreeTests(DriverType.Safari));
+        //data.add(new ShoppingSpreeTests(DriverType.Firefox));
         data.add(new ShoppingSpreeTests(DriverType.Chrome));
         return data.toArray();
     }
@@ -87,13 +89,23 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testCartValue() {
+        HomePage homePage = Pages.openHomePage(webDriver);
+        WebElement cartValue = homePage.getCartValue();
+        String text = cartValue.getText();
+        Assert.assertEquals("Cart: (Empty)",text);
+    }
+
+    @Test
     public void testDepartmentsCombo() {
         HomePage homePage = Pages.openHomePage(webDriver);
         WebElement depCmb = homePage.getDepartmentCmb();
         String label = depCmb.getAttribute("aria-label");
+        String className = depCmb.getAttribute("class");
         boolean isDisplayed = depCmb.isDisplayed();
         boolean isEnabled = depCmb.isEnabled();
         boolean isSelected = depCmb.isSelected();
+        //Assert.assertEquals("All departments",depCmb.getText());
     }
 
     @Test
@@ -129,6 +141,16 @@ public class ShoppingSpreeTests implements ITest {
         ProductPage prodPage = Pages.openProductPage(webDriver);
         prodPage.validateTitle();
         prodPage.validateUrl();
+    }
+
+    @Test
+    public void testYahooPage() {
+        YahooFinancialPage yahooFinancialPage = Pages.openYahooFinance(webDriver);
+        String text = yahooFinancialPage.getTable().getText();
+        List<WebElement> webElements = yahooFinancialPage.getTable().findElements(By.cssSelector("span"));
+        for(WebElement webElement : webElements) {
+            System.out.println(webElement.getText());
+        }
     }
 
     @Test
