@@ -76,6 +76,13 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testHomePage() {
+        HomePage homePage = Pages.openHomePage(webDriver);
+        homePage.validateTitle();
+        homePage.validateUrl();
+    }
+
+    @Test
     public void testCapabilities() {
         Capabilities capabilities = webDriver.getCapabilities();
         String name = capabilities.getBrowserName().toLowerCase();
@@ -109,13 +116,6 @@ public class ShoppingSpreeTests implements ITest {
     @Test
     public void testRefresh() {
         // LAB 11.c
-    }
-
-    @Test
-    public void testHomePage() {
-        webDriver.get("https://selenium.jacobparr.com");
-        String title = webDriver.getTitle();
-        Assert.assertEquals(title, "Spree Demo Site");
     }
 
     @Test
