@@ -3,13 +3,13 @@ package com.example.selenium.spree;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
-public class HomePage {
-    public static final String URL = "https://spreecommerce-demo.herokuapp.com/";
-    public static final String TITLE = "Spree Demo Site";
+public class CartPage {
+    public static final String URL = "https://spreecommerce-demo.herokuapp.com/cart";
+    public static final String TITLE = "Shopping Cart - Spree Demo Site";
 
-    private RemoteWebDriver webDriver;
+    RemoteWebDriver webDriver;
 
-    public HomePage(RemoteWebDriver webDriver) {
+    public CartPage(RemoteWebDriver webDriver) {
         this.webDriver = webDriver;
     }
 

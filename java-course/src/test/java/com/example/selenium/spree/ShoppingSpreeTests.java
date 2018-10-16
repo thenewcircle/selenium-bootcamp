@@ -105,17 +105,40 @@ public class ShoppingSpreeTests implements ITest {
 
     @Test
     public void testCartPage() {
-        // LAB 11.a
+        CartPage cartPage = Pages.openCartPage(webDriver);
+        cartPage.validateTitle();
+        cartPage.validateUrl();
+    }
+
+    @Test
+    public void testProductPage() {
+        ProductPage prodPage = Pages.openProductPage(webDriver);
+        prodPage.validateTitle();
+        prodPage.validateUrl();
     }
 
     @Test
     public void testBackAndForth() {
-        // LAB 11.b
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-tote");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
+
+        webDriver.navigate().back();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().forward();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Tote - Spree Demo Site");
     }
 
     @Test
     public void testRefresh() {
-        // LAB 11.c
+        webDriver.navigate().to("https://selenium.jacobparr.com/products/spree-bag");
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
+
+        webDriver.navigate().refresh();
+        Assert.assertEquals(webDriver.getTitle(), "Spree Bag - Spree Demo Site");
     }
 
     @Test
