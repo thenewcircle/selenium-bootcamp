@@ -4,7 +4,7 @@ import unittest
 from selenium import webdriver
 from ddt import ddt, idata
 
-import Pages
+from com.example.selenium.spree.Pages import Pages
 
 
 @ddt

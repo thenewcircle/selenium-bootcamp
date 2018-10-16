@@ -1,4 +1,4 @@
-import HomePage
+from com.example.selenium.spree.HomePage import HomePage
 
 
 class Pages:
