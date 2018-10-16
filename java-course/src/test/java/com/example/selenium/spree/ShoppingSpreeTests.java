@@ -75,6 +75,26 @@ public class ShoppingSpreeTests implements ITest {
     }
 
     @Test
+    public void testCapabilities() {
+        // LAB 10.e
+    }
+
+    @Test
+    public void testCartPage() {
+        // LAB 11.a
+    }
+
+    @Test
+    public void testBackAndForth() {
+        // LAB 11.b
+    }
+
+    @Test
+    public void testRefresh() {
+        // LAB 11.c
+    }
+
+    @Test
     public void testHomePage() {
         webDriver.get("https://selenium.jacobparr.com");
         String title = webDriver.getTitle();

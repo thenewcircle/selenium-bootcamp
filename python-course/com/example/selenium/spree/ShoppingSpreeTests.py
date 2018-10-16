@@ -28,11 +28,33 @@ class ShoppingSpreeTests(unittest.TestCase):
             self.webDriver = webdriver.Safari()
 
     @idata(driver_types)
+    def testCapabilities(self, driver_type):
+        self.create_driver(driver_type)
+        # LAB 10.a
+
+    @idata(driver_types)
+    def testCartPage(self, driver_type):
+        self.create_driver(driver_type)
+        # LAB 11.a
+
+    @idata(driver_types)
+    def testBackAndForth(self, driver_type):
+        self.create_driver(driver_type)
+        # LAB 11.b
+
+    @idata(driver_types)
+    def testRefresh(self, driver_type):
+        self.create_driver(driver_type)
+        # LAB 11.c
+
+
+    @idata(driver_types)
     def testHomePage(self, driver_type):
         self.create_driver(driver_type)
         self.webDriver.get("https://selenium.jacobparr.com")
         title = self.webDriver.title
         self.assertEquals("Spree Demo Site", title)
+
 
     @idata(driver_types)
     def testGetGoogleUrl(self, driver_type):
