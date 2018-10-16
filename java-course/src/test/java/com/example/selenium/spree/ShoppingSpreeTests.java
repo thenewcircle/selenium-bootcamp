@@ -1,10 +1,14 @@
 package com.example.selenium.spree;
 
 import ch.qos.logback.classic.Level;
+import com.example.selenium.spree.pages.CartPage;
+import com.example.selenium.spree.pages.HomePage;
+import com.example.selenium.spree.pages.ProductPage;
 import com.example.selenium.spree.support.LogbackUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -80,6 +84,16 @@ public class ShoppingSpreeTests implements ITest {
         HomePage homePage = Pages.openHomePage(webDriver);
         homePage.validateTitle();
         homePage.validateUrl();
+    }
+
+    @Test
+    public void testDepartmentsCombo() {
+        HomePage homePage = Pages.openHomePage(webDriver);
+        WebElement depCmb = homePage.getDepartmentCmb();
+        String label = depCmb.getAttribute("aria-label");
+        boolean isDisplayed = depCmb.isDisplayed();
+        boolean isEnabled = depCmb.isEnabled();
+        boolean isSelected = depCmb.isSelected();
     }
 
     @Test

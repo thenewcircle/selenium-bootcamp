@@ -8,3 +8,6 @@ class HomePage(BasePage):
     def __init__(self, test):
         BasePage.__init__(self, test, self.title, self.url)
         self.test = test
+
+    def getDepartmentCmb(self):
+        return self.test.webDriver.find_element_by_id("taxon")

@@ -1,5 +1,8 @@
 package com.example.selenium.spree;
 
+import com.example.selenium.spree.pages.CartPage;
+import com.example.selenium.spree.pages.HomePage;
+import com.example.selenium.spree.pages.ProductPage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Pages {

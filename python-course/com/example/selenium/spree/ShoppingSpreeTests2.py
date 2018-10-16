@@ -3,6 +3,8 @@ import unittest
 
 from selenium import webdriver
 from ddt import ddt, idata
+from selenium.webdriver.remote import webelement
+from selenium.webdriver.remote.webelement import WebElement
 
 from com.example.selenium.spree.Pages import Pages
 
@@ -33,28 +35,20 @@ class ShoppingSpreeTests2(unittest.TestCase):
         elif self.SAFARI == driver_type:
             self.webDriver = webdriver.Safari()
 
-
     @idata(driver_types)
-    def testHomePage(self, driver_type):
+    def testDepartmentsCombo(self, driver_type):
         self.create_driver(driver_type)
-        home_page = Pages.openHomePage(self)
-        home_page.validateTitle()
-        home_page.validateUrl()
-
-    @idata(driver_types)
-    def testCartPage(self, driver_type):
-        self.create_driver(driver_type)
-        cart_page = Pages.openCartPage(self)
-        cart_page.validateTitle()
-        cart_page.validateUrl()
-
-    @idata(driver_types)
-    def testProductPage(self, driver_type):
-        self.create_driver(driver_type)
-        product_page = Pages.openProductPage(self)
-        product_page.validateTitle()
-        product_page.validateUrl()
-
+        homePage = Pages.openHomePage(self)
+        deptCmb:WebElement = homePage.getDepartmentCmb()
+        attr = deptCmb.get_attribute("aria-label")
+        cssValue = deptCmb.value_of_css_property("border")
+        size = deptCmb.size
+        tagName = deptCmb.tag_name
+        text = deptCmb.text
+        displayed = deptCmb.is_displayed()
+        selected = deptCmb.is_selected()
+        enabled = deptCmb.is_enabled()
+        color = deptCmb.value_of_css_property("background-color")
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
