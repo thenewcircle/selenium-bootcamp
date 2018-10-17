@@ -3,8 +3,6 @@ import time
 from selenium.webdriver.remote.webelement import WebElement
 
 from com.example.selenium.spree.pages.BasePage import BasePage
-from com.example.selenium.spree.pages.ProductPage import ProductPage
-from com.example.selenium.spree.pages.ProductsPage import ProductsPage
 
 
 class HomePage(BasePage):
@@ -26,4 +24,5 @@ class HomePage(BasePage):
         self.getSearchBox().submit()
 
         time.sleep(2)
+        from com.example.selenium.spree.pages.ProductsPage import ProductsPage
         return ProductsPage(self.test, text)

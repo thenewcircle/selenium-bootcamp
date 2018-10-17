@@ -44,12 +44,12 @@ class ShoppingSpreeTests2(unittest.TestCase):
         productsPage.validateTitle()
         productsPage.validateUrl()
 
-        # productsPage.validateSearchText("Bag")
-        # productsPage.clearSearch()
-        # productsPage.validateSearchText("")
+        productsPage.validateSearchText("Bag")
+        productsPage.clearSearch()
+        productsPage.validateSearchText("")
 
-        # homePage = productsPage.clickLogo()
-        # homePage.validateUrl()
+        homePage = productsPage.clickLogo()
+        homePage.validateUrl()
 
     def tearDown(self):
         if hasattr(self, '_outcome'):  # Python 3.4+
